@@ -8,23 +8,23 @@ You can find the API documentation for Upsource at your Upsource instance base U
 
 ### Install lib
 
-To install go-upsource-client, use go get:
+To install upsource-go-client, use go get:
 ```bash
-go get github.com/groall/go-upsource-client/client
+go get github.com/groall/upsource-go-client/client
 ```
 
-Import the go-upsource-client package into your code:
+Import the upsource-go-client package into your code:
 
 ```go
 package whatever
 
 import (
-  "github.com/groall/go-upsource-client/client"
+  "github.com/groall/upsource-go-client/client"
 )
 ```
 #### Update
 
-To update go-upsource-client, use go get -u:
+To update upsource-go-client, use go get -u:
 ```bash
-go get -u github.com/groall/go-upsource-client/client
+go get -u github.com/groall/upsource-go-client/client
 ```

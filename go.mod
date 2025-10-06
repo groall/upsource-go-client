@@ -1,3 +1,3 @@
-module github.com/groall/upsource-client-go
+module github.com/groall/upsource-go-client
 
 go 1.22.0

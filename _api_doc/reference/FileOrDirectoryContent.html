@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html>
+
+<!-- /reference/FileOrDirectoryContent.html  -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="format-detection" content="telephone=no">
+
+<title>fileOrDirectoryContent.proto</title>
+
+<link rel="stylesheet" type="text/css" href="../styles/page.css">
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" sizes="16x16 32x32">
+</head>
+<body>
+  <div class="upsource-doc">
+    <h2>
+      Upsource API Documentation
+      <a class="index" href="index.html">Index</a>
+    </h2>
+
+    <h3>Messages</h3>
+    <a href="../json/FileOrDirectoryContent.json" class="json-link" target="_blank">View as JSON</a>
+    <div class="message block">
+      <h3 class="message" id="messages.CodeInspectionsDTO">
+        <a href="#messages.CodeInspectionsDTO"><span class="badge">M</span> CodeInspectionsDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> inspections </td><td>   <a href="#messages.InspectionCodeMarkupItemDTO">InspectionCodeMarkupItemDTO</a> </td><td> repeated </td><td>   <div class="docs">  See InspectionCodeMarkupItemDTO parameters </div> </td>
+          </tr>
+
+          <tr>
+            <td> fileLevel </td><td>   <a href="#messagesFileWarningLevelEnum">FileWarningLevelEnum</a> </td><td> required </td><td>   <div class="docs">  See FileWarningLevelEnum parameters </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.FileContentDTO">
+        <a href="#messages.FileContentDTO"><span class="badge">M</span> FileContentDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> text </td><td> string </td><td> required </td><td>   <div class="docs">  File text </div> </td>
+          </tr>
+          <tr>
+            <td> foldings </td><td>   <a href="#messages.FoldingInfoDTO">FoldingInfoDTO</a> </td><td> repeated </td><td>   <div class="docs">  See FoldingInfoDTO parameters </div> </td>
+          </tr>
+
+          <tr>
+            <td> isSyntaxSupported </td><td> bool </td><td> optional </td><td>   <div class="docs">  Whether syntax markup is available for this file type </div> </td>
+          </tr>
+          <tr>
+            <td> syntax </td><td>   <a href="#messages.TextMarkupDTO">TextMarkupDTO</a> </td><td> repeated </td><td>   <div class="docs">  See TextMarkupDTO parameters </div> </td>
+          </tr>
+
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.FileContentRawResponseDTO">
+        <a href="#messages.FileContentRawResponseDTO"><span class="badge">M</span> FileContentRawResponseDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> base64 </td><td> string </td><td> required </td><td>   <div class="docs">  Base64-encoded contents of a file </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.FileContentResponseDTO">
+        <a href="#messages.FileContentResponseDTO"><span class="badge">M</span> FileContentResponseDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> contentType </td><td>   <a href="#messages.FileContentTypeDTO">FileContentTypeDTO</a> </td><td> required </td><td>   <div class="docs">  See FileContentTypeDTO parameters </div> </td>
+          </tr>
+
+          <tr>
+            <td> fileContent </td><td>   <a href="#messages.FileContentDTO">FileContentDTO</a> </td><td> optional </td><td>   <div class="docs">  See FileContentDTO parameters </div> </td>
+          </tr>
+
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.FileContentTypeDTO">
+        <a href="#messages.FileContentTypeDTO"><span class="badge">M</span> FileContentTypeDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> isText </td><td> bool </td><td> required </td><td>   <div class="docs">  Whether the file is presentable as text </div> </td>
+          </tr>
+          <tr>
+            <td> isDirectory </td><td> bool </td><td> required </td><td>   <div class="docs">  Whether the file is a directory </div> </td>
+          </tr>
+          <tr>
+            <td> isGenerated </td><td> bool </td><td> required </td><td>   <div class="docs">  Whether file contents are generated </div> </td>
+          </tr>
+          <tr>
+            <td> canDownload </td><td> bool </td><td> required </td><td>   <div class="docs">  Whether the file can be downloaded </div> </td>
+          </tr>
+          <tr>
+            <td> fileType </td><td> string </td><td> required </td><td>   <div class="docs">  File extension </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.FileContributorsResponseDTO">
+        <a href="#messages.FileContributorsResponseDTO"><span class="badge">M</span> FileContributorsResponseDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> authorIds </td><td> string </td><td> repeated </td><td>   <div class="docs">  User IDs of the contributors </div> </td>
+          </tr>
+          <tr>
+            <td> authoredChangesCounts </td><td> int32 </td><td> repeated </td><td>   <div class="docs">  Number of changes made to the file </div> </td>
+          </tr>
+          <tr>
+            <td> reviewedChangesCounts </td><td> int32 </td><td> repeated </td><td>   <div class="docs">  Number of reviews performed on the file </div> </td>
+          </tr>
+          <tr>
+            <td> majorContributorUserId </td><td> string </td><td> optional </td><td>   <div class="docs">  The major contributor to the file, if there is one </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.FilePsiRequestDTO">
+        <a href="#messages.FilePsiRequestDTO"><span class="badge">M</span> FilePsiRequestDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> file </td><td>   <a href="Ids.html#messages.FileInRevisionDTO">FileInRevisionDTO</a> </td><td> required </td><td>   <div class="docs">  See FileInRevisionDTO parameters </div> </td>
+          </tr>
+
+          <tr>
+            <td> requestReferences </td><td> bool </td><td> optional </td><td>   <div class="docs">  Whether to request references </div> </td>
+          </tr>
+          <tr>
+            <td> requestGutterMarks </td><td> bool </td><td> optional </td><td>   <div class="docs">  Whether to request gutter marks </div> </td>
+          </tr>
+          <tr>
+            <td> requestInspections </td><td> bool </td><td> optional </td><td>   <div class="docs">  Whether to request inspections </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.FilePsiResponseDTO">
+        <a href="#messages.FilePsiResponseDTO"><span class="badge">M</span> FilePsiResponseDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> hasPsi </td><td> bool </td><td> optional </td><td>   <div class="docs">  Whether the code model is available for a file </div> </td>
+          </tr>
+          <tr>
+            <td> psiStatusMessage </td><td> string </td><td> optional </td><td>   <div class="docs">  PSI status message, e.g. a failure to provide code intelligence or another message regarding the file in general </div> </td>
+          </tr>
+          <tr>
+            <td> referenceMarkup </td><td>   <a href="#messages.FileReferenceCodeMarkupDTO">FileReferenceCodeMarkupDTO</a> </td><td> optional </td><td>   <div class="docs">  See FileReferenceCodeMarkupDTO parameters </div> </td>
+          </tr>
+
+          <tr>
+            <td> textMarkup </td><td>   <a href="#messages.FileTextMarkupDTO">FileTextMarkupDTO</a> </td><td> optional </td><td>   <div class="docs">  See FileTextMarkupDTO parameters </div> </td>
+          </tr>
+
+          <tr>
+            <td> gutterMarks </td><td>   <a href="#messages.GutterCodeMarkupsDTO">GutterCodeMarkupsDTO</a> </td><td> optional </td><td>   <div class="docs">  See GutterCodeMarkupsDTO parameters </div> </td>
+          </tr>
+
+          <tr>
+            <td> inspections </td><td>   <a href="#messages.CodeInspectionsDTO">CodeInspectionsDTO</a> </td><td> optional </td><td>   <div class="docs">  See CodeInspectionsDTO parameters </div> </td>
+          </tr>
+
+          <tr>
+            <td> externalInspections </td><td>   <a href="#messages.InspectionCodeMarkupItemDTO">InspectionCodeMarkupItemDTO</a> </td><td> repeated </td><td>   <div class="docs">  External inspections </div> </td>
+          </tr>
+
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.FileReferenceCodeMarkupDTO">
+        <a href="#messages.FileReferenceCodeMarkupDTO"><span class="badge">M</span> FileReferenceCodeMarkupDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> markup </td><td>   <a href="#messages.ReferenceCodeMarkupItemDTO">ReferenceCodeMarkupItemDTO</a> </td><td> repeated </td><td>   <div class="docs">  See ReferenceCodeMarkupItemDTO parameters </div> </td>
+          </tr>
+
+          <tr>
+            <td> navigationPointsTable </td><td>   <a href="#messages.MarkupNavigationPointDTO">MarkupNavigationPointDTO</a> </td><td> repeated </td><td>   <div class="docs">  See MarkupNavigationPointDTO parameters </div> </td>
+          </tr>
+
+          <tr>
+            <td> fileNameTable </td><td>   <a href="Ids.html#messages.FileInRevisionDTO">FileInRevisionDTO</a> </td><td> repeated </td><td>   <div class="docs">  See FileInRevisionDTO parameters </div> </td>
+          </tr>
+
+          <tr>
+            <td> localDeclarationRanges </td><td>   <a href="#messages.LocalDeclarationRangeDTO">LocalDeclarationRangeDTO</a> </td><td> repeated </td><td>   <div class="docs">  See LocalDeclarationRangeDTO parameters </div> </td>
+          </tr>
+
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.FileTextMarkupDTO">
+        <a href="#messages.FileTextMarkupDTO"><span class="badge">M</span> FileTextMarkupDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> markup </td><td>   <a href="#messages.TextMarkupDTO">TextMarkupDTO</a> </td><td> repeated </td><td>   <div class="docs">  See TextMarkupDTO parameters </div> </td>
+          </tr>
+
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.FoldingInfoDTO">
+        <a href="#messages.FoldingInfoDTO"><span class="badge">M</span> FoldingInfoDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> fromOffset </td><td> int32 </td><td> required </td><td>   <div class="docs">  Start offset of the foldable range </div> </td>
+          </tr>
+          <tr>
+            <td> toOffset </td><td> int32 </td><td> required </td><td>   <div class="docs">  End offset of the foldable range </div> </td>
+          </tr>
+          <tr>
+            <td> isInitialCollapsed </td><td> bool </td><td> required </td><td>   <div class="docs">  Whether the range is initially collapsed </div> </td>
+          </tr>
+          <tr>
+            <td> collapsedText </td><td> string </td><td> required </td><td>   <div class="docs">  Text to be displayed in place of the folded range </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.GutterCodeMarkupItemDTO">
+        <a href="#messages.GutterCodeMarkupItemDTO"><span class="badge">M</span> GutterCodeMarkupItemDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> range </td><td>   <a href="Ids.html#messages.RangeDTO">RangeDTO</a> </td><td> required </td><td>   <div class="docs">  See RangeDTO parameters </div> </td>
+          </tr>
+
+          <tr>
+            <td> gutterMark </td><td>   <a href="#messagesGutterMarkEnum">GutterMarkEnum</a> </td><td> repeated </td><td>   <div class="docs">  See GutterMarkEnum parameters </div> </td>
+          </tr>
+          <tr>
+            <td> relatedSemanticMarkup </td><td> int32 </td><td> required </td><td>   <div class="docs">  Index in 'referenceMarkup' list this gutter mark corresponds to </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.GutterCodeMarkupsDTO">
+        <a href="#messages.GutterCodeMarkupsDTO"><span class="badge">M</span> GutterCodeMarkupsDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> items </td><td>   <a href="#messages.GutterCodeMarkupItemDTO">GutterCodeMarkupItemDTO</a> </td><td> repeated </td><td>   <div class="docs">  See GutterCodeMarkupItemDTO parameters </div> </td>
+          </tr>
+
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.InspectionCodeMarkupItemDTO">
+        <a href="#messages.InspectionCodeMarkupItemDTO"><span class="badge">M</span> InspectionCodeMarkupItemDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> range </td><td>   <a href="Ids.html#messages.RangeDTO">RangeDTO</a> </td><td> required </td><td>   <div class="docs">  See RangeDTO parameters </div> </td>
+          </tr>
+
+          <tr>
+            <td> textAttribute </td><td>   <a href="#messages.TextAttributeDTO">TextAttributeDTO</a> </td><td> required </td><td>   <div class="docs">  See TextAttributeDTO parameters </div> </td>
+          </tr>
+
+          <tr>
+            <td> message </td><td> string </td><td> required </td><td>   <div class="docs">  Inspection message </div> </td>
+          </tr>
+          <tr>
+            <td> severity </td><td>   <a href="#messagesInspectionSeverityEnum">InspectionSeverityEnum</a> </td><td> required </td><td>   <div class="docs">  See InspectionSeverityEnum parameters </div> </td>
+          </tr>
+          <tr>
+            <td> textAttributesKey </td><td> string </td><td> optional </td><td>   <div class="docs">  Name (if any) of this markup key, given by IntelliJ IDEA </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.InspectionsDiffDTO">
+        <a href="#messages.InspectionsDiffDTO"><span class="badge">M</span> InspectionsDiffDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> diffForFile </td><td>   <a href="#messages.InspectionsDiffForFileDTO">InspectionsDiffForFileDTO</a> </td><td> repeated </td><td>   <div class="docs">  See InspectionsDiffForFileDTO parameters </div> </td>
+          </tr>
+
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.InspectionsDiffForFileDTO">
+        <a href="#messages.InspectionsDiffForFileDTO"><span class="badge">M</span> InspectionsDiffForFileDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> path </td><td> string </td><td> required </td><td>   <div class="docs">  A full path to the file starting with a slash (e.g. /directory/file.txt) </div> </td>
+          </tr>
+          <tr>
+            <td> introduced </td><td>   <a href="#messages.InspectionCodeMarkupItemDTO">InspectionCodeMarkupItemDTO</a> </td><td> repeated </td><td>   <div class="docs">  Introduced problems. See InspectionCodeMarkupItemDTO parameters </div> </td>
+          </tr>
+
+          <tr>
+            <td> fixed </td><td>   <a href="#messages.InspectionCodeMarkupItemDTO">InspectionCodeMarkupItemDTO</a> </td><td> repeated </td><td>   <div class="docs">  Fixed problems. See InspectionCodeMarkupItemDTO parameters </div> </td>
+          </tr>
+
+          <tr>
+            <td> fixedOriginalRanges </td><td>   <a href="Ids.html#messages.RangeDTO">RangeDTO</a> </td><td> repeated </td><td>   <div class="docs">  A list of ranges pointing to fixed problems in the original revision </div> </td>
+          </tr>
+
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.LocalDeclarationRangeDTO">
+        <a href="#messages.LocalDeclarationRangeDTO"><span class="badge">M</span> LocalDeclarationRangeDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> targetId </td><td> int32 </td><td> required </td><td>   <div class="docs">  ID of the target element </div> </td>
+          </tr>
+          <tr>
+            <td> startOffset </td><td> int32 </td><td> required </td><td>   <div class="docs">  Start offset </div> </td>
+          </tr>
+          <tr>
+            <td> endOffset </td><td> int32 </td><td> required </td><td>   <div class="docs">  End offset </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.MarkupNavigationPointDTO">
+        <a href="#messages.MarkupNavigationPointDTO"><span class="badge">M</span> MarkupNavigationPointDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> targetId </td><td> int32 </td><td> required </td><td>   <div class="docs">  ID of the target element </div> </td>
+          </tr>
+          <tr>
+            <td> fileId </td><td> int32 </td><td> required </td><td>   <div class="docs">  Index of the file name as stored in the 'fileNameTable' table of the Upsource database </div> </td>
+          </tr>
+          <tr>
+            <td> startOffset </td><td> int32 </td><td> required </td><td>   <div class="docs">  Start offset </div> </td>
+          </tr>
+          <tr>
+            <td> endOffset </td><td> int32 </td><td> required </td><td>   <div class="docs">  End offset </div> </td>
+          </tr>
+          <tr>
+            <td> stubIndex </td><td> int32 </td><td> required </td><td>   <div class="docs">  Stub index ID </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.ReferenceCodeMarkupItemDTO">
+        <a href="#messages.ReferenceCodeMarkupItemDTO"><span class="badge">M</span> ReferenceCodeMarkupItemDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> range </td><td>   <a href="Ids.html#messages.RangeDTO">RangeDTO</a> </td><td> required </td><td>   <div class="docs">  See RangeDTO parameters </div> </td>
+          </tr>
+
+          <tr>
+            <td> markupId </td><td> int32 </td><td> required </td><td>   <div class="docs">  ID of the markup element </div> </td>
+          </tr>
+          <tr>
+            <td> targetId </td><td> int32 </td><td> required </td><td>   <div class="docs">  ID of the target element </div> </td>
+          </tr>
+          <tr>
+            <td> capabilityFlags </td><td> int32 </td><td> required </td><td>   <div class="docs">  Bit mask of the 'CapabilityFlagsEnum' enum </div> </td>
+          </tr>
+          <tr>
+            <td> localIndex </td><td> int32 </td><td> required </td><td>   <div class="docs">  Used to identify the exact reference when references overlap </div> </td>
+          </tr>
+          <tr>
+            <td> hash </td><td> string </td><td> optional </td><td>   <div class="docs">  Hash of the PSI element (if any), used to test PSI elements for equality </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.TextAttributeDTO">
+        <a href="#messages.TextAttributeDTO"><span class="badge">M</span> TextAttributeDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> fgColor </td><td> string </td><td> optional </td><td>   <div class="docs">  Foreground color </div> </td>
+          </tr>
+          <tr>
+            <td> bgColor </td><td> string </td><td> optional </td><td>   <div class="docs">  Background color </div> </td>
+          </tr>
+          <tr>
+            <td> fontStyle </td><td> string </td><td> optional </td><td>   <div class="docs">  Font style (italic, bold) </div> </td>
+          </tr>
+          <tr>
+            <td> effectStyle </td><td> string </td><td> optional </td><td>   <div class="docs">  Text effect (underline, wave underline, strikeout, etc.) </div> </td>
+          </tr>
+          <tr>
+            <td> effectColor </td><td> string </td><td> optional </td><td>   <div class="docs">  Effect color </div> </td>
+          </tr>
+          <tr>
+            <td> errorStripeColor </td><td> string </td><td> optional </td><td>   <div class="docs">  Error stripe color </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.TextMarkupDTO">
+        <a href="#messages.TextMarkupDTO"><span class="badge">M</span> TextMarkupDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> range </td><td>   <a href="Ids.html#messages.RangeDTO">RangeDTO</a> </td><td> required </td><td>   <div class="docs">  Text range </div> </td>
+          </tr>
+
+          <tr>
+            <td> textAttribute </td><td>   <a href="#messages.TextAttributeDTO">TextAttributeDTO</a> </td><td> required </td><td>   <div class="docs">  See TextAttributeDTO parameters </div> </td>
+          </tr>
+
+      </table>
+    </div>
+    <h3>Enums</h3>
+    <a href="../json/FileOrDirectoryContent.json" class="json-link" target="_blank">View as JSON</a>
+    <div class="enum block">
+      <h3 class="enum" id="messagesCapabilityFlagsEnum"><a href="#messagesCapabilityFlagsEnum"><span class="badge">E</span> CapabilityFlagsEnum</a></h3>
+
+        <div class="docs">  Describes "capabilities" of a PSI element </div>
+
+      <table class="enum-table">
+        <thead>
+          <tr><td>Name</td><td>Number</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> canGotoDeclaration </td>
+            <td> 1 </td>
+            <td>  </td>
+          </tr>
+          <tr>
+            <td> canFindUsages </td>
+            <td> 2 </td>
+            <td>  </td>
+          </tr>
+          <tr>
+            <td> canViewHierarchy </td>
+            <td> 4 </td>
+            <td>  </td>
+          </tr>
+          <tr>
+            <td> canHaveDocumentation </td>
+            <td> 8 </td>
+            <td>  </td>
+          </tr>
+          <tr>
+            <td> isDeclaration </td>
+            <td> 16 </td>
+            <td>  </td>
+          </tr>
+          <tr>
+            <td> isWriteAccess </td>
+            <td> 32 </td>
+            <td>  </td>
+          </tr>
+      </table>
+    </div>
+    <div class="enum block">
+      <h3 class="enum" id="messagesFileWarningLevelEnum"><a href="#messagesFileWarningLevelEnum"><span class="badge">E</span> FileWarningLevelEnum</a></h3>
+
+        <div class="docs">  Describes PSI inspections level </div>
+
+      <table class="enum-table">
+        <thead>
+          <tr><td>Name</td><td>Number</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> none </td>
+            <td> 1 </td>
+            <td>  </td>
+          </tr>
+          <tr>
+            <td> ok </td>
+            <td> 2 </td>
+            <td>  </td>
+          </tr>
+          <tr>
+            <td> warning </td>
+            <td> 3 </td>
+            <td>  </td>
+          </tr>
+          <tr>
+            <td> error </td>
+            <td> 4 </td>
+            <td>  </td>
+          </tr>
+      </table>
+    </div>
+    <div class="enum block">
+      <h3 class="enum" id="messagesGutterMarkEnum"><a href="#messagesGutterMarkEnum"><span class="badge">E</span> GutterMarkEnum</a></h3>
+
+        <div class="docs">  Describes the properties of a gutter marker </div>
+
+      <table class="enum-table">
+        <thead>
+          <tr><td>Name</td><td>Number</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> hasSuperElements </td>
+            <td> 1 </td>
+            <td>  </td>
+          </tr>
+          <tr>
+            <td> hasDerivedElements </td>
+            <td> 2 </td>
+            <td>  </td>
+          </tr>
+      </table>
+    </div>
+    <div class="enum block">
+      <h3 class="enum" id="messagesInspectionSeverityEnum"><a href="#messagesInspectionSeverityEnum"><span class="badge">E</span> InspectionSeverityEnum</a></h3>
+
+        <div class="docs">  Describes severity of an inspection result </div>
+
+      <table class="enum-table">
+        <thead>
+          <tr><td>Name</td><td>Number</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> information </td>
+            <td> 1 </td>
+            <td>  </td>
+          </tr>
+          <tr>
+            <td> weak_warning </td>
+            <td> 2 </td>
+            <td>  </td>
+          </tr>
+          <tr>
+            <td> warning </td>
+            <td> 3 </td>
+            <td>  </td>
+          </tr>
+          <tr>
+            <td> error </td>
+            <td> 4 </td>
+            <td>  </td>
+          </tr>
+      </table>
+    </div>  </div>
+</body>
+
+</html>

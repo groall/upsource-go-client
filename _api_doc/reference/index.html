@@ -1,0 +1,1544 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="format-detection" content="telephone=no">
+
+<title>Upsource API</title>
+
+<link rel="stylesheet" type="text/css" href="../styles/index.css">
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" sizes="16x16 32x32">
+</head>
+<body>
+  <div class="upsource-doc">
+    <h2>Upsource API Documentation</h2>
+
+    <h3>Services</h3>
+    <ul class='toc'>
+        <li>
+          <span class="badge">S</span>
+          <a href="Service.html#messages.UpsourceRPC">UpsourceRPC</a>
+        </li>
+    </ul>
+    <h3>Messages</h3>
+    <ul class='toc'>
+        <li>
+          <span class="badge">M</span>
+          <a href="Misc.html#messages.AchievementDTO">AchievementDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Misc.html#messages.AchievementsListDTO">AchievementsListDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.AddCommentRequestDTO">AddCommentRequestDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.AddGroupToReviewRequestDTO">AddGroupToReviewRequestDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.AddGroupToReviewResponseDTO">AddGroupToReviewResponseDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.AddRoleRequestDTO">AddRoleRequestDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.AllRolesResponseDTO">AllRolesResponseDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Analytics.html#messages.AnalyzerStats">AnalyzerStats</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.AnchorDTO">AnchorDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Users.html#messages.BindVcsUsernameRequestDTO">BindVcsUsernameRequestDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.BranchDTO">BranchDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.BranchesRequestDTO">BranchesRequestDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.BranchGraphDTO">BranchGraphDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.BranchInfoDTO">BranchInfoDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.BranchingRevisionSuggestion">BranchingRevisionSuggestion</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.BranchListDTO">BranchListDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.BranchMergeInfoDTO">BranchMergeInfoDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.BranchRequestDTO">BranchRequestDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.BranchStatsDTO">BranchStatsDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.CanCreateBranchReviewDTO">CanCreateBranchReviewDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Misc.html#messages.CheckCanCreateProjectRequestDTO">CheckCanCreateProjectRequestDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Misc.html#messages.CheckCanCreateProjectResponseDTO">CheckCanCreateProjectResponseDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.CloseReviewRequestDTO">CloseReviewRequestDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.CloseReviewResponseDTO">CloseReviewResponseDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="FileOrDirectoryContent.html#messages.CodeInspectionsDTO">CodeInspectionsDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.CodeReviewPattern">CodeReviewPattern</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.CodeReviewPatternsDTO">CodeReviewPatternsDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.CommentDTO">CommentDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Analytics.html#messages.CommentsStatisticsDTO">CommentsStatisticsDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Analytics.html#messages.CommitInfo">CommitInfo</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Analytics.html#messages.CommitsDetailsDTO">CommitsDetailsDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Analytics.html#messages.CommitsDetailsRequestDTO">CommitsDetailsRequestDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Analytics.html#messages.CommitsSummaryDTO">CommitsSummaryDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Analytics.html#messages.CommitsSummaryRequestDTO">CommitsSummaryRequestDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Analytics.html#messages.CommitterModuleValue">CommitterModuleValue</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Analytics.html#messages.CommitterTimeValue">CommitterTimeValue</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Analytics.html#messages.CommitterUserInfo">CommitterUserInfo</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.CompareGraphDTO">CompareGraphDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.CompareInfoDTO">CompareInfoDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.CompareRequestDTO">CompareRequestDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.CompletionRateDTO">CompletionRateDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Analytics.html#messages.ContributorsDistributionDTO">ContributorsDistributionDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Analytics.html#messages.ContributorsDistributionRequestDTO">ContributorsDistributionRequestDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.CreateDiscussionRequestDTO">CreateDiscussionRequestDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="IssueTrackers.html#messages.CreateIssueFromDiscussionRequestDTO">CreateIssueFromDiscussionRequestDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="IssueTrackers.html#messages.CreateIssueFromReviewRequestDTO">CreateIssueFromReviewRequestDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.CreateProjectRequestDTO">CreateProjectRequestDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.CreateReviewRequestDTO">CreateReviewRequestDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Users.html#messages.CurrentUserResponseDTO">CurrentUserResponseDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.DeleteRoleRequestDTO">DeleteRoleRequestDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.DiscussionIdDTO">DiscussionIdDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.DiscussionInFeedDTO">DiscussionInFeedDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.DiscussionInFileDTO">DiscussionInFileDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.DiscussionInFileWithFileDTO">DiscussionInFileWithFileDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.DiscussionInReviewDTO">DiscussionInReviewDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.DiscussionsGroupDTO">DiscussionsGroupDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.DiscussionsInFileDTO">DiscussionsInFileDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.DiscussionsInFilesDTO">DiscussionsInFilesDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.DiscussionsInProjectDTO">DiscussionsInProjectDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.DiscussionsInProjectRequestDTO">DiscussionsInProjectRequestDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.DiscussionsInRevisionDTO">DiscussionsInRevisionDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.EditLabelRequestDTO">EditLabelRequestDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.EditLabelsRequestDTO">EditLabelsRequestDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.EditProjectRequestDTO">EditProjectRequestDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.EditReviewDescriptionRequestDTO">EditReviewDescriptionRequestDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.EditReviewDescriptionResponseDTO">EditReviewDescriptionResponseDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="FindUsages.html#messages.ElementDocumentationDTO">ElementDocumentationDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Misc.html#messages.EmailBouncesResponseDTO">EmailBouncesResponseDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.ExampleComparison">ExampleComparison</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Misc.html#messages.ExportDataResponseDTO">ExportDataResponseDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.ExternalInspectionDTO">ExternalInspectionDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.ExternalLinkDTO">ExternalLinkDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.FeedDTO">FeedDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.FeedItemDTO">FeedItemDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.FeedRequestDTO">FeedRequestDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.FileAnnotationResponseDTO">FileAnnotationResponseDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.FileAnnotationSectionDTO">FileAnnotationSectionDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="FileOrDirectoryContent.html#messages.FileContentDTO">FileContentDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="FileOrDirectoryContent.html#messages.FileContentRawResponseDTO">FileContentRawResponseDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="FileOrDirectoryContent.html#messages.FileContentResponseDTO">FileContentResponseDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="FileOrDirectoryContent.html#messages.FileContentTypeDTO">FileContentTypeDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="FileOrDirectoryContent.html#messages.FileContributorsResponseDTO">FileContributorsResponseDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.FileDiffFragmentDTO">FileDiffFragmentDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.FileDiffRequestDTO">FileDiffRequestDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.FileDiffResponseDTO">FileDiffResponseDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.FileDiffSummaryDTO">FileDiffSummaryDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.FileExternalInspectionsDiffResponseDTO">FileExternalInspectionsDiffResponseDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.FileFragmentAuthorsRequestDTO">FileFragmentAuthorsRequestDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Analytics.html#messages.FileHistoryChartDTO">FileHistoryChartDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Analytics.html#messages.FileHistoryChartRequestDTO">FileHistoryChartRequestDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Analytics.html#messages.FileHistoryFrameDTO">FileHistoryFrameDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.FileHistoryItemDTO">FileHistoryItemDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.FileHistoryRequestDTO">FileHistoryRequestDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.FileHistoryResponseDTO">FileHistoryResponseDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.FileInlineDiffResponseDTO">FileInlineDiffResponseDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.FileInReviewDiffRequestDTO">FileInReviewDiffRequestDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.FileInReviewDTO">FileInReviewDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.FileInReviewReadStatusRequestDTO">FileInReviewReadStatusRequestDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Ids.html#messages.FileInRevisionDTO">FileInRevisionDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.FileMergeInlineDiffRequestDTO">FileMergeInlineDiffRequestDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.FileMetaResponseDTO">FileMetaResponseDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.FileOwnershipSummaryDTO">FileOwnershipSummaryDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="FindUsages.html#messages.FilePathToRootDTO">FilePathToRootDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="FileOrDirectoryContent.html#messages.FilePsiRequestDTO">FilePsiRequestDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="FileOrDirectoryContent.html#messages.FilePsiResponseDTO">FilePsiResponseDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="FileOrDirectoryContent.html#messages.FileReferenceCodeMarkupDTO">FileReferenceCodeMarkupDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="FileOrDirectoryContent.html#messages.FileTextMarkupDTO">FileTextMarkupDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="FindUsages.html#messages.FindBranchRequestDTO">FindBranchRequestDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="FindUsages.html#messages.FindBranchResponseDTO">FindBranchResponseDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.FindCommitsRequestDTO">FindCommitsRequestDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.FindCommitsRequestPatternDTO">FindCommitsRequestPatternDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.FindCommitsResponseCommitDTO">FindCommitsResponseCommitDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.FindCommitsResponseCommitsDTO">FindCommitsResponseCommitsDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.FindCommitsResponseDTO">FindCommitsResponseDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="FindUsages.html#messages.FindHierarchyResultDTO">FindHierarchyResultDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.FindProjectsRequestDTO">FindProjectsRequestDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.FindPullRequestDTO">FindPullRequestDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="FindUsages.html#messages.FindUsagesItemDTO">FindUsagesItemDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="FindUsages.html#messages.FindUsagesResponseDTO">FindUsagesResponseDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Users.html#messages.FindUsersRequestDTO">FindUsersRequestDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="FileOrDirectoryContent.html#messages.FoldingInfoDTO">FoldingInfoDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Users.html#messages.FullUserInfoDTO">FullUserInfoDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Misc.html#messages.GetProjectSettingRequestDTO">GetProjectSettingRequestDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Misc.html#messages.GetSettingRequestDTO">GetSettingRequestDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Misc.html#messages.GetSettingResponseDTO">GetSettingResponseDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="FindUsages.html#messages.GotoFileItemDTO">GotoFileItemDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="FindUsages.html#messages.GotoFileRequestDTO">GotoFileRequestDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="FindUsages.html#messages.GotoFileResponseDTO">GotoFileResponseDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="FileOrDirectoryContent.html#messages.GutterCodeMarkupItemDTO">GutterCodeMarkupItemDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="FileOrDirectoryContent.html#messages.GutterCodeMarkupsDTO">GutterCodeMarkupsDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.HidePredefinedLabelsRequestDTO">HidePredefinedLabelsRequestDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="FileOrDirectoryContent.html#messages.InspectionCodeMarkupItemDTO">InspectionCodeMarkupItemDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.InspectionsCountDTO">InspectionsCountDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="FileOrDirectoryContent.html#messages.InspectionsDiffDTO">InspectionsDiffDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="FileOrDirectoryContent.html#messages.InspectionsDiffForFileDTO">InspectionsDiffForFileDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.InviteUserRequestDTO">InviteUserRequestDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.InviteUserResponseDTO">InviteUserResponseDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="IssueTrackers.html#messages.IssueFieldDTO">IssueFieldDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="IssueTrackers.html#messages.IssueFieldValueDTO">IssueFieldValueDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="IssueTrackers.html#messages.IssueFieldValueIdDTO">IssueFieldValueIdDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="IssueTrackers.html#messages.IssueIdDTO">IssueIdDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="IssueTrackers.html#messages.IssueInfoDTO">IssueInfoDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="IssueTrackers.html#messages.IssueInfoRequestDTO">IssueInfoRequestDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="IssueTrackers.html#messages.IssueRequiredFieldDTO">IssueRequiredFieldDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="IssueTrackers.html#messages.IssueTrackerProjectDetailsDTO">IssueTrackerProjectDetailsDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="IssueTrackers.html#messages.IssueTrackerProviderDTO">IssueTrackerProviderDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="IssueTrackers.html#messages.IssueTrackerProviderSettingDTO">IssueTrackerProviderSettingDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="IssueTrackers.html#messages.IssueTrackerProviderSettingsDTO">IssueTrackerProviderSettingsDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="IssueTrackers.html#messages.IssueTrackerProvidersListDTO">IssueTrackerProvidersListDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.LabelDTO">LabelDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.LabelsListDTO">LabelsListDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.LabelsRequestDTO">LabelsRequestDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Analytics.html#messages.LabelStats">LabelStats</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="FileOrDirectoryContent.html#messages.LocalDeclarationRangeDTO">LocalDeclarationRangeDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="FileOrDirectoryContent.html#messages.MarkupNavigationPointDTO">MarkupNavigationPointDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.MatchingRevisionsResponseDTO">MatchingRevisionsResponseDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Analytics.html#messages.ModulesDistributionDTO">ModulesDistributionDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Analytics.html#messages.ModulesDistributionRequestDTO">ModulesDistributionRequestDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Analytics.html#messages.ModuleTimeValue">ModuleTimeValue</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Analytics.html#messages.ModuleValue">ModuleValue</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="FindUsages.html#messages.NavigationTargetItemDTO">NavigationTargetItemDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.ParticipantInReviewDTO">ParticipantInReviewDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.ParticipantInReviewRequestDTO">ParticipantInReviewRequestDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.ParticipantProgressDTO">ParticipantProgressDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.ParticipantStateChangedDTO">ParticipantStateChangedDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Analytics.html#messages.ProjectActivityDTO">ProjectActivityDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Analytics.html#messages.ProjectActivityRequestDTO">ProjectActivityRequestDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Analytics.html#messages.ProjectCommittersDTO">ProjectCommittersDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.ProjectConfigurationResponseDTO">ProjectConfigurationResponseDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.ProjectFounderDTO">ProjectFounderDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.ProjectGroupDTO">ProjectGroupDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Ids.html#messages.ProjectIdDTO">ProjectIdDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Ids.html#messages.ProjectIdListDTO">ProjectIdListDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.ProjectInfoDTO">ProjectInfoDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.ProjectItemsListDTO">ProjectItemsListDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.ProjectModel">ProjectModel</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Analytics.html#messages.ProjectPulseRequestDTO">ProjectPulseRequestDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.ProjectReadmeResponseDTO">ProjectReadmeResponseDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.ProjectSettingsDTO">ProjectSettingsDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.ProjectTreeItemDTO">ProjectTreeItemDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Analytics.html#messages.ProjectTreeMapDTO">ProjectTreeMapDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Analytics.html#messages.ProjectTreeMapEntryDTO">ProjectTreeMapEntryDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Analytics.html#messages.ProjectTreeMapRequestDTO">ProjectTreeMapRequestDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Users.html#messages.ProjectUserGroupsRequestDTO">ProjectUserGroupsRequestDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Misc.html#messages.ProjectWebhookTriggerDTO">ProjectWebhookTriggerDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="FindUsages.html#messages.PsiElementIdDTO">PsiElementIdDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Analytics.html#messages.PulseResponseDTO">PulseResponseDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="QueryAssist.html#messages.QueryAssistRequestDTO">QueryAssistRequestDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="QueryAssist.html#messages.QueryAssistResponseDTO">QueryAssistResponseDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="QueryAssist.html#messages.QueryAssistStyleItem">QueryAssistStyleItem</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="QueryAssist.html#messages.QueryAssistSuggestionItem">QueryAssistSuggestionItem</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Ids.html#messages.RangeDTO">RangeDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.RangeMappingDTO">RangeMappingDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.ReactionDTO">ReactionDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.ReactionTargetDTO">ReactionTargetDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Misc.html#messages.ReadOnlyModeDTO">ReadOnlyModeDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="FileOrDirectoryContent.html#messages.ReferenceCodeMarkupItemDTO">ReferenceCodeMarkupItemDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.RemoveCommentRequestDTO">RemoveCommentRequestDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.RemoveCommentResponseDTO">RemoveCommentResponseDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.RenameReviewRequestDTO">RenameReviewRequestDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.RenameReviewResponseDTO">RenameReviewResponseDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.ResolveDiscussionRequestDTO">ResolveDiscussionRequestDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.ResolveDiscussionResponseDTO">ResolveDiscussionResponseDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Analytics.html#messages.ResponsibilityDistributionDTO">ResponsibilityDistributionDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Analytics.html#messages.ResponsibilityDistributionRequestDTO">ResponsibilityDistributionRequestDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Analytics.html#messages.ReviewCoverageDTO">ReviewCoverageDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Analytics.html#messages.ReviewCoverageRequestDTO">ReviewCoverageRequestDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.ReviewDeadlineRequestDTO">ReviewDeadlineRequestDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.ReviewDescriptorDTO">ReviewDescriptorDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Analytics.html#messages.ReviewersGraphDTO">ReviewersGraphDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Analytics.html#messages.ReviewersGraphLinkDTO">ReviewersGraphLinkDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Analytics.html#messages.ReviewersGraphRequestDTO">ReviewersGraphRequestDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Ids.html#messages.ReviewIdDTO">ReviewIdDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.ReviewInspectionsDiffRequestDTO">ReviewInspectionsDiffRequestDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.ReviewListDTO">ReviewListDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.ReviewOwnershipSummaryDTO">ReviewOwnershipSummaryDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.ReviewProgressDTO">ReviewProgressDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.ReviewsRequestDTO">ReviewsRequestDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.ReviewStateChangedDTO">ReviewStateChangedDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Analytics.html#messages.ReviewStatisticsDTO">ReviewStatisticsDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Analytics.html#messages.ReviewStatisticsRequestDTO">ReviewStatisticsRequestDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.ReviewSuggestDTO">ReviewSuggestDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.ReviewSummaryChangesRequestDTO">ReviewSummaryChangesRequestDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.ReviewSummaryChangesResponseDTO">ReviewSummaryChangesResponseDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.ReviewSummaryDiscussionsRequestDTO">ReviewSummaryDiscussionsRequestDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.ReviewTargetBranchDTO">ReviewTargetBranchDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Analytics.html#messages.ReviewTimeStatisticsDTO">ReviewTimeStatisticsDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Analytics.html#messages.ReviewTimeStatisticsRequestDTO">ReviewTimeStatisticsRequestDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.RevisionBranchesResponseDTO">RevisionBranchesResponseDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.RevisionBuildStatusDTO">RevisionBuildStatusDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.RevisionBuildStatusKeyDTO">RevisionBuildStatusKeyDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.RevisionBuildStatusListDTO">RevisionBuildStatusListDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.RevisionChangesRequestDTO">RevisionChangesRequestDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.RevisionDescriptorListDTO">RevisionDescriptorListDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.RevisionDiffItemDTO">RevisionDiffItemDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.RevisionDiscussionCountersListDTO">RevisionDiscussionCountersListDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.RevisionDiscussionCountersRequestDTO">RevisionDiscussionCountersRequestDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.RevisionExternalInspectionsDiffResponseDTO">RevisionExternalInspectionsDiffResponseDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Ids.html#messages.RevisionIdDTO">RevisionIdDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.RevisionInBranchDTO">RevisionInBranchDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.RevisionInfoDTO">RevisionInfoDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Ids.html#messages.RevisionInProjectDTO">RevisionInProjectDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.RevisionListDTO">RevisionListDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.RevisionListGraphDTO">RevisionListGraphDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.RevisionListGraphEdgeDTO">RevisionListGraphEdgeDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.RevisionListGraphNodeDTO">RevisionListGraphNodeDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.RevisionListGraphRowDTO">RevisionListGraphRowDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.RevisionOwnershipSummaryDTO">RevisionOwnershipSummaryDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.RevisionReviewInfoDTO">RevisionReviewInfoDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.RevisionReviewInfoListDTO">RevisionReviewInfoListDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.RevisionsDiffDTO">RevisionsDiffDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.RevisionsDiffRequestDTO">RevisionsDiffRequestDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.RevisionsExternalInspectionsDiffResponseDTO">RevisionsExternalInspectionsDiffResponseDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.RevisionsInReviewDTO">RevisionsInReviewDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.RevisionsInReviewResponseDTO">RevisionsInReviewResponseDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.RevisionsListFilteredRequestDTO">RevisionsListFilteredRequestDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.RevisionsListRequestDTO">RevisionsListRequestDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.RevisionsListUpdateRequestDTO">RevisionsListUpdateRequestDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.RevisionsListUpdateResponseDTO">RevisionsListUpdateResponseDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.RevisionsOwnershipSummaryDTO">RevisionsOwnershipSummaryDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.RevisionsSetDTO">RevisionsSetDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.RevisionSuggestDTO">RevisionSuggestDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.RoleDetailsDTO">RoleDetailsDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.RoleDTO">RoleDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="FindUsages.html#messages.SameUsagesDTO">SameUsagesDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.SanitizeHTMLRequestDTO">SanitizeHTMLRequestDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.SanitizeHTMLResponseDTO">SanitizeHTMLResponseDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Misc.html#messages.SetMottoRequestDTO">SetMottoRequestDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Misc.html#messages.SetProjectSettingRequestDTO">SetProjectSettingRequestDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Misc.html#messages.SetProjectWebhooksRequestDTO">SetProjectWebhooksRequestDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.SetReviewTargetBranchResponseDTO">SetReviewTargetBranchResponseDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Misc.html#messages.SetSettingRequestDTO">SetSettingRequestDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.ShortProjectInfoDTO">ShortProjectInfoDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.ShortProjectInfoListDTO">ShortProjectInfoListDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.ShortReviewInfoDTO">ShortReviewInfoDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.SimpleDiscussionCounterDTO">SimpleDiscussionCounterDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.StacktraceDTO">StacktraceDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.StacktracePositionDTO">StacktracePositionDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.StacktracePositionsDTO">StacktracePositionsDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.StartBranchTrackingRequestDTO">StartBranchTrackingRequestDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.StopBranchTrackingRequestDTO">StopBranchTrackingRequestDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="FindUsages.html#messages.StubIdDTO">StubIdDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.SuggestedReviewListDTO">SuggestedReviewListDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.SuggestedRevisionListDTO">SuggestedRevisionListDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="FindUsages.html#messages.TargetDescriptionDTO">TargetDescriptionDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.TestConnectionRequestDTO">TestConnectionRequestDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.TestConnectionResponseDTO">TestConnectionResponseDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Misc.html#messages.TestPOP3MailboxRequestDTO">TestPOP3MailboxRequestDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Misc.html#messages.TestPOP3MailboxResponseDTO">TestPOP3MailboxResponseDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="FileOrDirectoryContent.html#messages.TextAttributeDTO">TextAttributeDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="FileOrDirectoryContent.html#messages.TextMarkupDTO">TextMarkupDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="FindUsages.html#messages.TextSearchItem">TextSearchItem</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="FindUsages.html#messages.TextSearchProjectDetails">TextSearchProjectDetails</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="FindUsages.html#messages.TextSearchRequestDTO">TextSearchRequestDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="FindUsages.html#messages.TextSearchResponseDTO">TextSearchResponseDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="FindUsages.html#messages.TextSearchSnippet">TextSearchSnippet</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Analytics.html#messages.TimeValue">TimeValue</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.ToggleReactionRequestDTO">ToggleReactionRequestDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.ToggleReviewMutedRequestDTO">ToggleReviewMutedRequestDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.UncommittedRevisionDTO">UncommittedRevisionDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.UpdateCommentRequestDTO">UpdateCommentRequestDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.UpdateCommentResponseDTO">UpdateCommentResponseDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.UpdateDiscussionFlagRequestDTO">UpdateDiscussionFlagRequestDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.UpdateDiscussionLabelRequestDTO">UpdateDiscussionLabelRequestDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.UpdateParticipantInReviewRequestDTO">UpdateParticipantInReviewRequestDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.UpdateParticipantInReviewResponseDTO">UpdateParticipantInReviewResponseDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.UpdateReviewLabelRequestDTO">UpdateReviewLabelRequestDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.UpdateReviewLabelResponseDTO">UpdateReviewLabelResponseDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.UpdateTaskListRequestDTO">UpdateTaskListRequestDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Misc.html#messages.UpdateUserTimezoneDTO">UpdateUserTimezoneDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="FindUsages.html#messages.UsagesDiffByAnotherRevisionRequestDTO">UsagesDiffByAnotherRevisionRequestDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="FindUsages.html#messages.UsagesDiffByBoundaryRevisionsRequestDTO">UsagesDiffByBoundaryRevisionsRequestDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="FindUsages.html#messages.UsagesDiffDTO">UsagesDiffDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="FindUsages.html#messages.UsagesDiffFullRequestDTO">UsagesDiffFullRequestDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="FindUsages.html#messages.UsagesDiffRequestDTO">UsagesDiffRequestDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="FindUsages.html#messages.UsagesDiffResponseDTO">UsagesDiffResponseDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Users.html#messages.UserAbsenceRequestDTO">UserAbsenceRequestDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Misc.html#messages.UserAchievementsCountDTO">UserAchievementsCountDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Misc.html#messages.UserAchievementsRequestDTO">UserAchievementsRequestDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Misc.html#messages.UserActionNotificationDTO">UserActionNotificationDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Analytics.html#messages.UserActivityDTO">UserActivityDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Analytics.html#messages.UserActivityRequestDTO">UserActivityRequestDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Misc.html#messages.UserAgreementTextDTO">UserAgreementTextDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Users.html#messages.UserGroupDTO">UserGroupDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Users.html#messages.UserGroupsIdsListDTO">UserGroupsIdsListDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Users.html#messages.UserGroupsListDTO">UserGroupsListDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Users.html#messages.UserInfoRequestDTO">UserInfoRequestDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Users.html#messages.UserInfoResponseDTO">UserInfoResponseDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Users.html#messages.UserPresenceInfoDTO">UserPresenceInfoDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Users.html#messages.UserProjectInfoDTO">UserProjectInfoDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Users.html#messages.UserProjectsRequestDTO">UserProjectsRequestDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Users.html#messages.UserProjectsResponseDTO">UserProjectsResponseDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Analytics.html#messages.UserPulseRequestDTO">UserPulseRequestDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.UserRevisionsListRequestDTO">UserRevisionsListRequestDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.UserRolesDTO">UserRolesDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Users.html#messages.UsersForMentionRequestDTO">UsersForMentionRequestDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Users.html#messages.UsersForReviewDTO">UsersForReviewDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Users.html#messages.UsersForReviewRequestDTO">UsersForReviewRequestDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Users.html#messages.UsersListDTO">UsersListDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Users.html#messages.UsersPresenceInfoResponseDTO">UsersPresenceInfoResponseDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.UsersRolesRequestDTO">UsersRolesRequestDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.UsersRolesResponseDTO">UsersRolesResponseDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Analytics.html#messages.UserValue">UserValue</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.VcsHostingRequestDTO">VcsHostingRequestDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.VcsHostingResponseDTO">VcsHostingResponseDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.VcsHostingServiceDTO">VcsHostingServiceDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.VcsRepoDTO">VcsRepoDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Projects.html#messages.VcsRepoListDTO">VcsRepoListDTO</a>
+        </li>
+        <li>
+          <span class="badge">M</span>
+          <a href="Ids.html#messages.VoidMessage">VoidMessage</a>
+        </li>
+    </ul>
+    <h3>Enums</h3>
+    <ul class='toc'>
+        <li>
+          <span class="badge">E</span>
+          <a href="Projects.html#messagesAnalyzerProblemSeverityEnum">AnalyzerProblemSeverityEnum</a>
+        </li>
+        <li>
+          <span class="badge">E</span>
+          <a href="Projects.html#messagesAppConfigurationProblemEnum">AppConfigurationProblemEnum</a>
+        </li>
+        <li>
+          <span class="badge">E</span>
+          <a href="Projects.html#messagesBuildStatusEnum">BuildStatusEnum</a>
+        </li>
+        <li>
+          <span class="badge">E</span>
+          <a href="FileOrDirectoryContent.html#messagesCapabilityFlagsEnum">CapabilityFlagsEnum</a>
+        </li>
+        <li>
+          <span class="badge">E</span>
+          <a href="Projects.html#messagesConflictTypeEnum">ConflictTypeEnum</a>
+        </li>
+        <li>
+          <span class="badge">E</span>
+          <a href="Projects.html#messagesDiffTypeEnum">DiffTypeEnum</a>
+        </li>
+        <li>
+          <span class="badge">E</span>
+          <a href="Users.html#messagesEmailStatusEnum">EmailStatusEnum</a>
+        </li>
+        <li>
+          <span class="badge">E</span>
+          <a href="Projects.html#messagesFeedTypeEnum">FeedTypeEnum</a>
+        </li>
+        <li>
+          <span class="badge">E</span>
+          <a href="FileOrDirectoryContent.html#messagesFileWarningLevelEnum">FileWarningLevelEnum</a>
+        </li>
+        <li>
+          <span class="badge">E</span>
+          <a href="FileOrDirectoryContent.html#messagesGutterMarkEnum">GutterMarkEnum</a>
+        </li>
+        <li>
+          <span class="badge">E</span>
+          <a href="FileOrDirectoryContent.html#messagesInspectionSeverityEnum">InspectionSeverityEnum</a>
+        </li>
+        <li>
+          <span class="badge">E</span>
+          <a href="IssueTrackers.html#messagesIssueRequiredFieldTypeEnum">IssueRequiredFieldTypeEnum</a>
+        </li>
+        <li>
+          <span class="badge">E</span>
+          <a href="Projects.html#messagesOwnershipSummaryEnum">OwnershipSummaryEnum</a>
+        </li>
+        <li>
+          <span class="badge">E</span>
+          <a href="Projects.html#messagesParticipantStateEnum">ParticipantStateEnum</a>
+        </li>
+        <li>
+          <span class="badge">E</span>
+          <a href="Projects.html#messagesProjectStateEnum">ProjectStateEnum</a>
+        </li>
+        <li>
+          <span class="badge">E</span>
+          <a href="QueryAssist.html#messagesQueryAssistSearchContextEnum">QueryAssistSearchContextEnum</a>
+        </li>
+        <li>
+          <span class="badge">E</span>
+          <a href="Projects.html#messagesReadEnum">ReadEnum</a>
+        </li>
+        <li>
+          <span class="badge">E</span>
+          <a href="Analytics.html#messagesReviewCoverageStateEnum">ReviewCoverageStateEnum</a>
+        </li>
+        <li>
+          <span class="badge">E</span>
+          <a href="Projects.html#messagesReviewFeedSortEnum">ReviewFeedSortEnum</a>
+        </li>
+        <li>
+          <span class="badge">E</span>
+          <a href="Projects.html#messagesReviewStateEnum">ReviewStateEnum</a>
+        </li>
+        <li>
+          <span class="badge">E</span>
+          <a href="Projects.html#messagesRevisionReachabilityEnum">RevisionReachabilityEnum</a>
+        </li>
+        <li>
+          <span class="badge">E</span>
+          <a href="Projects.html#messagesRevisionStateEnum">RevisionStateEnum</a>
+        </li>
+        <li>
+          <span class="badge">E</span>
+          <a href="Users.html#messagesRoleInReviewEnum">RoleInReviewEnum</a>
+        </li>
+        <li>
+          <span class="badge">E</span>
+          <a href="Errors.html#messagesRPCErrors">RPCErrors</a>
+        </li>
+        <li>
+          <span class="badge">E</span>
+          <a href="Projects.html#messagesSyncResultEnum">SyncResultEnum</a>
+        </li>
+        <li>
+          <span class="badge">E</span>
+          <a href="Projects.html#messagesTestConnectionStatusEnum">TestConnectionStatusEnum</a>
+        </li>
+        <li>
+          <span class="badge">E</span>
+          <a href="Misc.html#messagesTestPOP3MailboxStatusEnum">TestPOP3MailboxStatusEnum</a>
+        </li>
+        <li>
+          <span class="badge">E</span>
+          <a href="Analytics.html#messagesTimeUnitEnum">TimeUnitEnum</a>
+        </li>
+        <li>
+          <span class="badge">E</span>
+          <a href="Misc.html#messagesWebhookEventEnum">WebhookEventEnum</a>
+        </li>
+    </ul>  </div>
+</body>
+
+</html>

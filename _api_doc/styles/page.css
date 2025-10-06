@@ -1,0 +1,154 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.upsource-doc {
+  min-width: 880px;
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 2em 2em;
+
+  color: #444;
+  font: 15px system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue, Arial, sans-serif;
+}
+
+.upsource-doc h1 {
+  padding-bottom: 0.5ex;
+  border-bottom: 1px solid #DFE5EB;
+
+  font-weight: 200;
+}
+
+.upsource-doc h2 {
+  margin: 2em 0 1em;
+  padding-bottom: 0.5ex;
+  border-bottom: 1px solid #DFE5EB;
+
+  font-weight: 200;
+}
+
+.upsource-doc h3 {
+  margin: 1.5em 0 .5em;
+
+  font-weight: 200;
+}
+
+.upsource-doc a {
+  color: #0F5B99;
+  text-decoration: none;
+}
+
+.upsource-doc a:hover {
+  color: #FF008C;
+  text-decoration: underline;
+}
+
+.upsource-doc a.index {
+  float: right;
+  font-size: 80%;
+}
+
+.upsource-doc div.block {
+  clear: both;
+}
+
+div.block + div.block {
+  margin-top: 2em;
+}
+
+.upsource-doc .badge {
+  position: relative;
+  bottom: 2px;
+
+  display: inline-block;
+  width: 1.6em;
+  height: 1.6em;
+
+  border: 1px solid #FBFBFB;
+  border-radius: 1ex;
+
+  color: #89BA48;
+  background-color: #DFF0C8;
+
+  font-size: 70%;
+  line-height: 1.7em;
+  text-align: center;
+}
+
+/* Table */
+.upsource-doc table {
+  width: 100%;
+  border-collapse: collapse;
+
+  font: 80% Menlo, "Bitstream Vera Sans Mono", "Ubuntu Mono", Consolas, "Courier New", Courier, monospace;
+}
+
+.upsource-doc thead {
+  font-weight: bold;
+  background-color: #DCDCDC;
+}
+
+.upsource-doc tbody tr:nth-child(even) {
+  background-color: #FBFBFB;
+}
+
+.upsource-doc td {
+  padding: 0.5ex 2ex;
+  border: 1px solid #CCC;
+}
+
+.upsource-doc td p {
+  margin: 0;
+  text-indent: 1em;
+}
+
+.upsource-doc td p:nth-child(1) {
+  text-indent: 0; /* No indent on first p in td */
+}
+
+.upsource-doc .nested {
+  margin-left: 40px;
+}
+
+/* Table of fields */
+.field-table td:nth-child(1) { /* Field */
+  width: 10em;
+}
+
+.field-table td:nth-child(2) { /* Type */
+  width: 10em;
+}
+
+.field-table td:nth-child(3) { /* Label */
+  width: 6em;
+}
+
+.field-table td:nth-child(4) { /* Description */
+  width: auto;
+}
+
+/* Table of enum values. */
+.enum-table td:nth-child(1) { /* Name */
+  width: 10em;
+}
+
+.enum-table td:nth-child(2) { /* Number */
+  width: 10em;
+}
+
+.enum-table td:nth-child(3) { /* Description */
+  width: auto;
+}
+
+div.docs {
+  margin: 1em 0;
+}
+
+td div.docs {
+  margin: 0;
+}
+
+.json-link {
+  font-size: small;
+}

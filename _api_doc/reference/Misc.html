@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="format-detection" content="telephone=no">
+
+<title>misc.proto</title>
+
+<link rel="stylesheet" type="text/css" href="../styles/page.css">
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" sizes="16x16 32x32">
+</head>
+<body>
+  <div class="upsource-doc">
+    <h2>
+      Upsource API Documentation
+      <a class="index" href="index.html">Index</a>
+    </h2>
+
+    <h3>Messages</h3>
+    <a href="../json/Misc.json" class="json-link" target="_blank">View as JSON</a>
+    <div class="message block">
+      <h3 class="message" id="messages.AchievementDTO">
+        <a href="#messages.AchievementDTO"><span class="badge">M</span> AchievementDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> id </td><td> string </td><td> required </td><td>   <div class="docs">  Achievement ID </div> </td>
+          </tr>
+          <tr>
+            <td> name </td><td> string </td><td> required </td><td>   <div class="docs">  Achievement title </div> </td>
+          </tr>
+          <tr>
+            <td> shortDescription </td><td> string </td><td> required </td><td>   <div class="docs">  Short description of the achievement </div> </td>
+          </tr>
+          <tr>
+            <td> description </td><td> string </td><td> optional </td><td>   <div class="docs">  Longer description of the achievement </div> </td>
+          </tr>
+          <tr>
+            <td> date </td><td> int64 </td><td> optional </td><td>   <div class="docs">  Unix timestamp of the unlocking event </div> </td>
+          </tr>
+          <tr>
+            <td> isUnread </td><td> bool </td><td> optional </td><td>   <div class="docs">  Whether the user saw a notification about the unlocking </div> </td>
+          </tr>
+          <tr>
+            <td> isUnlocked </td><td> bool </td><td> optional </td><td>   <div class="docs">  Whether the achievement is unlocked by the user </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.AchievementsListDTO">
+        <a href="#messages.AchievementsListDTO"><span class="badge">M</span> AchievementsListDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> items </td><td>   <a href="#messages.AchievementDTO">AchievementDTO</a> </td><td> repeated </td><td>  </td>
+          </tr>
+
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.CheckCanCreateProjectRequestDTO">
+        <a href="#messages.CheckCanCreateProjectRequestDTO"><span class="badge">M</span> CheckCanCreateProjectRequestDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> hubProjectId </td><td> string </td><td> required </td><td>   <div class="docs">  Hub project ID </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.CheckCanCreateProjectResponseDTO">
+        <a href="#messages.CheckCanCreateProjectResponseDTO"><span class="badge">M</span> CheckCanCreateProjectResponseDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> isAllowed </td><td> bool </td><td> required </td><td>   <div class="docs">  Whether the user has the right to create projects </div> </td>
+          </tr>
+          <tr>
+            <td> message </td><td> string </td><td> optional </td><td>   <div class="docs">  Optional text message </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.EmailBouncesResponseDTO">
+        <a href="#messages.EmailBouncesResponseDTO"><span class="badge">M</span> EmailBouncesResponseDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> emails </td><td> string </td><td> repeated </td><td>   <div class="docs">  Emails with either a "soft bounce" or a "hard bounce" status </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.ExportDataResponseDTO">
+        <a href="#messages.ExportDataResponseDTO"><span class="badge">M</span> ExportDataResponseDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> serverPath </td><td> string </td><td> required </td><td>   <div class="docs">  A full path to the server </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.GetProjectSettingRequestDTO">
+        <a href="#messages.GetProjectSettingRequestDTO"><span class="badge">M</span> GetProjectSettingRequestDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> projectId </td><td> string </td><td> required </td><td>   <div class="docs">  Project ID in Upsource </div> </td>
+          </tr>
+          <tr>
+            <td> request </td><td>   <a href="#messages.GetSettingRequestDTO">GetSettingRequestDTO</a> </td><td> required </td><td>   <div class="docs">  See GetSettingRequestDTO parameters </div> </td>
+          </tr>
+
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.GetSettingRequestDTO">
+        <a href="#messages.GetSettingRequestDTO"><span class="badge">M</span> GetSettingRequestDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> key </td><td> string </td><td> required </td><td>   <div class="docs">  Setting key </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.GetSettingResponseDTO">
+        <a href="#messages.GetSettingResponseDTO"><span class="badge">M</span> GetSettingResponseDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> value </td><td> string </td><td> optional </td><td>   <div class="docs">  User setting value </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.ProjectWebhookTriggerDTO">
+        <a href="#messages.ProjectWebhookTriggerDTO"><span class="badge">M</span> ProjectWebhookTriggerDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> events </td><td>   <a href="#messagesWebhookEventEnum">WebhookEventEnum</a> </td><td> repeated </td><td>   <div class="docs">  Events to be notified of </div> </td>
+          </tr>
+          <tr>
+            <td> urls </td><td> string </td><td> repeated </td><td>   <div class="docs">  URL targets for webhook requests </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.ReadOnlyModeDTO">
+        <a href="#messages.ReadOnlyModeDTO"><span class="badge">M</span> ReadOnlyModeDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> isReadOnly </td><td> bool </td><td> required </td><td>   <div class="docs">  Whether the server is in read-only mode </div> </td>
+          </tr>
+          <tr>
+            <td> description </td><td> string </td><td> optional </td><td>   <div class="docs">  Describes the reason for enabling read-only mode (if any) </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.SetMottoRequestDTO">
+        <a href="#messages.SetMottoRequestDTO"><span class="badge">M</span> SetMottoRequestDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> motto </td><td> string </td><td> optional </td><td>   <div class="docs">  Server motto text (leave empty to remove an existing one) </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.SetProjectSettingRequestDTO">
+        <a href="#messages.SetProjectSettingRequestDTO"><span class="badge">M</span> SetProjectSettingRequestDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> projectId </td><td> string </td><td> required </td><td>   <div class="docs">  Project ID in Upsource </div> </td>
+          </tr>
+          <tr>
+            <td> request </td><td>   <a href="#messages.SetSettingRequestDTO">SetSettingRequestDTO</a> </td><td> required </td><td>   <div class="docs">  See SetSettingRequestDTO parameters </div> </td>
+          </tr>
+
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.SetProjectWebhooksRequestDTO">
+        <a href="#messages.SetProjectWebhooksRequestDTO"><span class="badge">M</span> SetProjectWebhooksRequestDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> projectId </td><td> string </td><td> required </td><td>   <div class="docs">  Project ID in Upsource </div> </td>
+          </tr>
+          <tr>
+            <td> triggers </td><td>   <a href="#messages.ProjectWebhookTriggerDTO">ProjectWebhookTriggerDTO</a> </td><td> repeated </td><td>   <div class="docs">  List of webhook triggers </div> </td>
+          </tr>
+
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.SetSettingRequestDTO">
+        <a href="#messages.SetSettingRequestDTO"><span class="badge">M</span> SetSettingRequestDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> key </td><td> string </td><td> required </td><td>   <div class="docs">  Setting key </div> </td>
+          </tr>
+          <tr>
+            <td> value </td><td> string </td><td> required </td><td>   <div class="docs">  Setting value </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.TestPOP3MailboxRequestDTO">
+        <a href="#messages.TestPOP3MailboxRequestDTO"><span class="badge">M</span> TestPOP3MailboxRequestDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> protocol </td><td> string </td><td> required </td><td>   <div class="docs">  Protocol type ("POP3", "POP3+SSL", "POP3+TLS") </div> </td>
+          </tr>
+          <tr>
+            <td> host </td><td> string </td><td> required </td><td>   <div class="docs">  Email service host name </div> </td>
+          </tr>
+          <tr>
+            <td> port </td><td> int32 </td><td> required </td><td>   <div class="docs">  Email server port number </div> </td>
+          </tr>
+          <tr>
+            <td> login </td><td> string </td><td> required </td><td>   <div class="docs">  Email login </div> </td>
+          </tr>
+          <tr>
+            <td> password </td><td> string </td><td> required </td><td>   <div class="docs">  Email password </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.TestPOP3MailboxResponseDTO">
+        <a href="#messages.TestPOP3MailboxResponseDTO"><span class="badge">M</span> TestPOP3MailboxResponseDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> status </td><td>   <a href="#messagesTestPOP3MailboxStatusEnum">TestPOP3MailboxStatusEnum</a> </td><td> required </td><td>   <div class="docs">  Mailbox status. OK (1); LoginFailed (2); ConnectionFailed (3); </div> </td>
+          </tr>
+          <tr>
+            <td> message </td><td> string </td><td> optional </td><td>   <div class="docs">  Optional text message </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.UpdateUserTimezoneDTO">
+        <a href="#messages.UpdateUserTimezoneDTO"><span class="badge">M</span> UpdateUserTimezoneDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> userId </td><td> string </td><td> required </td><td>   <div class="docs">  User ID in Upsource </div> </td>
+          </tr>
+          <tr>
+            <td> timezoneOffset </td><td> int32 </td><td> required </td><td>   <div class="docs">  Timezone offset </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.UserAchievementsCountDTO">
+        <a href="#messages.UserAchievementsCountDTO"><span class="badge">M</span> UserAchievementsCountDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> count </td><td> int32 </td><td> required </td><td>  </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.UserAchievementsRequestDTO">
+        <a href="#messages.UserAchievementsRequestDTO"><span class="badge">M</span> UserAchievementsRequestDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> userId </td><td> string </td><td> required </td><td>   <div class="docs">  User ID in Upsource </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.UserActionNotificationDTO">
+        <a href="#messages.UserActionNotificationDTO"><span class="badge">M</span> UserActionNotificationDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> userId </td><td> string </td><td> required </td><td>   <div class="docs">  User ID in Upsource </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.UserAgreementTextDTO">
+        <a href="#messages.UserAgreementTextDTO"><span class="badge">M</span> UserAgreementTextDTO</a>
+      </h3>
+
+        <div class="docs">  Text of the end user agreement </div>
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> text </td><td> string </td><td> required </td><td>  </td>
+          </tr>
+      </table>
+    </div>
+    <h3>Enums</h3>
+    <a href="../json/Misc.json" class="json-link" target="_blank">View as JSON</a>
+    <div class="enum block">
+      <h3 class="enum" id="messagesTestPOP3MailboxStatusEnum"><a href="#messagesTestPOP3MailboxStatusEnum"><span class="badge">E</span> TestPOP3MailboxStatusEnum</a></h3>
+
+        <div class="docs">  Describes connection status </div>
+
+      <table class="enum-table">
+        <thead>
+          <tr><td>Name</td><td>Number</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> OK </td>
+            <td> 1 </td>
+            <td>  </td>
+          </tr>
+          <tr>
+            <td> LoginFailed </td>
+            <td> 2 </td>
+            <td>  </td>
+          </tr>
+          <tr>
+            <td> ConnectionFailed </td>
+            <td> 3 </td>
+            <td>  </td>
+          </tr>
+      </table>
+    </div>
+    <div class="enum block">
+      <h3 class="enum" id="messagesWebhookEventEnum"><a href="#messagesWebhookEventEnum"><span class="badge">E</span> WebhookEventEnum</a></h3>
+
+
+      <table class="enum-table">
+        <thead>
+          <tr><td>Name</td><td>Number</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> CommentAdded </td>
+            <td> 1 </td>
+            <td>   <div class="docs">  On comment added </div> </td>
+          </tr>
+          <tr>
+            <td> ReviewCreated </td>
+            <td> 2 </td>
+            <td>   <div class="docs">  On review created </div> </td>
+          </tr>
+          <tr>
+            <td> ReviewParticipantCompleted </td>
+            <td> 3 </td>
+            <td>   <div class="docs">  On review accepted or concern raised </div> </td>
+          </tr>
+          <tr>
+            <td> NewReviewParticipant </td>
+            <td> 4 </td>
+            <td>   <div class="docs">  On new review participant </div> </td>
+          </tr>
+          <tr>
+            <td> RevisionAddedToReview </td>
+            <td> 5 </td>
+            <td>   <div class="docs">  On revision added to review </div> </td>
+          </tr>
+          <tr>
+            <td> NewRevision </td>
+            <td> 6 </td>
+            <td>   <div class="docs">  On new revision </div> </td>
+          </tr>
+          <tr>
+            <td> ReviewStateChanged </td>
+            <td> 7 </td>
+            <td>   <div class="docs">  On review closed or reopened </div> </td>
+          </tr>
+          <tr>
+            <td> ReviewParticipantRemoved </td>
+            <td> 8 </td>
+            <td>   <div class="docs">  On review participant removed </div> </td>
+          </tr>
+          <tr>
+            <td> MergedToDefaultBranch </td>
+            <td> 9 </td>
+            <td>   <div class="docs">  On merge to the default branch </div> </td>
+          </tr>
+          <tr>
+            <td> NewBranch </td>
+            <td> 10 </td>
+            <td>   <div class="docs">  On new branch </div> </td>
+          </tr>
+          <tr>
+            <td> ReviewRemoved </td>
+            <td> 11 </td>
+            <td>   <div class="docs">  On review removed </div> </td>
+          </tr>
+          <tr>
+            <td> BranchRemoved </td>
+            <td> 12 </td>
+            <td>   <div class="docs">  On branch removed </div> </td>
+          </tr>
+          <tr>
+            <td> ReactionToggled </td>
+            <td> 13 </td>
+            <td>   <div class="docs">  On reaction added or removed </div> </td>
+          </tr>
+          <tr>
+            <td> CommentEdited </td>
+            <td> 14 </td>
+            <td>   <div class="docs">  On comment edited </div> </td>
+          </tr>
+          <tr>
+            <td> CommentRemoved </td>
+            <td> 15 </td>
+            <td>   <div class="docs">  On comment removed </div> </td>
+          </tr>
+          <tr>
+            <td> ReviewLabelChanged </td>
+            <td> 16 </td>
+            <td>   <div class="docs">  On review label added or removed </div> </td>
+          </tr>
+      </table>
+    </div>  </div>
+</body>
+
+</html>

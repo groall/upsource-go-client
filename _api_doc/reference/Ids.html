@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="format-detection" content="telephone=no">
+
+<title>ids.proto</title>
+
+<link rel="stylesheet" type="text/css" href="../styles/page.css">
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" sizes="16x16 32x32">
+</head>
+<body>
+  <div class="upsource-doc">
+    <h2>
+      Upsource API Documentation
+      <a class="index" href="index.html">Index</a>
+    </h2>
+
+    <h3>Messages</h3>
+    <a href="../json/Ids.json" class="json-link" target="_blank">View as JSON</a>
+    <div class="message block">
+      <h3 class="message" id="messages.FileInRevisionDTO">
+        <a href="#messages.FileInRevisionDTO"><span class="badge">M</span> FileInRevisionDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> projectId </td><td> string </td><td> required </td><td>   <div class="docs">  Project ID in Upsource </div> </td>
+          </tr>
+          <tr>
+            <td> revisionId </td><td> string </td><td> required </td><td>   <div class="docs">  VCS revision ID </div> </td>
+          </tr>
+          <tr>
+            <td> fileName </td><td> string </td><td> required </td><td>   <div class="docs">  A full path to the file starting with a slash (e.g. /directory/file.txt) </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.ProjectIdDTO">
+        <a href="#messages.ProjectIdDTO"><span class="badge">M</span> ProjectIdDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> projectId </td><td> string </td><td> required </td><td>   <div class="docs">  Project ID in Upsource </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.ProjectIdListDTO">
+        <a href="#messages.ProjectIdListDTO"><span class="badge">M</span> ProjectIdListDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> projectId </td><td> string </td><td> repeated </td><td>   <div class="docs">  Project ID in Upsource </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.RangeDTO">
+        <a href="#messages.RangeDTO"><span class="badge">M</span> RangeDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> startOffset </td><td> int32 </td><td> required </td><td>   <div class="docs">  Start offset of the text range </div> </td>
+          </tr>
+          <tr>
+            <td> endOffset </td><td> int32 </td><td> required </td><td>   <div class="docs">  End offset of the text range </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.ReviewIdDTO">
+        <a href="#messages.ReviewIdDTO"><span class="badge">M</span> ReviewIdDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> projectId </td><td> string </td><td> required </td><td>   <div class="docs">  Project ID in Upsource </div> </td>
+          </tr>
+          <tr>
+            <td> reviewId </td><td> string </td><td> required </td><td>   <div class="docs">  Review ID assigned to it when it's created </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.RevisionIdDTO">
+        <a href="#messages.RevisionIdDTO"><span class="badge">M</span> RevisionIdDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> revisionId </td><td> string </td><td> required </td><td>   <div class="docs">  VCS revision ID </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.RevisionInProjectDTO">
+        <a href="#messages.RevisionInProjectDTO"><span class="badge">M</span> RevisionInProjectDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> projectId </td><td> string </td><td> required </td><td>   <div class="docs">  Project ID in Upsource </div> </td>
+          </tr>
+          <tr>
+            <td> revisionId </td><td> string </td><td> required </td><td>   <div class="docs">  VCS revision ID </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.VoidMessage">
+        <a href="#messages.VoidMessage"><span class="badge">M</span> VoidMessage</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> voidField </td><td> int32 </td><td> optional </td><td>   <div class="docs">  No value required/returned </div> </td>
+          </tr>
+      </table>
+    </div>
+  </div>
+</body>
+
+</html>

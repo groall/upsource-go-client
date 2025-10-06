@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="format-detection" content="telephone=no">
+
+<title>analytics.proto</title>
+
+<link rel="stylesheet" type="text/css" href="../styles/page.css">
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" sizes="16x16 32x32">
+</head>
+<body>
+  <div class="upsource-doc">
+    <h2>
+      Upsource API Documentation
+      <a class="index" href="index.html">Index</a>
+    </h2>
+
+    <h3>Messages</h3>
+    <a href="../json/Analytics.json" class="json-link" target="_blank">View as JSON</a>
+    <div class="message block">
+      <h3 class="message" id="messages.AnalyzerStats">
+        <a href="#messages.AnalyzerStats"><span class="badge">M</span> AnalyzerStats</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> minCommitTime </td><td> int64 </td><td> required </td><td>   <div class="docs">  Unix timestamp of the earliest commit </div> </td>
+          </tr>
+          <tr>
+            <td> maxCommitTime </td><td> int64 </td><td> required </td><td>   <div class="docs">  Unix timestamp of the latest commit </div> </td>
+          </tr>
+          <tr>
+            <td> totalCommits </td><td> int32 </td><td> required </td><td>   <div class="docs">  Total number of commits </div> </td>
+          </tr>
+          <tr>
+            <td> minIndexedCommitTime </td><td> int64 </td><td> required </td><td>   <div class="docs">  Unix timestamp of the earliest indexed commit </div> </td>
+          </tr>
+          <tr>
+            <td> maxIndexedCommitTime </td><td> int64 </td><td> required </td><td>   <div class="docs">  Unix timestamp of the latest indexed commit </div> </td>
+          </tr>
+          <tr>
+            <td> totalIndexedCommits </td><td> int32 </td><td> required </td><td>   <div class="docs">  Total number of indexed commits </div> </td>
+          </tr>
+          <tr>
+            <td> isProjectModelKnown </td><td> bool </td><td> required </td><td>   <div class="docs">  Whether project model is known </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.CommentsStatisticsDTO">
+        <a href="#messages.CommentsStatisticsDTO"><span class="badge">M</span> CommentsStatisticsDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> reviewComments </td><td> int32 </td><td> required </td><td>   <div class="docs">  Number of review comments </div> </td>
+          </tr>
+          <tr>
+            <td> totalComments </td><td> int32 </td><td> required </td><td>   <div class="docs">  Total number of comments </div> </td>
+          </tr>
+          <tr>
+            <td> totalCounts </td><td>   <a href="#messages.UserValue">UserValue</a> </td><td> repeated </td><td>   <div class="docs">  See UserValue parameters </div> </td>
+          </tr>
+
+          <tr>
+            <td> unlabeledCounts </td><td>   <a href="#messages.UserValue">UserValue</a> </td><td> repeated </td><td>   <div class="docs">  See UserValue parameters </div> </td>
+          </tr>
+
+          <tr>
+            <td> statsPerLabel </td><td>   <a href="#messages.LabelStats">LabelStats</a> </td><td> repeated </td><td>   <div class="docs">  See LabelStats parameters </div> </td>
+          </tr>
+
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.CommitInfo">
+        <a href="#messages.CommitInfo"><span class="badge">M</span> CommitInfo</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> revisionId </td><td> string </td><td> required </td><td>   <div class="docs">  Revision ID </div> </td>
+          </tr>
+          <tr>
+            <td> description </td><td> string </td><td> required </td><td>   <div class="docs">  Commit message </div> </td>
+          </tr>
+          <tr>
+            <td> time </td><td> int64 </td><td> required </td><td>   <div class="docs">  Unix timestamp of commit time </div> </td>
+          </tr>
+          <tr>
+            <td> shortRevisionId </td><td> string </td><td> required </td><td>   <div class="docs">  Short revision ID </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.CommitsDetailsDTO">
+        <a href="#messages.CommitsDetailsDTO"><span class="badge">M</span> CommitsDetailsDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> commits </td><td>   <a href="#messages.CommitInfo">CommitInfo</a> </td><td> repeated </td><td>   <div class="docs">  See CommitInfo parameters </div> </td>
+          </tr>
+
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.CommitsDetailsRequestDTO">
+        <a href="#messages.CommitsDetailsRequestDTO"><span class="badge">M</span> CommitsDetailsRequestDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> projectId </td><td> string </td><td> required </td><td>   <div class="docs">  Project ID in Upsource </div> </td>
+          </tr>
+          <tr>
+            <td> fromTime </td><td> int64 </td><td> required </td><td>   <div class="docs">  Unix timestamp </div> </td>
+          </tr>
+          <tr>
+            <td> toTime </td><td> int64 </td><td> required </td><td>   <div class="docs">  Unix timestamp </div> </td>
+          </tr>
+          <tr>
+            <td> committers </td><td> string </td><td> repeated </td><td>   <div class="docs">  User IDs of committers </div> </td>
+          </tr>
+          <tr>
+            <td> module </td><td> string </td><td> optional </td><td>   <div class="docs">  Name of the project module </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.CommitsSummaryDTO">
+        <a href="#messages.CommitsSummaryDTO"><span class="badge">M</span> CommitsSummaryDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> totalCommits </td><td> int32 </td><td> required </td><td>   <div class="docs">  Total number of commits </div> </td>
+          </tr>
+          <tr>
+            <td> offsiteCommits </td><td> int32 </td><td> required </td><td>   <div class="docs">  Number of commits that didn't affect any module </div> </td>
+          </tr>
+          <tr>
+            <td> modulesTouched </td><td> int32 </td><td> required </td><td>   <div class="docs">  Number of modules affected </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.CommitsSummaryRequestDTO">
+        <a href="#messages.CommitsSummaryRequestDTO"><span class="badge">M</span> CommitsSummaryRequestDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> projectId </td><td> string </td><td> required </td><td>   <div class="docs">  Project ID in Upsource </div> </td>
+          </tr>
+          <tr>
+            <td> fromTime </td><td> int64 </td><td> required </td><td>   <div class="docs">  Unix timestamp </div> </td>
+          </tr>
+          <tr>
+            <td> toTime </td><td> int64 </td><td> required </td><td>   <div class="docs">  Unix timestamp </div> </td>
+          </tr>
+          <tr>
+            <td> committers </td><td> string </td><td> repeated </td><td>   <div class="docs">  User IDs of committers </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.CommitterModuleValue">
+        <a href="#messages.CommitterModuleValue"><span class="badge">M</span> CommitterModuleValue</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> committer </td><td> string </td><td> required </td><td>   <div class="docs">  User ID of the committer </div> </td>
+          </tr>
+          <tr>
+            <td> items </td><td>   <a href="#messages.ModuleValue">ModuleValue</a> </td><td> repeated </td><td>   <div class="docs">  See ModuleValue parameters </div> </td>
+          </tr>
+
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.CommitterTimeValue">
+        <a href="#messages.CommitterTimeValue"><span class="badge">M</span> CommitterTimeValue</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> committer </td><td> string </td><td> required </td><td>   <div class="docs">  User ID of the committer </div> </td>
+          </tr>
+          <tr>
+            <td> items </td><td>   <a href="#messages.TimeValue">TimeValue</a> </td><td> repeated </td><td>   <div class="docs">  See TimeValue parameters </div> </td>
+          </tr>
+
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.CommitterUserInfo">
+        <a href="#messages.CommitterUserInfo"><span class="badge">M</span> CommitterUserInfo</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> committer </td><td> string </td><td> required </td><td>   <div class="docs">  VCS committer name </div> </td>
+          </tr>
+          <tr>
+            <td> userId </td><td> string </td><td> required </td><td>   <div class="docs">  User ID of the committer </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.ContributorsDistributionDTO">
+        <a href="#messages.ContributorsDistributionDTO"><span class="badge">M</span> ContributorsDistributionDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> items </td><td>   <a href="#messages.CommitterTimeValue">CommitterTimeValue</a> </td><td> repeated </td><td>   <div class="docs">  See CommitterTimeValue parameters </div> </td>
+          </tr>
+
+          <tr>
+            <td> timePoints </td><td> int64 </td><td> repeated </td><td>   <div class="docs">  The specific time intervals that define the distribution </div> </td>
+          </tr>
+          <tr>
+            <td> users </td><td>   <a href="#messages.CommitterUserInfo">CommitterUserInfo</a> </td><td> repeated </td><td>   <div class="docs">  See CommitterUserInfo parameters </div> </td>
+          </tr>
+
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.ContributorsDistributionRequestDTO">
+        <a href="#messages.ContributorsDistributionRequestDTO"><span class="badge">M</span> ContributorsDistributionRequestDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> projectId </td><td> string </td><td> required </td><td>   <div class="docs">  Project ID in Upsource </div> </td>
+          </tr>
+          <tr>
+            <td> module </td><td> string </td><td> optional </td><td>   <div class="docs">  Name of the project module </div> </td>
+          </tr>
+          <tr>
+            <td> fromTime </td><td> int64 </td><td> required </td><td>   <div class="docs">  Unix timestamp </div> </td>
+          </tr>
+          <tr>
+            <td> toTime </td><td> int64 </td><td> required </td><td>   <div class="docs">  Unix timestamp </div> </td>
+          </tr>
+          <tr>
+            <td> timePoints </td><td> int64 </td><td> repeated </td><td>   <div class="docs">  The specific time intervals that define the distribution (Unix timestamps) </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.FileHistoryChartDTO">
+        <a href="#messages.FileHistoryChartDTO"><span class="badge">M</span> FileHistoryChartDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> maxAge </td><td> int64 </td><td> required </td><td>   <div class="docs">  Age of the oldest file on the chart (Unix timestamp) </div> </td>
+          </tr>
+          <tr>
+            <td> maxEdits </td><td> int32 </td><td> required </td><td>   <div class="docs">  Number of edits for the most edited file on the chart </div> </td>
+          </tr>
+          <tr>
+            <td> paths </td><td> string </td><td> repeated </td><td>   <div class="docs">  Full paths to the files starting with a slash (e.g. /directory/file.txt) </div> </td>
+          </tr>
+          <tr>
+            <td> firstEdits </td><td> int64 </td><td> repeated </td><td>   <div class="docs">  Unix timestamps of first edits </div> </td>
+          </tr>
+          <tr>
+            <td> frames </td><td>   <a href="#messages.FileHistoryFrameDTO">FileHistoryFrameDTO</a> </td><td> repeated </td><td>   <div class="docs">  See FileHistoryFrameDTO parameters </div> </td>
+          </tr>
+
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.FileHistoryChartRequestDTO">
+        <a href="#messages.FileHistoryChartRequestDTO"><span class="badge">M</span> FileHistoryChartRequestDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> projectId </td><td> string </td><td> required </td><td>   <div class="docs">  Project ID in Upsource </div> </td>
+          </tr>
+          <tr>
+            <td> framesCount </td><td> int32 </td><td> optional </td><td>   <div class="docs">  Number of frames </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.FileHistoryFrameDTO">
+        <a href="#messages.FileHistoryFrameDTO"><span class="badge">M</span> FileHistoryFrameDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> timestamp </td><td> int64 </td><td> required </td><td>   <div class="docs">  Unix timestamp of the frame </div> </td>
+          </tr>
+          <tr>
+            <td> deltas </td><td> int32 </td><td> repeated </td><td>   <div class="docs">  Counts of file edits since the previous frame </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.LabelStats">
+        <a href="#messages.LabelStats"><span class="badge">M</span> LabelStats</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> label </td><td>   <a href="Projects.html#messages.LabelDTO">LabelDTO</a> </td><td> required </td><td>   <div class="docs">  Discussion label. See LabelDTO parameters </div> </td>
+          </tr>
+
+          <tr>
+            <td> countsPerUser </td><td>   <a href="#messages.UserValue">UserValue</a> </td><td> repeated </td><td>   <div class="docs">  See UserValue parameters </div> </td>
+          </tr>
+
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.ModulesDistributionDTO">
+        <a href="#messages.ModulesDistributionDTO"><span class="badge">M</span> ModulesDistributionDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> items </td><td>   <a href="#messages.ModuleTimeValue">ModuleTimeValue</a> </td><td> repeated </td><td>   <div class="docs">  See ModuleTimeValue parameters </div> </td>
+          </tr>
+
+          <tr>
+            <td> timePoints </td><td> int64 </td><td> repeated </td><td>   <div class="docs">  The specific time intervals that define the distribution (Unix timestamps) </div> </td>
+          </tr>
+          <tr>
+            <td> modules </td><td> string </td><td> repeated </td><td>   <div class="docs">  Names of the project modules </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.ModulesDistributionRequestDTO">
+        <a href="#messages.ModulesDistributionRequestDTO"><span class="badge">M</span> ModulesDistributionRequestDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> projectId </td><td> string </td><td> required </td><td>   <div class="docs">  Project ID in Upsource </div> </td>
+          </tr>
+          <tr>
+            <td> fromTime </td><td> int64 </td><td> required </td><td>   <div class="docs">  Unix timestamp </div> </td>
+          </tr>
+          <tr>
+            <td> toTime </td><td> int64 </td><td> required </td><td>   <div class="docs">  Unix timestamp </div> </td>
+          </tr>
+          <tr>
+            <td> committers </td><td> string </td><td> repeated </td><td>   <div class="docs">  User IDs of committers </div> </td>
+          </tr>
+          <tr>
+            <td> timePoints </td><td> int64 </td><td> repeated </td><td>   <div class="docs">  The specific time intervals that define the distribution (Unix timestamps) </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.ModuleTimeValue">
+        <a href="#messages.ModuleTimeValue"><span class="badge">M</span> ModuleTimeValue</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> module </td><td> string </td><td> required </td><td>   <div class="docs">  Name of the project module </div> </td>
+          </tr>
+          <tr>
+            <td> items </td><td>   <a href="#messages.TimeValue">TimeValue</a> </td><td> repeated </td><td>   <div class="docs">  See TimeValue parameters </div> </td>
+          </tr>
+
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.ModuleValue">
+        <a href="#messages.ModuleValue"><span class="badge">M</span> ModuleValue</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> module </td><td> string </td><td> required </td><td>   <div class="docs">  Name of the project module </div> </td>
+          </tr>
+          <tr>
+            <td> value </td><td> int32 </td><td> required </td><td>   <div class="docs">  The value associated with the module </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.ProjectActivityDTO">
+        <a href="#messages.ProjectActivityDTO"><span class="badge">M</span> ProjectActivityDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> items </td><td>   <a href="#messages.TimeValue">TimeValue</a> </td><td> repeated </td><td>   <div class="docs">  See TimeValue parameters </div> </td>
+          </tr>
+
+          <tr>
+            <td> modules </td><td> string </td><td> repeated </td><td>   <div class="docs">  Names of project modules </div> </td>
+          </tr>
+          <tr>
+            <td> stats </td><td>   <a href="#messages.AnalyzerStats">AnalyzerStats</a> </td><td> required </td><td>   <div class="docs">  See AnalyzerStats parameters </div> </td>
+          </tr>
+
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.ProjectActivityRequestDTO">
+        <a href="#messages.ProjectActivityRequestDTO"><span class="badge">M</span> ProjectActivityRequestDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> projectId </td><td> string </td><td> required </td><td>   <div class="docs">  Project ID in Upsource </div> </td>
+          </tr>
+          <tr>
+            <td> module </td><td> string </td><td> optional </td><td>   <div class="docs">  Name of the project module </div> </td>
+          </tr>
+          <tr>
+            <td> referenceTime </td><td> int64 </td><td> required </td><td>   <div class="docs">  Unix timestamp used to calculate the distribution. This timestamp encapsulates the time set on the client and makes the server generate even days, months, etc. for the particular client. </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.ProjectCommittersDTO">
+        <a href="#messages.ProjectCommittersDTO"><span class="badge">M</span> ProjectCommittersDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> users </td><td>   <a href="#messages.CommitterUserInfo">CommitterUserInfo</a> </td><td> repeated </td><td>   <div class="docs">  See CommitterUserInfo parameters </div> </td>
+          </tr>
+
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.ProjectPulseRequestDTO">
+        <a href="#messages.ProjectPulseRequestDTO"><span class="badge">M</span> ProjectPulseRequestDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> projectId </td><td> string </td><td> required </td><td>   <div class="docs">  Project ID in Upsource </div> </td>
+          </tr>
+          <tr>
+            <td> fromTime </td><td> int64 </td><td> required </td><td>   <div class="docs">  Unix timestamp </div> </td>
+          </tr>
+          <tr>
+            <td> toTime </td><td> int64 </td><td> required </td><td>   <div class="docs">  Unix timestamp </div> </td>
+          </tr>
+          <tr>
+            <td> timePoints </td><td> int64 </td><td> repeated </td><td>   <div class="docs">  The specific time intervals that define the distribution (Unix timestamps) </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.ProjectTreeMapDTO">
+        <a href="#messages.ProjectTreeMapDTO"><span class="badge">M</span> ProjectTreeMapDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> entries </td><td>   <a href="#messages.ProjectTreeMapEntryDTO">ProjectTreeMapEntryDTO</a> </td><td> repeated </td><td>   <div class="docs">  See ProjectTreeMapEntryDTO parameters </div> </td>
+          </tr>
+
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.ProjectTreeMapEntryDTO">
+        <a href="#messages.ProjectTreeMapEntryDTO"><span class="badge">M</span> ProjectTreeMapEntryDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> path </td><td> string </td><td> required </td><td>   <div class="docs">  File path </div> </td>
+          </tr>
+          <tr>
+            <td> size </td><td> int32 </td><td> required </td><td>   <div class="docs">  File size </div> </td>
+          </tr>
+          <tr>
+            <td> modificationsCount </td><td> int32 </td><td> required </td><td>   <div class="docs">  Number of modifications </div> </td>
+          </tr>
+          <tr>
+            <td> isBinary </td><td> bool </td><td> required </td><td>   <div class="docs">  Whether a file is binary </div> </td>
+          </tr>
+          <tr>
+            <td> timeSinceLastChange </td><td> int64 </td><td> required </td><td>   <div class="docs">  Time elapsed since last change (milliseconds) </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.ProjectTreeMapRequestDTO">
+        <a href="#messages.ProjectTreeMapRequestDTO"><span class="badge">M</span> ProjectTreeMapRequestDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> projectId </td><td> string </td><td> required </td><td>   <div class="docs">  Project ID in Upsource </div> </td>
+          </tr>
+          <tr>
+            <td> revisionId </td><td> string </td><td> required </td><td>   <div class="docs">  Revision ID </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.PulseResponseDTO">
+        <a href="#messages.PulseResponseDTO"><span class="badge">M</span> PulseResponseDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> userValues </td><td> int32 </td><td> repeated </td><td>   <div class="docs">  Pulse values (number of commits in a week) for the current authenticated user </div> </td>
+          </tr>
+          <tr>
+            <td> allValues </td><td> int32 </td><td> repeated </td><td>   <div class="docs">  Pulse values for all users in a project </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.ResponsibilityDistributionDTO">
+        <a href="#messages.ResponsibilityDistributionDTO"><span class="badge">M</span> ResponsibilityDistributionDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> items </td><td>   <a href="#messages.CommitterModuleValue">CommitterModuleValue</a> </td><td> repeated </td><td>   <div class="docs">  See CommitterModuleValue parameters </div> </td>
+          </tr>
+
+          <tr>
+            <td> users </td><td>   <a href="#messages.CommitterUserInfo">CommitterUserInfo</a> </td><td> repeated </td><td>   <div class="docs">  See CommitterUserInfo parameters </div> </td>
+          </tr>
+
+          <tr>
+            <td> modules </td><td> string </td><td> repeated </td><td>   <div class="docs">  Names of the project modules </div> </td>
+          </tr>
+          <tr>
+            <td> stats </td><td>   <a href="#messages.AnalyzerStats">AnalyzerStats</a> </td><td> required </td><td>   <div class="docs">  See AnalyzerStats parameters </div> </td>
+          </tr>
+
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.ResponsibilityDistributionRequestDTO">
+        <a href="#messages.ResponsibilityDistributionRequestDTO"><span class="badge">M</span> ResponsibilityDistributionRequestDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> projectId </td><td> string </td><td> required </td><td>   <div class="docs">  Project ID in Upsource </div> </td>
+          </tr>
+          <tr>
+            <td> fromTime </td><td> int64 </td><td> required </td><td>   <div class="docs">  Unix timestamp </div> </td>
+          </tr>
+          <tr>
+            <td> toTime </td><td> int64 </td><td> required </td><td>   <div class="docs">  Unix timestamp </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.ReviewCoverageDTO">
+        <a href="#messages.ReviewCoverageDTO"><span class="badge">M</span> ReviewCoverageDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> allRevisions </td><td>   <a href="#messages.TimeValue">TimeValue</a> </td><td> repeated </td><td>   <div class="docs">  Number of revisions covered by reviews </div> </td>
+          </tr>
+
+          <tr>
+            <td> revisionsCoveredByOpen </td><td>   <a href="#messages.TimeValue">TimeValue</a> </td><td> repeated </td><td>   <div class="docs">  Number of revisions covered by open reviews </div> </td>
+          </tr>
+
+          <tr>
+            <td> revisionsCoveredByClosed </td><td>   <a href="#messages.TimeValue">TimeValue</a> </td><td> repeated </td><td>   <div class="docs">  Number of revisions covered by closed reviews </div> </td>
+          </tr>
+
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.ReviewCoverageRequestDTO">
+        <a href="#messages.ReviewCoverageRequestDTO"><span class="badge">M</span> ReviewCoverageRequestDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> projectId </td><td> string </td><td> required </td><td>   <div class="docs">  Project ID in Upsource </div> </td>
+          </tr>
+          <tr>
+            <td> period </td><td>   <a href="#messagesTimeUnitEnum">TimeUnitEnum</a> </td><td> required </td><td>   <div class="docs">  See TimeUnitEnum parameters </div> </td>
+          </tr>
+          <tr>
+            <td> referenceTime </td><td> int64 </td><td> required </td><td>   <div class="docs">  Unix timestamp used to calculate the distribution. This timestamp encapsulates the time set on the client and makes the server generate even days, months, etc. for the particular client. </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.ReviewersGraphDTO">
+        <a href="#messages.ReviewersGraphDTO"><span class="badge">M</span> ReviewersGraphDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> userIds </td><td> string </td><td> repeated </td><td>   <div class="docs">  User IDs of graph nodes </div> </td>
+          </tr>
+          <tr>
+            <td> links </td><td>   <a href="#messages.ReviewersGraphLinkDTO">ReviewersGraphLinkDTO</a> </td><td> repeated </td><td>   <div class="docs">  Graph links </div> </td>
+          </tr>
+
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.ReviewersGraphLinkDTO">
+        <a href="#messages.ReviewersGraphLinkDTO"><span class="badge">M</span> ReviewersGraphLinkDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> from </td><td> int32 </td><td> required </td><td>   <div class="docs">  Index of link source user </div> </td>
+          </tr>
+          <tr>
+            <td> to </td><td> int32 </td><td> required </td><td>   <div class="docs">  Index of link target user </div> </td>
+          </tr>
+          <tr>
+            <td> strength </td><td> int64 </td><td> required </td><td>   <div class="docs">  Link strength </div> </td>
+          </tr>
+          <tr>
+            <td> totalReviewsCount </td><td> int32 </td><td> required </td><td>   <div class="docs">  Total reviews count </div> </td>
+          </tr>
+          <tr>
+            <td> recentReviewsCount </td><td> int32 </td><td> required </td><td>   <div class="docs">  Recent reviews count </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.ReviewersGraphRequestDTO">
+        <a href="#messages.ReviewersGraphRequestDTO"><span class="badge">M</span> ReviewersGraphRequestDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> projectId </td><td> string </td><td> required </td><td>   <div class="docs">  Project ID in Upsource </div> </td>
+          </tr>
+          <tr>
+            <td> fromTime </td><td> int64 </td><td> optional </td><td>   <div class="docs">  Unix timestamp, only reviews that were updated later are considered </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.ReviewStatisticsDTO">
+        <a href="#messages.ReviewStatisticsDTO"><span class="badge">M</span> ReviewStatisticsDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> openReviews </td><td> int32 </td><td> required </td><td>   <div class="docs">  Number of open reviews </div> </td>
+          </tr>
+          <tr>
+            <td> closedReviews </td><td> int32 </td><td> required </td><td>   <div class="docs">  Number of closed reviews </div> </td>
+          </tr>
+          <tr>
+            <td> allRevisions </td><td> int32 </td><td> required </td><td>   <div class="docs">  Number of revisions covered by reviews </div> </td>
+          </tr>
+          <tr>
+            <td> revisionsCoveredByOpenReviews </td><td> int32 </td><td> required </td><td>   <div class="docs">  Number of revisions covered by open reviews </div> </td>
+          </tr>
+          <tr>
+            <td> revisionsCoveredByClosedReviews </td><td> int32 </td><td> required </td><td>   <div class="docs">  Number of revisions covered by closed reviews </div> </td>
+          </tr>
+          <tr>
+            <td> authorStatsByReviews </td><td>   <a href="#messages.UserValue">UserValue</a> </td><td> repeated </td><td>   <div class="docs">  Review counts per author </div> </td>
+          </tr>
+
+          <tr>
+            <td> reviewerStatsByReviews </td><td>   <a href="#messages.UserValue">UserValue</a> </td><td> repeated </td><td>   <div class="docs">  Review counts per reviewer </div> </td>
+          </tr>
+
+          <tr>
+            <td> authorStatsByRevisions </td><td>   <a href="#messages.UserValue">UserValue</a> </td><td> repeated </td><td>   <div class="docs">  Review revisions counts per author </div> </td>
+          </tr>
+
+          <tr>
+            <td> reviewerStatsByRevisions </td><td>   <a href="#messages.UserValue">UserValue</a> </td><td> repeated </td><td>   <div class="docs">  Review revisions counts per reviewer </div> </td>
+          </tr>
+
+          <tr>
+            <td> commentsStats </td><td>   <a href="#messages.CommentsStatisticsDTO">CommentsStatisticsDTO</a> </td><td> required </td><td>   <div class="docs">  Discussion comments statistics. See CommentsStatisticsDTO parameters </div> </td>
+          </tr>
+
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.ReviewStatisticsRequestDTO">
+        <a href="#messages.ReviewStatisticsRequestDTO"><span class="badge">M</span> ReviewStatisticsRequestDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> projectId </td><td> string </td><td> required </td><td>   <div class="docs">  Project ID in Upsource </div> </td>
+          </tr>
+          <tr>
+            <td> fromTime </td><td> int64 </td><td> optional </td><td>   <div class="docs">  Unix timestamp </div> </td>
+          </tr>
+          <tr>
+            <td> toTime </td><td> int64 </td><td> optional </td><td>   <div class="docs">  Unix timestamp </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.ReviewTimeStatisticsDTO">
+        <a href="#messages.ReviewTimeStatisticsDTO"><span class="badge">M</span> ReviewTimeStatisticsDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> distribution </td><td> int64 </td><td> repeated </td><td>   <div class="docs">  Durations of review iterations, sorted in ascending order </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.ReviewTimeStatisticsRequestDTO">
+        <a href="#messages.ReviewTimeStatisticsRequestDTO"><span class="badge">M</span> ReviewTimeStatisticsRequestDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> userId </td><td> string </td><td> required </td><td>   <div class="docs">  Upsource user ID </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.TimeValue">
+        <a href="#messages.TimeValue"><span class="badge">M</span> TimeValue</a>
+      </h3>
+
+        <div class="docs">  A time-value pair </div>
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> time </td><td> int64 </td><td> required </td><td>   <div class="docs">  Unix timestamp </div> </td>
+          </tr>
+          <tr>
+            <td> value </td><td> int32 </td><td> required </td><td>   <div class="docs">  The value associated with the timestamp </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.UserActivityDTO">
+        <a href="#messages.UserActivityDTO"><span class="badge">M</span> UserActivityDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> items </td><td>   <a href="#messages.TimeValue">TimeValue</a> </td><td> repeated </td><td>   <div class="docs">  See TimeValue parameters </div> </td>
+          </tr>
+
+          <tr>
+            <td> stats </td><td>   <a href="#messages.AnalyzerStats">AnalyzerStats</a> </td><td> required </td><td>   <div class="docs">  See AnalyzerStats parameters </div> </td>
+          </tr>
+
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.UserActivityRequestDTO">
+        <a href="#messages.UserActivityRequestDTO"><span class="badge">M</span> UserActivityRequestDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> projectId </td><td> string </td><td> required </td><td>   <div class="docs">  Project ID in Upsource </div> </td>
+          </tr>
+          <tr>
+            <td> period </td><td>   <a href="#messagesTimeUnitEnum">TimeUnitEnum</a> </td><td> required </td><td>   <div class="docs">  User activity period. See TimeUnitEnum parameters </div> </td>
+          </tr>
+          <tr>
+            <td> referenceTime </td><td> int64 </td><td> required </td><td>   <div class="docs">  Unix timestamp used to calculate the distribution. This timestamp encapsulates the time set on the client and makes the server generate even days, months, etc. for the particular client. </div> </td>
+          </tr>
+          <tr>
+            <td> committers </td><td> string </td><td> repeated </td><td>   <div class="docs">  User IDs of committers </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.UserPulseRequestDTO">
+        <a href="#messages.UserPulseRequestDTO"><span class="badge">M</span> UserPulseRequestDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> userId </td><td> string </td><td> required </td><td>   <div class="docs">  Upsource user ID </div> </td>
+          </tr>
+          <tr>
+            <td> fromTime </td><td> int64 </td><td> required </td><td>   <div class="docs">  Unix timestamp </div> </td>
+          </tr>
+          <tr>
+            <td> toTime </td><td> int64 </td><td> required </td><td>   <div class="docs">  Unix timestamp </div> </td>
+          </tr>
+          <tr>
+            <td> timePoints </td><td> int64 </td><td> repeated </td><td>   <div class="docs">  The specific time intervals that define the distribution (Unix timestamps) </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.UserValue">
+        <a href="#messages.UserValue"><span class="badge">M</span> UserValue</a>
+      </h3>
+
+        <div class="docs">  A user-value pair </div>
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> userId </td><td> string </td><td> required </td><td>   <div class="docs">  Upsource user ID </div> </td>
+          </tr>
+          <tr>
+            <td> value </td><td> int32 </td><td> required </td><td>   <div class="docs">  The value associated with the user ID </div> </td>
+          </tr>
+      </table>
+    </div>
+    <h3>Enums</h3>
+    <a href="../json/Analytics.json" class="json-link" target="_blank">View as JSON</a>
+    <div class="enum block">
+      <h3 class="enum" id="messagesReviewCoverageStateEnum"><a href="#messagesReviewCoverageStateEnum"><span class="badge">E</span> ReviewCoverageStateEnum</a></h3>
+
+
+      <table class="enum-table">
+        <thead>
+          <tr><td>Name</td><td>Number</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> CLOSED </td>
+            <td> 1 </td>
+            <td>  </td>
+          </tr>
+          <tr>
+            <td> OPEN </td>
+            <td> 2 </td>
+            <td>  </td>
+          </tr>
+          <tr>
+            <td> ALL </td>
+            <td> 3 </td>
+            <td>  </td>
+          </tr>
+      </table>
+    </div>
+    <div class="enum block">
+      <h3 class="enum" id="messagesTimeUnitEnum"><a href="#messagesTimeUnitEnum"><span class="badge">E</span> TimeUnitEnum</a></h3>
+
+
+      <table class="enum-table">
+        <thead>
+          <tr><td>Name</td><td>Number</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> HOUR </td>
+            <td> 1 </td>
+            <td>  </td>
+          </tr>
+          <tr>
+            <td> DAY </td>
+            <td> 2 </td>
+            <td>  </td>
+          </tr>
+          <tr>
+            <td> WEEK </td>
+            <td> 3 </td>
+            <td>  </td>
+          </tr>
+          <tr>
+            <td> MONTH </td>
+            <td> 4 </td>
+            <td>  </td>
+          </tr>
+          <tr>
+            <td> QUARTER </td>
+            <td> 5 </td>
+            <td>  </td>
+          </tr>
+          <tr>
+            <td> YEAR </td>
+            <td> 6 </td>
+            <td>  </td>
+          </tr>
+      </table>
+    </div>  </div>
+</body>
+
+</html>

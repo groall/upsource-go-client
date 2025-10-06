@@ -1,0 +1,171 @@
+{
+  "enums": [{
+    "values": [
+      {
+        "number": 1,
+        "name": "Revisions"
+      },
+      {
+        "number": 2,
+        "name": "Reviews"
+      },
+      {
+        "number": 4,
+        "name": "Branches"
+      },
+      {
+        "number": 8,
+        "name": "Discussions"
+      }
+    ],
+    "name": "QueryAssistSearchContextEnum"
+  }],
+  "messages": [
+    {
+      "name": "QueryAssistSuggestionItem",
+      "fields": [
+        {
+          "name": "caret",
+          "description": "Caret position",
+          "label": "required",
+          "type": "Int32"
+        },
+        {
+          "name": "completionStart",
+          "description": "Completion start position",
+          "label": "required",
+          "type": "Int32"
+        },
+        {
+          "name": "completionEnd",
+          "description": "Completion end position",
+          "label": "required",
+          "type": "Int32"
+        },
+        {
+          "name": "matchingStart",
+          "description": "Start of the match",
+          "label": "required",
+          "type": "Int32"
+        },
+        {
+          "name": "matchingEnd",
+          "description": "End of the match",
+          "label": "required",
+          "type": "Int32"
+        },
+        {
+          "name": "type",
+          "description": "Suggestion text",
+          "label": "required",
+          "type": "String"
+        },
+        {
+          "name": "group",
+          "description": "Suggestion group",
+          "label": "optional",
+          "type": "String"
+        },
+        {
+          "name": "description",
+          "description": "Suggestion description",
+          "label": "optional",
+          "type": "String"
+        },
+        {
+          "name": "prefix",
+          "description": "Completion prefix",
+          "label": "optional",
+          "type": "String"
+        },
+        {
+          "name": "suffix",
+          "description": "Completion suffix",
+          "label": "optional",
+          "type": "String"
+        }
+      ]
+    },
+    {
+      "name": "QueryAssistStyleItem",
+      "fields": [
+        {
+          "name": "start",
+          "description": "Start position of the style range",
+          "label": "required",
+          "type": "Int32"
+        },
+        {
+          "name": "length",
+          "description": "Length of the style range",
+          "label": "required",
+          "type": "Int32"
+        },
+        {
+          "name": "style",
+          "description": "Name of the style",
+          "label": "required",
+          "type": "String"
+        }
+      ]
+    },
+    {
+      "name": "QueryAssistRequestDTO",
+      "fields": [
+        {
+          "name": "context",
+          "description": "See QueryAssistSearchContextEnum parameters",
+          "label": "required",
+          "type": "QueryAssistSearchContextEnum"
+        },
+        {
+          "name": "query",
+          "description": "Search query",
+          "label": "required",
+          "type": "String"
+        },
+        {
+          "name": "caret",
+          "description": "Caret position",
+          "label": "optional",
+          "type": "Int32"
+        },
+        {
+          "name": "projectId",
+          "description": "Project ID in Upsource",
+          "label": "optional",
+          "type": "String"
+        }
+      ]
+    },
+    {
+      "name": "QueryAssistResponseDTO",
+      "fields": [
+        {
+          "name": "query",
+          "description": "Search query",
+          "label": "required",
+          "type": "String"
+        },
+        {
+          "name": "caret",
+          "description": "Caret position",
+          "label": "optional",
+          "type": "Int32"
+        },
+        {
+          "name": "suggestions",
+          "description": "See QueryAssistSuggestionItem parameters",
+          "label": "repeated",
+          "type": "QueryAssistSuggestionItem"
+        },
+        {
+          "name": "styleRanges",
+          "description": "See QueryAssistStyleItem parameters",
+          "label": "repeated",
+          "type": "QueryAssistStyleItem"
+        }
+      ]
+    }
+  ]
+}

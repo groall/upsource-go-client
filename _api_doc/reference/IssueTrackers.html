@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="format-detection" content="telephone=no">
+
+<title>issueTrackers.proto</title>
+
+<link rel="stylesheet" type="text/css" href="../styles/page.css">
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" sizes="16x16 32x32">
+</head>
+<body>
+  <div class="upsource-doc">
+    <h2>
+      Upsource API Documentation
+      <a class="index" href="index.html">Index</a>
+    </h2>
+
+    <h3>Messages</h3>
+    <a href="../json/IssueTrackers.json" class="json-link" target="_blank">View as JSON</a>
+    <div class="message block">
+      <h3 class="message" id="messages.CreateIssueFromDiscussionRequestDTO">
+        <a href="#messages.CreateIssueFromDiscussionRequestDTO"><span class="badge">M</span> CreateIssueFromDiscussionRequestDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> projectId </td><td> string </td><td> required </td><td>   <div class="docs">  Project ID in Upsource </div> </td>
+          </tr>
+          <tr>
+            <td> discussionId </td><td> string </td><td> required </td><td>   <div class="docs">  ID of the discussion </div> </td>
+          </tr>
+          <tr>
+            <td> fieldValue </td><td>   <a href="#messages.IssueFieldValueIdDTO">IssueFieldValueIdDTO</a> </td><td> repeated </td><td>   <div class="docs">  See IssueFieldValueIdDTO parameters </div> </td>
+          </tr>
+
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.CreateIssueFromReviewRequestDTO">
+        <a href="#messages.CreateIssueFromReviewRequestDTO"><span class="badge">M</span> CreateIssueFromReviewRequestDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> projectId </td><td> string </td><td> required </td><td>   <div class="docs">  Project ID in Upsource </div> </td>
+          </tr>
+          <tr>
+            <td> reviewKey </td><td> string </td><td> required </td><td>   <div class="docs">  Review ID </div> </td>
+          </tr>
+          <tr>
+            <td> fieldValue </td><td>   <a href="#messages.IssueFieldValueIdDTO">IssueFieldValueIdDTO</a> </td><td> repeated </td><td>   <div class="docs">  See IssueFieldValueIdDTO parameters </div> </td>
+          </tr>
+
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.IssueFieldDTO">
+        <a href="#messages.IssueFieldDTO"><span class="badge">M</span> IssueFieldDTO</a>
+      </h3>
+
+        <div class="docs">  Supported fields: Issue Type, Priority </div>
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> id </td><td> string </td><td> required </td><td>   <div class="docs">  Field ID </div> </td>
+          </tr>
+          <tr>
+            <td> name </td><td> string </td><td> required </td><td>   <div class="docs">  Field name. The following fields are recognized for JIRA: url, linkUrl, projectId, login, password, pkcs12cert, pkcs12pass, enableCreateIssue, enableReviewComment, wfc_reviewCreated, wfc_reviewAccepted, wfc_reviewRejected, wfc_reviewClosed. YouTrack configuration in Upsource is delegated to Hub. </div> </td>
+          </tr>
+          <tr>
+            <td> defaultValueId </td><td> string </td><td> optional </td><td>   <div class="docs">  Default value </div> </td>
+          </tr>
+          <tr>
+            <td> value </td><td>   <a href="#messages.IssueFieldValueDTO">IssueFieldValueDTO</a> </td><td> repeated </td><td>   <div class="docs">  See IssueFieldValueDTO parameters </div> </td>
+          </tr>
+
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.IssueFieldValueDTO">
+        <a href="#messages.IssueFieldValueDTO"><span class="badge">M</span> IssueFieldValueDTO</a>
+      </h3>
+
+        <div class="docs">  Allowed values for "Issue Type": Normal, Minor, Critical, etc. Allowed values for "Priority": Bug, Task, Feature, etc. </div>
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> valueId </td><td> string </td><td> required </td><td>   <div class="docs">  Value ID </div> </td>
+          </tr>
+          <tr>
+            <td> name </td><td> string </td><td> required </td><td>   <div class="docs">  Value title </div> </td>
+          </tr>
+          <tr>
+            <td> html </td><td> string </td><td> required </td><td>   <div class="docs">  HTML presentation of the value, e.g. a <span> with some inline styles </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.IssueFieldValueIdDTO">
+        <a href="#messages.IssueFieldValueIdDTO"><span class="badge">M</span> IssueFieldValueIdDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> fieldId </td><td> string </td><td> required </td><td>   <div class="docs">  Field ID (see IssueFieldDTO) </div> </td>
+          </tr>
+          <tr>
+            <td> valueId </td><td> string </td><td> required </td><td>   <div class="docs">  Value ID (see IssueFieldValueDTO) </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.IssueIdDTO">
+        <a href="#messages.IssueIdDTO"><span class="badge">M</span> IssueIdDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> issueId </td><td> string </td><td> required </td><td>   <div class="docs">  Issue ID </div> </td>
+          </tr>
+          <tr>
+            <td> issueLink </td><td> string </td><td> optional </td><td>   <div class="docs">  Issue link </div> </td>
+          </tr>
+          <tr>
+            <td> isCreatedFromUpsource </td><td> bool </td><td> optional </td><td>   <div class="docs">  Whether the issue has been created from Upsource </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.IssueInfoDTO">
+        <a href="#messages.IssueInfoDTO"><span class="badge">M</span> IssueInfoDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> issueId </td><td> string </td><td> required </td><td>   <div class="docs">  Issue ID </div> </td>
+          </tr>
+          <tr>
+            <td> issueLink </td><td> string </td><td> optional </td><td>   <div class="docs">  Issue URL </div> </td>
+          </tr>
+          <tr>
+            <td> summary </td><td> string </td><td> optional </td><td>   <div class="docs">  Issue summary </div> </td>
+          </tr>
+          <tr>
+            <td> isResolved </td><td> bool </td><td> optional </td><td>   <div class="docs">  Whether the issue has been resolved </div> </td>
+          </tr>
+          <tr>
+            <td> field </td><td> string </td><td> repeated </td><td>   <div class="docs">  HTML presentation of issue fields (Issue Type, Priority, State) </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.IssueInfoRequestDTO">
+        <a href="#messages.IssueInfoRequestDTO"><span class="badge">M</span> IssueInfoRequestDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> projectId </td><td> string </td><td> required </td><td>   <div class="docs">  Project ID in Upsource </div> </td>
+          </tr>
+          <tr>
+            <td> issueId </td><td>   <a href="#messages.IssueIdDTO">IssueIdDTO</a> </td><td> required </td><td>   <div class="docs">  Issue ID </div> </td>
+          </tr>
+
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.IssueRequiredFieldDTO">
+        <a href="#messages.IssueRequiredFieldDTO"><span class="badge">M</span> IssueRequiredFieldDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> issueTypeId </td><td> string </td><td> required </td><td>   <div class="docs">  Issue type ID </div> </td>
+          </tr>
+          <tr>
+            <td> field </td><td>   <a href="#messages.IssueFieldDTO">IssueFieldDTO</a> </td><td> required </td><td>   <div class="docs">  See IssueFieldDTO parameters </div> </td>
+          </tr>
+
+          <tr>
+            <td> fieldType </td><td>   <a href="#messagesIssueRequiredFieldTypeEnum">IssueRequiredFieldTypeEnum</a> </td><td> required </td><td>   <div class="docs">  Field type </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.IssueTrackerProjectDetailsDTO">
+        <a href="#messages.IssueTrackerProjectDetailsDTO"><span class="badge">M</span> IssueTrackerProjectDetailsDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> providerKey </td><td> string </td><td> required </td><td>   <div class="docs">  Issue tracker provider key ("YouTrack", "JIRA") </div> </td>
+          </tr>
+          <tr>
+            <td> projectUrl </td><td> string </td><td> required </td><td>   <div class="docs">  Issue tracker project URL </div> </td>
+          </tr>
+          <tr>
+            <td> field </td><td>   <a href="#messages.IssueFieldDTO">IssueFieldDTO</a> </td><td> repeated </td><td>   <div class="docs">  See IssueFieldDTO parameters </div> </td>
+          </tr>
+
+          <tr>
+            <td> canCreateIssue </td><td> bool </td><td> required </td><td>   <div class="docs">  Whether an issue can be created </div> </td>
+          </tr>
+          <tr>
+            <td> requiredField </td><td>   <a href="#messages.IssueRequiredFieldDTO">IssueRequiredFieldDTO</a> </td><td> repeated </td><td>   <div class="docs">  See IssueRequiredFieldDTO parameters </div> </td>
+          </tr>
+
+          <tr>
+            <td> projectKey </td><td> string </td><td> optional </td><td>   <div class="docs">  Issue tracker project key </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.IssueTrackerProviderDTO">
+        <a href="#messages.IssueTrackerProviderDTO"><span class="badge">M</span> IssueTrackerProviderDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> providerKey </td><td> string </td><td> required </td><td>   <div class="docs">  Issue tracker project key (JIRA, YouTrack) </div> </td>
+          </tr>
+          <tr>
+            <td> scriptText </td><td> string </td><td> required </td><td>   <div class="docs">  Text of the issue tracker configuration script (must be a React component) </div> </td>
+          </tr>
+          <tr>
+            <td> isAutoSetup </td><td> bool </td><td> required </td><td>   <div class="docs">  Whether issue tracker integration can be set up automatically </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.IssueTrackerProviderSettingDTO">
+        <a href="#messages.IssueTrackerProviderSettingDTO"><span class="badge">M</span> IssueTrackerProviderSettingDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> name </td><td> string </td><td> required </td><td>   <div class="docs">  Setting key </div> </td>
+          </tr>
+          <tr>
+            <td> value </td><td> string </td><td> required </td><td>   <div class="docs">  Setting value </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.IssueTrackerProviderSettingsDTO">
+        <a href="#messages.IssueTrackerProviderSettingsDTO"><span class="badge">M</span> IssueTrackerProviderSettingsDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> providerKey </td><td> string </td><td> required </td><td>   <div class="docs">  Issue tracker provider key ("YouTrack", "JIRA") </div> </td>
+          </tr>
+          <tr>
+            <td> settings </td><td>   <a href="#messages.IssueTrackerProviderSettingDTO">IssueTrackerProviderSettingDTO</a> </td><td> repeated </td><td>   <div class="docs">  Settings used to set up the integration (e.g server URL, login credentials, project ID in the issue tracker) </div> </td>
+          </tr>
+
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.IssueTrackerProvidersListDTO">
+        <a href="#messages.IssueTrackerProvidersListDTO"><span class="badge">M</span> IssueTrackerProvidersListDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> providers </td><td>   <a href="#messages.IssueTrackerProviderDTO">IssueTrackerProviderDTO</a> </td><td> repeated </td><td>   <div class="docs">  See IssueTrackerProviderDTO parameters </div> </td>
+          </tr>
+
+      </table>
+    </div>
+    <h3>Enums</h3>
+    <a href="../json/IssueTrackers.json" class="json-link" target="_blank">View as JSON</a>
+    <div class="enum block">
+      <h3 class="enum" id="messagesIssueRequiredFieldTypeEnum"><a href="#messagesIssueRequiredFieldTypeEnum"><span class="badge">E</span> IssueRequiredFieldTypeEnum</a></h3>
+
+
+      <table class="enum-table">
+        <thead>
+          <tr><td>Name</td><td>Number</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> Text </td>
+            <td> 1 </td>
+            <td>  </td>
+          </tr>
+          <tr>
+            <td> Date </td>
+            <td> 2 </td>
+            <td>  </td>
+          </tr>
+          <tr>
+            <td> Value </td>
+            <td> 3 </td>
+            <td>  </td>
+          </tr>
+          <tr>
+            <td> Array </td>
+            <td> 4 </td>
+            <td>  </td>
+          </tr>
+      </table>
+    </div>  </div>
+</body>
+
+</html>

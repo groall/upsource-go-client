@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="format-detection" content="telephone=no">
+
+<title>errors.proto</title>
+
+<link rel="stylesheet" type="text/css" href="../styles/page.css">
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" sizes="16x16 32x32">
+</head>
+<body>
+  <div class="upsource-doc">
+    <h2>
+      Upsource API Documentation
+      <a class="index" href="index.html">Index</a>
+    </h2>
+
+    <h3>Enums</h3>
+    <a href="../json/Errors.json" class="json-link" target="_blank">View as JSON</a>
+    <div class="enum block">
+      <h3 class="enum" id="messagesRPCErrors"><a href="#messagesRPCErrors"><span class="badge">E</span> RPCErrors</a></h3>
+
+        <div class="docs">  RPC status codes. The corresponding HTTP status code is sent along. </div>
+
+      <table class="enum-table">
+        <thead>
+          <tr><td>Name</td><td>Number</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> OK </td>
+            <td> 0 </td>
+            <td>   <div class="docs">  Equivalent to 200 OK </div> </td>
+          </tr>
+          <tr>
+            <td> Unknown </td>
+            <td> 1 </td>
+            <td>   <div class="docs">  Equivalent to 500 Internal Server Error </div> </td>
+          </tr>
+          <tr>
+            <td> InvalidRequest </td>
+            <td> 100 </td>
+            <td>   <div class="docs">  Equivalent to 400 Bad Request </div> </td>
+          </tr>
+          <tr>
+            <td> AuthenticationError </td>
+            <td> 101 </td>
+            <td>   <div class="docs">  Equivalent to 401 Unauthorized </div> </td>
+          </tr>
+          <tr>
+            <td> AccessDenied </td>
+            <td> 102 </td>
+            <td>   <div class="docs">  Equivalent to 401 Unauthorized </div> </td>
+          </tr>
+          <tr>
+            <td> SecurityTokenExpired </td>
+            <td> 103 </td>
+            <td>   <div class="docs">  Equivalent to 401 Unauthorized (more precisely, to the non-standard 419 Authentication Timeout) </div> </td>
+          </tr>
+          <tr>
+            <td> SecurityTokenRequired </td>
+            <td> 104 </td>
+            <td>   <div class="docs">  Equivalent to 401 Unauthorized </div> </td>
+          </tr>
+          <tr>
+            <td> RequestRejected </td>
+            <td> 105 </td>
+            <td>   <div class="docs">  Equivalent to 403 Forbidden </div> </td>
+          </tr>
+          <tr>
+            <td> NotFound </td>
+            <td> 106 </td>
+            <td>   <div class="docs">  Equivalent to 404 Not Found </div> </td>
+          </tr>
+          <tr>
+            <td> MethodNotSupported </td>
+            <td> 107 </td>
+            <td>   <div class="docs">  Equivalent to 405 Method Not Supported </div> </td>
+          </tr>
+          <tr>
+            <td> InternalError </td>
+            <td> 108 </td>
+            <td>   <div class="docs">  Equivalent to 500 Internal Server Error </div> </td>
+          </tr>
+          <tr>
+            <td> TaskCancelled </td>
+            <td> 109 </td>
+            <td>   <div class="docs">  Equivalent to 204 No Content </div> </td>
+          </tr>
+          <tr>
+            <td> ServerReadOnly </td>
+            <td> 110 </td>
+            <td>   <div class="docs">  Equivalent to 503 Service Unavailable </div> </td>
+          </tr>
+          <tr>
+            <td> NotSupportedInProduction </td>
+            <td> 1000 </td>
+            <td>   <div class="docs">  Feature is only supported in development mode </div> </td>
+          </tr>
+          <tr>
+            <td> UpsourceException </td>
+            <td> 1001 </td>
+            <td>   <div class="docs">  Application-level exception </div> </td>
+          </tr>
+          <tr>
+            <td> FileNotFoundInRevision </td>
+            <td> 1002 </td>
+            <td>   <div class="docs">  The requested file was not found (application-specific version of 404 Not Found) </div> </td>
+          </tr>
+          <tr>
+            <td> RevisionNotIndexed </td>
+            <td> 1003 </td>
+            <td>   <div class="docs">  The requested revision is not indexed </div> </td>
+          </tr>
+          <tr>
+            <td> UpsourceNotReadyException </td>
+            <td> 2001 </td>
+            <td>   <div class="docs">  The requested data is not yet available, check back later </div> </td>
+          </tr>
+          <tr>
+            <td> FileIsTooBig </td>
+            <td> 2002 </td>
+            <td>   <div class="docs">  File is too big to be displayed (downloading is possible) </div> </td>
+          </tr>
+      </table>
+    </div>  </div>
+</body>
+
+</html>

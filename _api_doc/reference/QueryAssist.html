@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="format-detection" content="telephone=no">
+
+<title>queryAssist.proto</title>
+
+<link rel="stylesheet" type="text/css" href="../styles/page.css">
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" sizes="16x16 32x32">
+</head>
+<body>
+  <div class="upsource-doc">
+    <h2>
+      Upsource API Documentation
+      <a class="index" href="index.html">Index</a>
+    </h2>
+
+    <h3>Messages</h3>
+    <a href="../json/QueryAssist.json" class="json-link" target="_blank">View as JSON</a>
+    <div class="message block">
+      <h3 class="message" id="messages.QueryAssistRequestDTO">
+        <a href="#messages.QueryAssistRequestDTO"><span class="badge">M</span> QueryAssistRequestDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> context </td><td>   <a href="#messagesQueryAssistSearchContextEnum">QueryAssistSearchContextEnum</a> </td><td> required </td><td>   <div class="docs">  See QueryAssistSearchContextEnum parameters </div> </td>
+          </tr>
+          <tr>
+            <td> query </td><td> string </td><td> required </td><td>   <div class="docs">  Search query </div> </td>
+          </tr>
+          <tr>
+            <td> caret </td><td> int32 </td><td> optional </td><td>   <div class="docs">  Caret position </div> </td>
+          </tr>
+          <tr>
+            <td> projectId </td><td> string </td><td> optional </td><td>   <div class="docs">  Project ID in Upsource </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.QueryAssistResponseDTO">
+        <a href="#messages.QueryAssistResponseDTO"><span class="badge">M</span> QueryAssistResponseDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> query </td><td> string </td><td> required </td><td>   <div class="docs">  Search query </div> </td>
+          </tr>
+          <tr>
+            <td> caret </td><td> int32 </td><td> optional </td><td>   <div class="docs">  Caret position </div> </td>
+          </tr>
+          <tr>
+            <td> suggestions </td><td>   <a href="#messages.QueryAssistSuggestionItem">QueryAssistSuggestionItem</a> </td><td> repeated </td><td>   <div class="docs">  See QueryAssistSuggestionItem parameters </div> </td>
+          </tr>
+
+          <tr>
+            <td> styleRanges </td><td>   <a href="#messages.QueryAssistStyleItem">QueryAssistStyleItem</a> </td><td> repeated </td><td>   <div class="docs">  See QueryAssistStyleItem parameters </div> </td>
+          </tr>
+
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.QueryAssistStyleItem">
+        <a href="#messages.QueryAssistStyleItem"><span class="badge">M</span> QueryAssistStyleItem</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> start </td><td> int32 </td><td> required </td><td>   <div class="docs">  Start position of the style range </div> </td>
+          </tr>
+          <tr>
+            <td> length </td><td> int32 </td><td> required </td><td>   <div class="docs">  Length of the style range </div> </td>
+          </tr>
+          <tr>
+            <td> style </td><td> string </td><td> required </td><td>   <div class="docs">  Name of the style </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.QueryAssistSuggestionItem">
+        <a href="#messages.QueryAssistSuggestionItem"><span class="badge">M</span> QueryAssistSuggestionItem</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> caret </td><td> int32 </td><td> required </td><td>   <div class="docs">  Caret position </div> </td>
+          </tr>
+          <tr>
+            <td> completionStart </td><td> int32 </td><td> required </td><td>   <div class="docs">  Completion start position </div> </td>
+          </tr>
+          <tr>
+            <td> completionEnd </td><td> int32 </td><td> required </td><td>   <div class="docs">  Completion end position </div> </td>
+          </tr>
+          <tr>
+            <td> matchingStart </td><td> int32 </td><td> required </td><td>   <div class="docs">  Start of the match </div> </td>
+          </tr>
+          <tr>
+            <td> matchingEnd </td><td> int32 </td><td> required </td><td>   <div class="docs">  End of the match </div> </td>
+          </tr>
+          <tr>
+            <td> type </td><td> string </td><td> required </td><td>   <div class="docs">  Suggestion text </div> </td>
+          </tr>
+          <tr>
+            <td> group </td><td> string </td><td> optional </td><td>   <div class="docs">  Suggestion group </div> </td>
+          </tr>
+          <tr>
+            <td> description </td><td> string </td><td> optional </td><td>   <div class="docs">  Suggestion description </div> </td>
+          </tr>
+          <tr>
+            <td> prefix </td><td> string </td><td> optional </td><td>   <div class="docs">  Completion prefix </div> </td>
+          </tr>
+          <tr>
+            <td> suffix </td><td> string </td><td> optional </td><td>   <div class="docs">  Completion suffix </div> </td>
+          </tr>
+      </table>
+    </div>
+    <h3>Enums</h3>
+    <a href="../json/QueryAssist.json" class="json-link" target="_blank">View as JSON</a>
+    <div class="enum block">
+      <h3 class="enum" id="messagesQueryAssistSearchContextEnum"><a href="#messagesQueryAssistSearchContextEnum"><span class="badge">E</span> QueryAssistSearchContextEnum</a></h3>
+
+
+      <table class="enum-table">
+        <thead>
+          <tr><td>Name</td><td>Number</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> Revisions </td>
+            <td> 1 </td>
+            <td>  </td>
+          </tr>
+          <tr>
+            <td> Reviews </td>
+            <td> 2 </td>
+            <td>  </td>
+          </tr>
+          <tr>
+            <td> Branches </td>
+            <td> 4 </td>
+            <td>  </td>
+          </tr>
+          <tr>
+            <td> Discussions </td>
+            <td> 8 </td>
+            <td>  </td>
+          </tr>
+      </table>
+    </div>  </div>
+</body>
+
+</html>

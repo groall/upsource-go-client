@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="format-detection" content="telephone=no">
+
+<title>events.proto</title>
+
+<link rel="stylesheet" type="text/css" href="../styles/page.css">
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" sizes="16x16 32x32">
+</head>
+<body>
+  <div class="upsource-doc">
+    <h2>
+      Upsource API Documentation
+      <a class="index" href="index.html">Index</a>
+    </h2>
+
+    <h3>Messages</h3>
+    <a href="../json/Events.json" class="json-link" target="_blank">View as JSON</a>
+    <div class="message block">
+      <h3 class="message" id="messages.DeleteBranchEventBean">
+        <a href="#messages.DeleteBranchEventBean"><span class="badge">M</span> DeleteBranchEventBean</a>
+      </h3>
+
+        <div class="docs">  Removed branch in project </div>
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> name </td><td> string </td><td> required </td><td>   <div class="docs">  Branch name </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.DiscussionFeedEventBean">
+        <a href="#messages.DiscussionFeedEventBean"><span class="badge">M</span> DiscussionFeedEventBean</a>
+      </h3>
+
+        <div class="docs">  Discussion event </div>
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> base </td><td>   <a href="#messages.FeedEventBean">FeedEventBean</a> </td><td> required </td><td>   <div class="docs">  Base feed event </div> </td>
+          </tr>
+
+          <tr>
+            <td> notificationReason </td><td>   <a href="#messagesNotificationReason">NotificationReason</a> </td><td> required </td><td>   <div class="docs">  Notification reason </div> </td>
+          </tr>
+          <tr>
+            <td> discussionId </td><td> string </td><td> required </td><td>   <div class="docs">  Discussion ID </div> </td>
+          </tr>
+          <tr>
+            <td> commentId </td><td> string </td><td> optional </td><td>   <div class="docs">  Comment ID </div> </td>
+          </tr>
+          <tr>
+            <td> isEdit </td><td> bool </td><td> optional </td><td>   <div class="docs">  Whether the event corresponds to comment editing </div> </td>
+          </tr>
+          <tr>
+            <td> resolveAction </td><td> bool </td><td> optional </td><td>   <div class="docs">  Indicates a change of the discussion's resolved status: true for resolve, false for un-resolve </div> </td>
+          </tr>
+          <tr>
+            <td> commentText </td><td> string </td><td> optional </td><td>   <div class="docs">  Comment text </div> </td>
+          </tr>
+          <tr>
+            <td> isDeletion </td><td> bool </td><td> optional </td><td>   <div class="docs">  Whether the event corresponds to comment deletion </div> </td>
+          </tr>
+          <tr>
+            <td> projectId </td><td> string </td><td> optional </td><td>   <div class="docs">  Anchor data for event </div> </td>
+          </tr>
+          <tr>
+            <td> revisionId </td><td> string </td><td> optional </td><td>   <div class="docs">  Anchor data for event </div> </td>
+          </tr>
+          <tr>
+            <td> fileName </td><td> string </td><td> optional </td><td>   <div class="docs">  Anchor data for event </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.FeedEventBean">
+        <a href="#messages.FeedEventBean"><span class="badge">M</span> FeedEventBean</a>
+      </h3>
+
+        <div class="docs">  Base event details included in all other events </div>
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> userId </td><td>   <a href="#messages.UserIdBean">UserIdBean</a> </td><td> optional </td><td>   <div class="docs">  User that initiated the event </div> </td>
+          </tr>
+
+          <tr>
+            <td> userIds </td><td>   <a href="#messages.UserIdBean">UserIdBean</a> </td><td> repeated </td><td>   <div class="docs">  List of users that will receive the event in their feeds </div> </td>
+          </tr>
+
+          <tr>
+            <td> reviewNumber </td><td> int32 </td><td> optional </td><td>   <div class="docs">  Associated review number </div> </td>
+          </tr>
+          <tr>
+            <td> reviewId </td><td> string </td><td> optional </td><td>   <div class="docs">  Associated review ID </div> </td>
+          </tr>
+          <tr>
+            <td> date </td><td> int64 </td><td> required </td><td>   <div class="docs">  Event date </div> </td>
+          </tr>
+          <tr>
+            <td> actor </td><td>   <a href="#messages.UserIdBean">UserIdBean</a> </td><td> required </td><td>   <div class="docs">  User that initiated the event </div> </td>
+          </tr>
+
+          <tr>
+            <td> feedEventId </td><td> string </td><td> optional </td><td>   <div class="docs">  Event ID </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.MergedToDefaultBranchEventBean">
+        <a href="#messages.MergedToDefaultBranchEventBean"><span class="badge">M</span> MergedToDefaultBranchEventBean</a>
+      </h3>
+
+        <div class="docs">  Merged changes to default branch </div>
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> commitsCount </td><td> int32 </td><td> required </td><td>   <div class="docs">  Number of commits merged </div> </td>
+          </tr>
+          <tr>
+            <td> branches </td><td> string </td><td> repeated </td><td>   <div class="docs">  List of merged branches </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.NewBranchEventBean">
+        <a href="#messages.NewBranchEventBean"><span class="badge">M</span> NewBranchEventBean</a>
+      </h3>
+
+        <div class="docs">  New branch in project </div>
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> name </td><td> string </td><td> required </td><td>   <div class="docs">  Branch name </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.NewParticipantInReviewFeedEventBean">
+        <a href="#messages.NewParticipantInReviewFeedEventBean"><span class="badge">M</span> NewParticipantInReviewFeedEventBean</a>
+      </h3>
+
+        <div class="docs">  Participant added to review </div>
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> base </td><td>   <a href="#messages.FeedEventBean">FeedEventBean</a> </td><td> required </td><td>   <div class="docs">  Base feed event </div> </td>
+          </tr>
+
+          <tr>
+            <td> participant </td><td>   <a href="#messages.UserIdBean">UserIdBean</a> </td><td> required </td><td>   <div class="docs">  Participant user info </div> </td>
+          </tr>
+
+          <tr>
+            <td> role </td><td>   <a href="#messagesParticipantRole">ParticipantRole</a> </td><td> required </td><td>   <div class="docs">  Participant role </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.NewRevisionEventBean">
+        <a href="#messages.NewRevisionEventBean"><span class="badge">M</span> NewRevisionEventBean</a>
+      </h3>
+
+        <div class="docs">  New revision in project </div>
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> revisionId </td><td> string </td><td> required </td><td>   <div class="docs">  Revision ID </div> </td>
+          </tr>
+          <tr>
+            <td> branches </td><td> string </td><td> repeated </td><td>   <div class="docs">  List of branches </div> </td>
+          </tr>
+          <tr>
+            <td> author </td><td> string </td><td> optional </td><td>   <div class="docs">  Author ID </div> </td>
+          </tr>
+          <tr>
+            <td> message </td><td> string </td><td> optional </td><td>   <div class="docs">  Commit message </div> </td>
+          </tr>
+          <tr>
+            <td> date </td><td> int64 </td><td> optional </td><td>   <div class="docs">  Commit date </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.ParticipantStateChangedFeedEventBean">
+        <a href="#messages.ParticipantStateChangedFeedEventBean"><span class="badge">M</span> ParticipantStateChangedFeedEventBean</a>
+      </h3>
+
+        <div class="docs">  Review participant state changed </div>
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> base </td><td>   <a href="#messages.FeedEventBean">FeedEventBean</a> </td><td> required </td><td>   <div class="docs">  Base feed event </div> </td>
+          </tr>
+
+          <tr>
+            <td> participant </td><td>   <a href="#messages.UserIdBean">UserIdBean</a> </td><td> required </td><td>   <div class="docs">  Participant user info </div> </td>
+          </tr>
+
+          <tr>
+            <td> oldState </td><td>   <a href="#messagesParticipantState">ParticipantState</a> </td><td> required </td><td>   <div class="docs">  Old state </div> </td>
+          </tr>
+          <tr>
+            <td> newState </td><td>   <a href="#messagesParticipantState">ParticipantState</a> </td><td> required </td><td>   <div class="docs">  New state </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.PullRequestMergedFeedEventBean">
+        <a href="#messages.PullRequestMergedFeedEventBean"><span class="badge">M</span> PullRequestMergedFeedEventBean</a>
+      </h3>
+
+        <div class="docs">  Pull request merged </div>
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> base </td><td>   <a href="#messages.FeedEventBean">FeedEventBean</a> </td><td> required </td><td>   <div class="docs">  Base feed event </div> </td>
+          </tr>
+
+          <tr>
+            <td> pullRequest </td><td> string </td><td> required </td><td>   <div class="docs">  Branch name </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.ReactionToggledEventBean">
+        <a href="#messages.ReactionToggledEventBean"><span class="badge">M</span> ReactionToggledEventBean</a>
+      </h3>
+
+        <div class="docs">  Reaction added or removed </div>
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> discussionId </td><td> string </td><td> required </td><td>   <div class="docs">  Discussion ID </div> </td>
+          </tr>
+          <tr>
+            <td> commentId </td><td> string </td><td> required </td><td>   <div class="docs">  Comment ID </div> </td>
+          </tr>
+          <tr>
+            <td> reactionId </td><td> string </td><td> required </td><td>   <div class="docs">  Reaction ID </div> </td>
+          </tr>
+          <tr>
+            <td> wasAdded </td><td> bool </td><td> required </td><td>   <div class="docs">  Whether the reaction was added or removed </div> </td>
+          </tr>
+          <tr>
+            <td> actor </td><td>   <a href="#messages.UserIdBean">UserIdBean</a> </td><td> required </td><td>   <div class="docs">  User who toggled reaction </div> </td>
+          </tr>
+
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.RemovedParticipantFromReviewFeedEventBean">
+        <a href="#messages.RemovedParticipantFromReviewFeedEventBean"><span class="badge">M</span> RemovedParticipantFromReviewFeedEventBean</a>
+      </h3>
+
+        <div class="docs">  Participant removed from review </div>
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> base </td><td>   <a href="#messages.FeedEventBean">FeedEventBean</a> </td><td> required </td><td>   <div class="docs">  Base feed event </div> </td>
+          </tr>
+
+          <tr>
+            <td> participant </td><td>   <a href="#messages.UserIdBean">UserIdBean</a> </td><td> required </td><td>   <div class="docs">  Participant user info </div> </td>
+          </tr>
+
+          <tr>
+            <td> formerRole </td><td>   <a href="#messagesParticipantRole">ParticipantRole</a> </td><td> required </td><td>   <div class="docs">  The role participant had before being removed from review </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.ReviewCreatedFeedEventBean">
+        <a href="#messages.ReviewCreatedFeedEventBean"><span class="badge">M</span> ReviewCreatedFeedEventBean</a>
+      </h3>
+
+        <div class="docs">  Review created </div>
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> base </td><td>   <a href="#messages.FeedEventBean">FeedEventBean</a> </td><td> required </td><td>   <div class="docs">  Base feed event </div> </td>
+          </tr>
+
+          <tr>
+            <td> revisions </td><td> string </td><td> repeated </td><td>   <div class="docs">  List of revisions that were added to review at time of creation </div> </td>
+          </tr>
+          <tr>
+            <td> branch </td><td> string </td><td> optional </td><td>   <div class="docs">  Name of the branch being tracked by the review </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.ReviewDeadlineUpdatedFeedEventBean">
+        <a href="#messages.ReviewDeadlineUpdatedFeedEventBean"><span class="badge">M</span> ReviewDeadlineUpdatedFeedEventBean</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> base </td><td>   <a href="#messages.FeedEventBean">FeedEventBean</a> </td><td> required </td><td>   <div class="docs">  Base feed event </div> </td>
+          </tr>
+
+          <tr>
+            <td> deadline </td><td> int64 </td><td> optional </td><td>   <div class="docs">  Review due date (Unix timestamp) </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.ReviewLabelChangedEventBean">
+        <a href="#messages.ReviewLabelChangedEventBean"><span class="badge">M</span> ReviewLabelChangedEventBean</a>
+      </h3>
+
+        <div class="docs">  Review label added or removed </div>
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> reviewId </td><td> string </td><td> required </td><td>   <div class="docs">  Review ID </div> </td>
+          </tr>
+          <tr>
+            <td> labelId </td><td> string </td><td> required </td><td>   <div class="docs">  Label ID </div> </td>
+          </tr>
+          <tr>
+            <td> labelName </td><td> string </td><td> required </td><td>   <div class="docs">  Label name </div> </td>
+          </tr>
+          <tr>
+            <td> wasAdded </td><td> bool </td><td> required </td><td>   <div class="docs">  Whether the label was added or removed </div> </td>
+          </tr>
+          <tr>
+            <td> actor </td><td>   <a href="#messages.UserIdBean">UserIdBean</a> </td><td> required </td><td>   <div class="docs">  User who changed label </div> </td>
+          </tr>
+
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.ReviewRemovedFeedEventBean">
+        <a href="#messages.ReviewRemovedFeedEventBean"><span class="badge">M</span> ReviewRemovedFeedEventBean</a>
+      </h3>
+
+        <div class="docs">  Review removed </div>
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> base </td><td>   <a href="#messages.FeedEventBean">FeedEventBean</a> </td><td> required </td><td>   <div class="docs">  Base feed event </div> </td>
+          </tr>
+
+          <tr>
+            <td> reviewId </td><td> string </td><td> required </td><td>   <div class="docs">  Review ID </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.ReviewSquashedFeedEventBean">
+        <a href="#messages.ReviewSquashedFeedEventBean"><span class="badge">M</span> ReviewSquashedFeedEventBean</a>
+      </h3>
+
+        <div class="docs">  Review squashed to revision </div>
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> base </td><td>   <a href="#messages.FeedEventBean">FeedEventBean</a> </td><td> required </td><td>   <div class="docs">  Base feed event </div> </td>
+          </tr>
+
+          <tr>
+            <td> revisionId </td><td> string </td><td> required </td><td>   <div class="docs">  Target Revision ID </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.ReviewStateChangedFeedEventBean">
+        <a href="#messages.ReviewStateChangedFeedEventBean"><span class="badge">M</span> ReviewStateChangedFeedEventBean</a>
+      </h3>
+
+        <div class="docs">  Review state changed </div>
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> base </td><td>   <a href="#messages.FeedEventBean">FeedEventBean</a> </td><td> required </td><td>   <div class="docs">  Base feed event </div> </td>
+          </tr>
+
+          <tr>
+            <td> oldState </td><td>   <a href="#messagesReviewState">ReviewState</a> </td><td> required </td><td>   <div class="docs">  Old state </div> </td>
+          </tr>
+          <tr>
+            <td> newState </td><td>   <a href="#messagesReviewState">ReviewState</a> </td><td> required </td><td>   <div class="docs">  New state </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.ReviewStoppedBranchTrackingFeedEventBean">
+        <a href="#messages.ReviewStoppedBranchTrackingFeedEventBean"><span class="badge">M</span> ReviewStoppedBranchTrackingFeedEventBean</a>
+      </h3>
+
+        <div class="docs">  Branch tracking stopped for review </div>
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> base </td><td>   <a href="#messages.FeedEventBean">FeedEventBean</a> </td><td> required </td><td>   <div class="docs">  Base feed event </div> </td>
+          </tr>
+
+          <tr>
+            <td> branch </td><td> string </td><td> required </td><td>   <div class="docs">  Branch name </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.RevisionAddedToReviewFeedEventBean">
+        <a href="#messages.RevisionAddedToReviewFeedEventBean"><span class="badge">M</span> RevisionAddedToReviewFeedEventBean</a>
+      </h3>
+
+        <div class="docs">  Revision added to review </div>
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> base </td><td>   <a href="#messages.FeedEventBean">FeedEventBean</a> </td><td> required </td><td>   <div class="docs">  Base feed event </div> </td>
+          </tr>
+
+          <tr>
+            <td> revisionId </td><td> string </td><td> optional </td><td>   <div class="docs">  Revision ID (deprecated) </div> </td>
+          </tr>
+          <tr>
+            <td> revisionIds </td><td> string </td><td> repeated </td><td>   <div class="docs">  List of revision IDs </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.RevisionRemovedFromReviewFeedEventBean">
+        <a href="#messages.RevisionRemovedFromReviewFeedEventBean"><span class="badge">M</span> RevisionRemovedFromReviewFeedEventBean</a>
+      </h3>
+
+        <div class="docs">  Revision removed from review </div>
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> base </td><td>   <a href="#messages.FeedEventBean">FeedEventBean</a> </td><td> required </td><td>   <div class="docs">  Base feed event </div> </td>
+          </tr>
+
+          <tr>
+            <td> revisionIds </td><td> string </td><td> repeated </td><td>   <div class="docs">  List of revision IDs </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.UserIdBean">
+        <a href="#messages.UserIdBean"><span class="badge">M</span> UserIdBean</a>
+      </h3>
+
+        <div class="docs">  User info </div>
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> userId </td><td> string </td><td> optional </td><td>  </td>
+          </tr>
+          <tr>
+            <td> userName </td><td> string </td><td> optional </td><td>  </td>
+          </tr>
+          <tr>
+            <td> userEmail </td><td> string </td><td> optional </td><td>  </td>
+          </tr>
+      </table>
+    </div>
+    <h3>Enums</h3>
+    <a href="../json/Events.json" class="json-link" target="_blank">View as JSON</a>
+    <div class="enum block">
+      <h3 class="enum" id="messagesNotificationReason"><a href="#messagesNotificationReason"><span class="badge">E</span> NotificationReason</a></h3>
+
+        <div class="docs">  Reason feed event appears in someone's feed </div>
+
+      <table class="enum-table">
+        <thead>
+          <tr><td>Name</td><td>Number</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> Unknown </td>
+            <td> 0 </td>
+            <td>  </td>
+          </tr>
+          <tr>
+            <td> CommentInAuthorFeed </td>
+            <td> 1 </td>
+            <td>  </td>
+          </tr>
+          <tr>
+            <td> NotifyCommitAuthor </td>
+            <td> 2 </td>
+            <td>  </td>
+          </tr>
+          <tr>
+            <td> Mention </td>
+            <td> 3 </td>
+            <td>  </td>
+          </tr>
+          <tr>
+            <td> HashTagSubscription </td>
+            <td> 4 </td>
+            <td>  </td>
+          </tr>
+          <tr>
+            <td> DiscussionIsStarred </td>
+            <td> 5 </td>
+            <td>  </td>
+          </tr>
+          <tr>
+            <td> ParticipatedInDiscussion </td>
+            <td> 6 </td>
+            <td>  </td>
+          </tr>
+          <tr>
+            <td> ParticipatedInReview </td>
+            <td> 7 </td>
+            <td>  </td>
+          </tr>
+          <tr>
+            <td> Reply </td>
+            <td> 8 </td>
+            <td>  </td>
+          </tr>
+      </table>
+    </div>
+    <div class="enum block">
+      <h3 class="enum" id="messagesParticipantRole"><a href="#messagesParticipantRole"><span class="badge">E</span> ParticipantRole</a></h3>
+
+        <div class="docs">  Review participant role </div>
+
+      <table class="enum-table">
+        <thead>
+          <tr><td>Name</td><td>Number</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> Author </td>
+            <td> 1 </td>
+            <td>  </td>
+          </tr>
+          <tr>
+            <td> Reviewer </td>
+            <td> 2 </td>
+            <td>  </td>
+          </tr>
+          <tr>
+            <td> Watcher </td>
+            <td> 3 </td>
+            <td>  </td>
+          </tr>
+      </table>
+    </div>
+    <div class="enum block">
+      <h3 class="enum" id="messagesParticipantState"><a href="#messagesParticipantState"><span class="badge">E</span> ParticipantState</a></h3>
+
+        <div class="docs">  Review participant state </div>
+
+      <table class="enum-table">
+        <thead>
+          <tr><td>Name</td><td>Number</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> Unread </td>
+            <td> 0 </td>
+            <td>  </td>
+          </tr>
+          <tr>
+            <td> Read </td>
+            <td> 1 </td>
+            <td>  </td>
+          </tr>
+          <tr>
+            <td> Accepted </td>
+            <td> 2 </td>
+            <td>  </td>
+          </tr>
+          <tr>
+            <td> Rejected </td>
+            <td> 3 </td>
+            <td>  </td>
+          </tr>
+      </table>
+    </div>
+    <div class="enum block">
+      <h3 class="enum" id="messagesReviewState"><a href="#messagesReviewState"><span class="badge">E</span> ReviewState</a></h3>
+
+        <div class="docs">  Review state </div>
+
+      <table class="enum-table">
+        <thead>
+          <tr><td>Name</td><td>Number</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> Open </td>
+            <td> 0 </td>
+            <td>  </td>
+          </tr>
+          <tr>
+            <td> Closed </td>
+            <td> 1 </td>
+            <td>  </td>
+          </tr>
+      </table>
+    </div>  </div>
+</body>
+
+</html>

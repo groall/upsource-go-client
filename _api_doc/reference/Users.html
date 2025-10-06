@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="format-detection" content="telephone=no">
+
+<title>users.proto</title>
+
+<link rel="stylesheet" type="text/css" href="../styles/page.css">
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" sizes="16x16 32x32">
+</head>
+<body>
+  <div class="upsource-doc">
+    <h2>
+      Upsource API Documentation
+      <a class="index" href="index.html">Index</a>
+    </h2>
+
+    <h3>Messages</h3>
+    <a href="../json/Users.json" class="json-link" target="_blank">View as JSON</a>
+    <div class="message block">
+      <h3 class="message" id="messages.BindVcsUsernameRequestDTO">
+        <a href="#messages.BindVcsUsernameRequestDTO"><span class="badge">M</span> BindVcsUsernameRequestDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> userId </td><td> string </td><td> required </td><td>   <div class="docs">  User ID to register as an alias of the currently logged-in user </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.CurrentUserResponseDTO">
+        <a href="#messages.CurrentUserResponseDTO"><span class="badge">M</span> CurrentUserResponseDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> userId </td><td> string </td><td> required </td><td>   <div class="docs">  Upsource user ID </div> </td>
+          </tr>
+          <tr>
+            <td> login </td><td> string </td><td> required </td><td>   <div class="docs">  Upsource login </div> </td>
+          </tr>
+          <tr>
+            <td> name </td><td> string </td><td> required </td><td>   <div class="docs">  Visible name </div> </td>
+          </tr>
+          <tr>
+            <td> isServerAdmin </td><td> bool </td><td> required </td><td>   <div class="docs">  The user is a server admin </div> </td>
+          </tr>
+          <tr>
+            <td> isGuestUser </td><td> bool </td><td> required </td><td>   <div class="docs">  The user is a guest user </div> </td>
+          </tr>
+          <tr>
+            <td> isTestUser </td><td> bool </td><td> required </td><td>   <div class="docs">  The user is a test user </div> </td>
+          </tr>
+          <tr>
+            <td> canCreateProjects </td><td> bool </td><td> required </td><td>   <div class="docs">  The user has the right to create projects </div> </td>
+          </tr>
+          <tr>
+            <td> emailStatus </td><td>   <a href="#messagesEmailStatusEnum">EmailStatusEnum</a> </td><td> required </td><td>   <div class="docs">  See EmailStatusEnum parameters </div> </td>
+          </tr>
+          <tr>
+            <td> adminPermissionsInProjects </td><td> string </td><td> repeated </td><td>   <div class="docs">  The list of projects where the user has admin permissions </div> </td>
+          </tr>
+          <tr>
+            <td> reviewEditPermissionsInProjects </td><td> string </td><td> repeated </td><td>   <div class="docs">  The list of projects where the user has permission to edit reviews </div> </td>
+          </tr>
+          <tr>
+            <td> reviewViewPermissionsInProjects </td><td> string </td><td> repeated </td><td>   <div class="docs">  The list of projects where the user has permission to view reviews </div> </td>
+          </tr>
+          <tr>
+            <td> codeContributePermissionsInProjects </td><td> string </td><td> repeated </td><td>   <div class="docs">  The list of projects where the user has permission to create/merge pull requests </div> </td>
+          </tr>
+          <tr>
+            <td> isEULAAccepted </td><td> bool </td><td> optional </td><td>   <div class="docs">  Checks if EULA is accepted by the current user. Returns 'null' if EULA is not set up in Hub </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.FindUsersRequestDTO">
+        <a href="#messages.FindUsersRequestDTO"><span class="badge">M</span> FindUsersRequestDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> projectId </td><td> string </td><td> optional </td><td>   <div class="docs">  Project ID in Upsource </div> </td>
+          </tr>
+          <tr>
+            <td> pattern </td><td> string </td><td> required </td><td>   <div class="docs">  Search query, e.g. part of the name </div> </td>
+          </tr>
+          <tr>
+            <td> limit </td><td> int32 </td><td> required </td><td>   <div class="docs">  Number of results to return </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.FullUserInfoDTO">
+        <a href="#messages.FullUserInfoDTO"><span class="badge">M</span> FullUserInfoDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> userId </td><td> string </td><td> required </td><td>   <div class="docs">  Upsource user ID </div> </td>
+          </tr>
+          <tr>
+            <td> name </td><td> string </td><td> required </td><td>   <div class="docs">  Upsource user name </div> </td>
+          </tr>
+          <tr>
+            <td> isResolved </td><td> bool </td><td> required </td><td>   <div class="docs">  Whether the user has an account in Hub </div> </td>
+          </tr>
+          <tr>
+            <td> isMe </td><td> bool </td><td> required </td><td>   <div class="docs">  Flags the currently logged-in user </div> </td>
+          </tr>
+          <tr>
+            <td> isOnline </td><td> bool </td><td> optional </td><td>   <div class="docs">  Whether the user is online </div> </td>
+          </tr>
+          <tr>
+            <td> avatarUrl </td><td> string </td><td> optional </td><td>   <div class="docs">  URL of the userpic </div> </td>
+          </tr>
+          <tr>
+            <td> profileUrl </td><td> string </td><td> optional </td><td>   <div class="docs">  URL of the Hub user profile </div> </td>
+          </tr>
+          <tr>
+            <td> email </td><td> string </td><td> optional </td><td>   <div class="docs">  Email address </div> </td>
+          </tr>
+          <tr>
+            <td> login </td><td> string </td><td> optional </td><td>   <div class="docs">  Login </div> </td>
+          </tr>
+          <tr>
+            <td> absentUntil </td><td> int64 </td><td> optional </td><td>   <div class="docs">  Absence end date, if the user is currently on leave </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.ProjectUserGroupsRequestDTO">
+        <a href="#messages.ProjectUserGroupsRequestDTO"><span class="badge">M</span> ProjectUserGroupsRequestDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> projectId </td><td> string </td><td> required </td><td>   <div class="docs">  Project ID in Upsource </div> </td>
+          </tr>
+          <tr>
+            <td> query </td><td> string </td><td> optional </td><td>   <div class="docs">  Search query, i.e. starting part of the name </div> </td>
+          </tr>
+          <tr>
+            <td> limit </td><td> int32 </td><td> required </td><td>   <div class="docs">  Maximum number of results to return </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.UserAbsenceRequestDTO">
+        <a href="#messages.UserAbsenceRequestDTO"><span class="badge">M</span> UserAbsenceRequestDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> absentUntil </td><td> int64 </td><td> optional </td><td>   <div class="docs">  Absence end date </div> </td>
+          </tr>
+          <tr>
+            <td> userId </td><td> string </td><td> optional </td><td>   <div class="docs">  User ID in Upsource ("null" denotes current user) </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.UserGroupDTO">
+        <a href="#messages.UserGroupDTO"><span class="badge">M</span> UserGroupDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> id </td><td> string </td><td> required </td><td>   <div class="docs">  Group ID </div> </td>
+          </tr>
+          <tr>
+            <td> name </td><td> string </td><td> required </td><td>   <div class="docs">  Group name </div> </td>
+          </tr>
+          <tr>
+            <td> usersCount </td><td> int32 </td><td> required </td><td>   <div class="docs">  Number of users participating in this group </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.UserGroupsIdsListDTO">
+        <a href="#messages.UserGroupsIdsListDTO"><span class="badge">M</span> UserGroupsIdsListDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> ids </td><td> string </td><td> repeated </td><td>   <div class="docs">  IDs of user groups </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.UserGroupsListDTO">
+        <a href="#messages.UserGroupsListDTO"><span class="badge">M</span> UserGroupsListDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> groups </td><td>   <a href="#messages.UserGroupDTO">UserGroupDTO</a> </td><td> repeated </td><td>   <div class="docs">  List of user groups </div> </td>
+          </tr>
+
+          <tr>
+            <td> hasMore </td><td> bool </td><td> required </td><td>   <div class="docs">  Whether there are more groups by the request beyond the limit specified </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.UserInfoRequestDTO">
+        <a href="#messages.UserInfoRequestDTO"><span class="badge">M</span> UserInfoRequestDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> ids </td><td> string </td><td> repeated </td><td>   <div class="docs">  A list of user IDs to request the full user info for </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.UserInfoResponseDTO">
+        <a href="#messages.UserInfoResponseDTO"><span class="badge">M</span> UserInfoResponseDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> infos </td><td>   <a href="#messages.FullUserInfoDTO">FullUserInfoDTO</a> </td><td> repeated </td><td>   <div class="docs">  See FullUserInfoDTO parameters </div> </td>
+          </tr>
+
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.UserPresenceInfoDTO">
+        <a href="#messages.UserPresenceInfoDTO"><span class="badge">M</span> UserPresenceInfoDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> userId </td><td> string </td><td> required </td><td>   <div class="docs">  Upsource user ID </div> </td>
+          </tr>
+          <tr>
+            <td> isOnline </td><td> bool </td><td> required </td><td>   <div class="docs">  Whether the user is online </div> </td>
+          </tr>
+          <tr>
+            <td> absentUntil </td><td> int64 </td><td> optional </td><td>   <div class="docs">  Absence end date, if the user is currently on leave </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.UserProjectInfoDTO">
+        <a href="#messages.UserProjectInfoDTO"><span class="badge">M</span> UserProjectInfoDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> projectId </td><td> string </td><td> required </td><td>   <div class="docs">  Project ID in Upsource </div> </td>
+          </tr>
+          <tr>
+            <td> lastCommitTime </td><td> int64 </td><td> required </td><td>   <div class="docs">  Unix timestamp of the last commit </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.UserProjectsRequestDTO">
+        <a href="#messages.UserProjectsRequestDTO"><span class="badge">M</span> UserProjectsRequestDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> userId </td><td> string </td><td> required </td><td>   <div class="docs">  Upsource user ID </div> </td>
+          </tr>
+          <tr>
+            <td> commitTimestampFilter </td><td> int64 </td><td> required </td><td>   <div class="docs">  Project update timestamp to limit the returned projects by </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.UserProjectsResponseDTO">
+        <a href="#messages.UserProjectsResponseDTO"><span class="badge">M</span> UserProjectsResponseDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> projects </td><td>   <a href="#messages.UserProjectInfoDTO">UserProjectInfoDTO</a> </td><td> repeated </td><td>   <div class="docs">  See UserProjectInfoDTO parameters </div> </td>
+          </tr>
+
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.UsersForMentionRequestDTO">
+        <a href="#messages.UsersForMentionRequestDTO"><span class="badge">M</span> UsersForMentionRequestDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> projectId </td><td> string </td><td> required </td><td>   <div class="docs">  Project ID in Upsource </div> </td>
+          </tr>
+          <tr>
+            <td> reviewId </td><td> string </td><td> optional </td><td>   <div class="docs">  ID of the Upsource review </div> </td>
+          </tr>
+          <tr>
+            <td> revisionId </td><td> string </td><td> optional </td><td>   <div class="docs">  ID of the revision </div> </td>
+          </tr>
+          <tr>
+            <td> fileName </td><td> string </td><td> optional </td><td>   <div class="docs">  A full path to the file starting with a slash (e.g. /directory/file.txt) </div> </td>
+          </tr>
+          <tr>
+            <td> query </td><td> string </td><td> optional </td><td>   <div class="docs">  Search query, e.g. part of the name </div> </td>
+          </tr>
+          <tr>
+            <td> limit </td><td> int32 </td><td> required </td><td>   <div class="docs">  Number of results to return </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.UsersForReviewDTO">
+        <a href="#messages.UsersForReviewDTO"><span class="badge">M</span> UsersForReviewDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> result </td><td>   <a href="#messages.UsersListDTO">UsersListDTO</a> </td><td> required </td><td>   <div class="docs">  Suggested reviewers for a given review </div> </td>
+          </tr>
+
+          <tr>
+            <td> relevantUser </td><td> string </td><td> repeated </td><td>   <div class="docs">  All relevant users </div> </td>
+          </tr>
+          <tr>
+            <td> userRelevance </td><td> int32 </td><td> repeated </td><td>   <div class="docs">  Users' relevance [0..100] </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.UsersForReviewRequestDTO">
+        <a href="#messages.UsersForReviewRequestDTO"><span class="badge">M</span> UsersForReviewRequestDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> reviewId </td><td>   <a href="Ids.html#messages.ReviewIdDTO">ReviewIdDTO</a> </td><td> required </td><td>   <div class="docs">  See ReviewIdDTO parameters </div> </td>
+          </tr>
+
+          <tr>
+            <td> role </td><td>   <a href="#messagesRoleInReviewEnum">RoleInReviewEnum</a> </td><td> required </td><td>   <div class="docs">  See RoleInReviewEnum parameters </div> </td>
+          </tr>
+          <tr>
+            <td> query </td><td> string </td><td> optional </td><td>   <div class="docs">  Search query, e.g. part of the name </div> </td>
+          </tr>
+          <tr>
+            <td> limit </td><td> int32 </td><td> required </td><td>   <div class="docs">  Number of results to return </div> </td>
+          </tr>
+          <tr>
+            <td> timeout </td><td> int64 </td><td> optional </td><td>   <div class="docs">  Timeout(ms) to calculate smart users suggestion, by default - 1 minute </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.UsersListDTO">
+        <a href="#messages.UsersListDTO"><span class="badge">M</span> UsersListDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> me </td><td> string </td><td> optional </td><td>   <div class="docs">  User ID of the logged-in user </div> </td>
+          </tr>
+          <tr>
+            <td> suggestedUsers </td><td> string </td><td> repeated </td><td>   <div class="docs">  User IDs of suggested users </div> </td>
+          </tr>
+          <tr>
+            <td> suggestedUserRelevance </td><td> int32 </td><td> repeated </td><td>   <div class="docs">  Users' relevance [0..100] as a reviewer </div> </td>
+          </tr>
+          <tr>
+            <td> suggestedUserOpenedReviews </td><td> int32 </td><td> repeated </td><td>   <div class="docs">  The number of open reviews the user has </div> </td>
+          </tr>
+          <tr>
+            <td> committers </td><td> string </td><td> repeated </td><td>   <div class="docs">  User IDs of suggested committers </div> </td>
+          </tr>
+          <tr>
+            <td> others </td><td> string </td><td> repeated </td><td>   <div class="docs">  User IDs of other suggested participants </div> </td>
+          </tr>
+          <tr>
+            <td> hasMore </td><td> bool </td><td> required </td><td>   <div class="docs">  Whether all available items have been returned or more can be requested by passing the corresponding 'limit' value in the subsequent request </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.UsersPresenceInfoResponseDTO">
+        <a href="#messages.UsersPresenceInfoResponseDTO"><span class="badge">M</span> UsersPresenceInfoResponseDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> presences </td><td>   <a href="#messages.UserPresenceInfoDTO">UserPresenceInfoDTO</a> </td><td> repeated </td><td>   <div class="docs">  See UserPresenceInfoDTO parameters </div> </td>
+          </tr>
+
+      </table>
+    </div>
+    <h3>Enums</h3>
+    <a href="../json/Users.json" class="json-link" target="_blank">View as JSON</a>
+    <div class="enum block">
+      <h3 class="enum" id="messagesEmailStatusEnum"><a href="#messagesEmailStatusEnum"><span class="badge">E</span> EmailStatusEnum</a></h3>
+
+        <div class="docs">  Describes status of an email address </div>
+
+      <table class="enum-table">
+        <thead>
+          <tr><td>Name</td><td>Number</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> OK </td>
+            <td> 1 </td>
+            <td>  </td>
+          </tr>
+          <tr>
+            <td> NotVerified </td>
+            <td> 2 </td>
+            <td>  </td>
+          </tr>
+          <tr>
+            <td> NotSpecified </td>
+            <td> 3 </td>
+            <td>  </td>
+          </tr>
+          <tr>
+            <td> HardBounce </td>
+            <td> 4 </td>
+            <td>  </td>
+          </tr>
+      </table>
+    </div>
+    <div class="enum block">
+      <h3 class="enum" id="messagesRoleInReviewEnum"><a href="#messagesRoleInReviewEnum"><span class="badge">E</span> RoleInReviewEnum</a></h3>
+
+        <div class="docs">  Describes roles in a review </div>
+
+      <table class="enum-table">
+        <thead>
+          <tr><td>Name</td><td>Number</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> Author </td>
+            <td> 1 </td>
+            <td>  </td>
+          </tr>
+          <tr>
+            <td> Reviewer </td>
+            <td> 2 </td>
+            <td>  </td>
+          </tr>
+          <tr>
+            <td> Watcher </td>
+            <td> 3 </td>
+            <td>  </td>
+          </tr>
+      </table>
+    </div>  </div>
+</body>
+
+</html>

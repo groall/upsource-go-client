@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Upsource API</title>
+  <link rel="stylesheet" type="text/css" href="styles/index.css">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" sizes="16x16 32x32">
+</head>
+<body>
+  <div class="upsource-doc">
+    <h2 id="overview">Upsource API overview</h2>
+
+    <p>
+      Upsource API is an RPC-style HTTP API. You can make calls using HTTP <code>GET</code> and <code>POST</code>.
+      All data is sent and received as JSON. While the RPC methods don't enforce the use of a specific HTTP method, we recommend that you conform to HTTP
+      semantics by using <code>GET</code> for retrieving data (e.g. <code>getRevisionsList</code>) and <code>POST</code> for modifying data (e.g. <code>createReview</code>).
+    </p>
+
+    <p>All timestamps are Unix timestamps, the number of seconds that have elapsed since January 1, 1970 (midnight UTC/GMT).</p>
+
+    <p>To invoke a method of the Upsource API using HTTP <code>GET</code>, make the following request:</p>
+
+    <pre><code>http://your-upsource-host/~rpc/methodName?params={JSON-encoded-params}</code></pre>
+
+    <p>To make a <code>POST</code> request, use the same URL but pass the request payload in the POST body instead. A Content-Type of <code>application/json</code> should be set.</p>
+
+    <h2 id="authorization">Authorization</h2>
+
+    <p>If no credentials are provided, the request will be executed with guest permissions.</p>
+
+    <p>To make a request on behalf of a specific user, send the <code>Authorization</code> header along with your request:</p>
+
+    <pre><code>Authorization: Basic login:password</code></pre>
+
+    <p>Substitute <code>login:password</code> with the actual credentials, encoded in Base64.</p>
+
+    <h2 id="example">Example</h2>
+
+    <p>To get the latest revisions in <code>MyProject</code> project, perform the following request:</p>
+
+    <pre><code>
+URL: http://your-upsource-host/~rpc/getRevisionsList
+POST body: {"projectId":"MyProject", "limit":30}
+    </code></pre>
+
+    <p>Raw request:</p>
+
+    <pre><code>
+POST /~rpc/getRevisionsList HTTP/1.1
+Authorization: Basic YWRtaW46YWRtaW4=
+Host: your-upsource-host
+Connection: close
+Content-Length: XXX
+
+{"projectId":"MyProject", "limit":30}
+    </code></pre>
+
+    <p>Example of an error response:</p>
+
+    <pre><code>
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=UTF-8
+Content-Length: XXX
+Connection: close
+Date: Fri, 24 Apr 2015 11:09:20 GMT
+Cache-Control: no-cache, no-store, must-revalidate
+Pragma: no-cache
+Expires: 0
+X-Upsource-Server: your-upsource-host
+
+{
+  "error": {
+    "code": 103,
+    "message": "User guest doesn't have read access to project MyProject"
+  }
+}
+    </code></pre>
+
+    <p>Errors are usually transient and therefore are returned with no-cache headers.</p>
+
+    <p>Example of a success response:</p>
+
+    <pre><code>
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=UTF-8
+Content-Length: XXX
+Connection: close
+Date: Fri, 24 Apr 2015 10:55:08 GMT
+Cache-Control: public, must-revalidate
+ETag: aa1ce9f680e31b8b
+X-Upsource-Server: your-upsource-host
+
+{
+  "result": {
+    "revision": [{
+      "revisionId": "cea8888e1b9eff4c9887a1fe8bdcee59898e7f43",
+      "revisionDate": 1429718289000,
+      "effectiveRevisionDate": 1429718289000,
+      "revisionCommitMessage": "#DSH-325 extract directives describes to top level\n",
+      "state": 3,
+      "revisionIdShort": "cea8888",
+      "authorId": "~John Doe &lt;john.doe@mycompany.com>",
+      "parentRevisions": ["b9b0ee4fb570d7457ac1cf2631d3bd4fc164017c"],
+      "childRevisions": ["7c8bf9e7b9ab8e240d489fa59f6c79bfb1409de9"]
+    }
+    ...],
+    "headHash": "57c491029f0f89b9"
+  }
+}
+    </code></pre>
+
+    <p>Most success responses contain a ETag which allows a client to make conditional requests.</p>
+
+    <h2 id="reference">API Reference</h2>
+
+    <p>See the <a href="reference/index.html">complete reference</a>.</p>
+
+    <h2 id="webhooks">Webhooks</h2>
+
+    <p>
+      Webhooks allow you to notify external services, such as an issue tracker, a CI server, or a deployment tool, about events that
+      occur in an Upsource project. Webhooks are a way to <strong>push</strong> notifications to external services which is usually preferable
+      to polling. When an event occurs inside Upsource we'll send a JSON payload to specified URLs using <code>HTTP POST</code>.
+      The following events are available:
+    </p>
+
+    <ul>
+      <li>A comment is added,</li>
+      <li>a comment is edited,</li>
+      <li>a comment is removed,</li>
+      <li>a reaction is added or removed,</li>
+      <li>a review is created,</li>
+      <li>a review is closed or reopened,</li>
+      <li>a review is removed,</li>
+      <li>review changes are accepted by a participant / a concern is raised about the changes,</li>
+      <li>a new participant is added to a review,</li>
+      <li>an existing participant is removed from a review,</li>
+      <li>a revision is added to a review,</li>
+      <li>a review label is added or removed,</li>
+      <li>a new revision is detected,</li>
+      <li>a new branch is detected,</li>
+      <li>a branch is removed,</li>
+      <li>a merge is made to the default branch.</li>
+    </ul>
+
+    <p>
+      When configuring a webhook, you can choose which events you would like to receive payloads for, or you can opt-in to receive
+      all events in a project. Each event type has a specific payload format with the relevant event information. To see a full list of events
+      and corresponding payloads, check out the <a href="integration/index.html">documentation page</a>.
+    </p>
+
+    <p>Example of a webhook request sent by Upsource:</p>
+
+    <pre><code>
+      POST /my-webhook HTTP/1.1
+      Host: example.com
+      Content-Type: application/json; charset=UTF-8
+      Content-Length: XXX
+      Connection: close
+      User-Agent: Jakarta Commons-HttpClient/3.1
+      X-Request-Id: c8a5b163-508f-42b5-939a-e11b02caf72e
+
+      {
+        "majorVersion": 3,
+        "minorVersion": 0,
+        "projectId": "demo-project",
+        "dataType": "NewRevisionEventBean",
+        "data": {
+          "revisionId": "c1f4de8e6c5aca9b5615fa6656e1f26e4f26d0d0",
+          "branches": [
+            "master"
+          ],
+          "author": "John Doe &lt;john.doe@mycompany.com&gt;",
+          "message": "#DSH-325 extract directives describes to top level\n",
+          "date": 1454432013000
+        }
+      }
+    </code></pre>
+
+    <p><code>projectId</code> and <code>dataType</code> properties describe the payload, <code>data</code> property contains the actual event-specific payload.</p>
+
+    <h2 id="vcs">VCS Settings</h2>
+
+    <p>
+      Certain methods (<code>createProject</code>, <code>editProject</code>, <code>loadProject</code>, <code>testVcsConnection</code>) include a field named <code>vcsSettings</code>,
+      whose value is a JSON-encoded string of VCS configuration parameters.
+    </p>
+
+    <p>Generic example:</p>
+
+    <pre><code>
+      {
+          "mappings": [{
+              "id": "id", // ID of the first repository is <strong>"id"</strong>, IDs of other repositories are arbitrary alphanumeric strings
+              "vcs": "git", // VCS type ID, one of "git", mercurial", "perforce", "svn"
+              "url": "url", // VCS repository URL
+
+              // VCS credentials, either "username" and "password" or "key" and "key-passphrase"
+              "username": "username",
+              "password": "password",
+
+              "key": "key",
+              "key-passphrase": "key-passphrase"
+          }]
+      }
+    </code></pre>
+
+    <p>Example of a multi-repository project:</p>
+
+    <pre><code>
+      {
+          "mappings": [{
+              "id": <strong>"id"</strong>,
+              "vcs": "git",
+              "url": "https://github.com/user/project.git"
+          }, {
+              "id": <strong>"another-repo"</strong>,
+              "vcs": "git",
+              "url": "https://github.com/user/another-repo.git",
+              "mapping": <strong>"another-repo"</strong>
+          }]
+      }
+    </code></pre>
+
+    <p>Example of a GitHub-connected project:</p>
+
+    <pre><code>
+      {
+          "mappings": [{
+              "id": "id",
+              "vcs": "git",
+              "url": "https://github.com/user/project.git",
+              "pull-requests": "github", // Optional, enables "Import pull requests as branches"
+              "sync-comments": "github", // Optional, enables "Synchronize comments and pull requests"
+              "sync-token": "sync-token" // OAuth token
+          }]
+      }
+    </code></pre>
+
+  </div>
+</body>
+
+</html>

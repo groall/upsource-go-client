@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="format-detection" content="telephone=no">
+
+<title>findUsages.proto</title>
+
+<link rel="stylesheet" type="text/css" href="../styles/page.css">
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" sizes="16x16 32x32">
+</head>
+<body>
+  <div class="upsource-doc">
+    <h2>
+      Upsource API Documentation
+      <a class="index" href="index.html">Index</a>
+    </h2>
+
+    <h3>Messages</h3>
+    <a href="../json/FindUsages.json" class="json-link" target="_blank">View as JSON</a>
+    <div class="message block">
+      <h3 class="message" id="messages.ElementDocumentationDTO">
+        <a href="#messages.ElementDocumentationDTO"><span class="badge">M</span> ElementDocumentationDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> docString </td><td> string </td><td> optional </td><td>   <div class="docs">  Text of the element documentation </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.FilePathToRootDTO">
+        <a href="#messages.FilePathToRootDTO"><span class="badge">M</span> FilePathToRootDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> fileName </td><td> string </td><td> required </td><td>   <div class="docs">  A full path to the file starting with a slash (e.g. /directory/file.txt) </div> </td>
+          </tr>
+          <tr>
+            <td> pathToRoot </td><td>   <a href="Projects.html#messages.ProjectItemsListDTO">ProjectItemsListDTO</a> </td><td> required </td><td>   <div class="docs">  See ProjectItemsListDTO parameters </div> </td>
+          </tr>
+
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.FindBranchRequestDTO">
+        <a href="#messages.FindBranchRequestDTO"><span class="badge">M</span> FindBranchRequestDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> projectId </td><td> string </td><td> required </td><td>   <div class="docs">  Project ID in Upsource </div> </td>
+          </tr>
+          <tr>
+            <td> pattern </td><td> string </td><td> required </td><td>   <div class="docs">  Search query, e.g. part of the branch name </div> </td>
+          </tr>
+          <tr>
+            <td> limit </td><td> int32 </td><td> required </td><td>   <div class="docs">  Max number of results to return </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.FindBranchResponseDTO">
+        <a href="#messages.FindBranchResponseDTO"><span class="badge">M</span> FindBranchResponseDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> branches </td><td> string </td><td> repeated </td><td>   <div class="docs">  The list of matched branches </div> </td>
+          </tr>
+          <tr>
+            <td> hasMore </td><td> bool </td><td> required </td><td>   <div class="docs">  Whether all available items have been returned or more can be requested by passing the corresponding 'limit' value in the subsequent request </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.FindHierarchyResultDTO">
+        <a href="#messages.FindHierarchyResultDTO"><span class="badge">M</span> FindHierarchyResultDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> ancestors </td><td>   <a href="#messages.NavigationTargetItemDTO">NavigationTargetItemDTO</a> </td><td> repeated </td><td>   <div class="docs">  The list of element's ancestors </div> </td>
+          </tr>
+
+          <tr>
+            <td> inheritors </td><td>   <a href="#messages.NavigationTargetItemDTO">NavigationTargetItemDTO</a> </td><td> repeated </td><td>   <div class="docs">  The list of element's inheritors </div> </td>
+          </tr>
+
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.FindUsagesItemDTO">
+        <a href="#messages.FindUsagesItemDTO"><span class="badge">M</span> FindUsagesItemDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> navigationTarget </td><td>   <a href="#messages.NavigationTargetItemDTO">NavigationTargetItemDTO</a> </td><td> required </td><td>   <div class="docs">  See NavigationTargetItemDTO parameters </div> </td>
+          </tr>
+
+          <tr>
+            <td> previewText </td><td> string </td><td> required </td><td>   <div class="docs">  Preview text </div> </td>
+          </tr>
+          <tr>
+            <td> startOffsetInPreview </td><td> int32 </td><td> required </td><td>   <div class="docs">  Start offset </div> </td>
+          </tr>
+          <tr>
+            <td> endOffsetInPreview </td><td> int32 </td><td> required </td><td>   <div class="docs">  End offset </div> </td>
+          </tr>
+          <tr>
+            <td> lineNumber </td><td> int32 </td><td> required </td><td>   <div class="docs">  Line number </div> </td>
+          </tr>
+          <tr>
+            <td> isImportant </td><td> bool </td><td> required </td><td>   <div class="docs">  Identifies if this usage is semantic-sensitive or not </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.FindUsagesResponseDTO">
+        <a href="#messages.FindUsagesResponseDTO"><span class="badge">M</span> FindUsagesResponseDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> filePathToRoot </td><td>   <a href="#messages.FilePathToRootDTO">FilePathToRootDTO</a> </td><td> repeated </td><td>   <div class="docs">  See FilePathToRootDTO parameters </div> </td>
+          </tr>
+
+          <tr>
+            <td> item </td><td>   <a href="#messages.FindUsagesItemDTO">FindUsagesItemDTO</a> </td><td> repeated </td><td>   <div class="docs">  See FindUsagesItemDTO parameters </div> </td>
+          </tr>
+
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.GotoFileItemDTO">
+        <a href="#messages.GotoFileItemDTO"><span class="badge">M</span> GotoFileItemDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> projectId </td><td> string </td><td> required </td><td>   <div class="docs">  Project ID in Upsource </div> </td>
+          </tr>
+          <tr>
+            <td> revisionId </td><td> string </td><td> required </td><td>   <div class="docs">  ID of the revision </div> </td>
+          </tr>
+          <tr>
+            <td> fileName </td><td> string </td><td> required </td><td>   <div class="docs">  A full path to the file starting with a slash (e.g. /directory/file.txt) </div> </td>
+          </tr>
+          <tr>
+            <td> isDeleted </td><td> bool </td><td> required </td><td>   <div class="docs">  Whether the file is deleted </div> </td>
+          </tr>
+          <tr>
+            <td> lastModified </td><td> int64 </td><td> optional </td><td>   <div class="docs">  Unix timestamp of the last modification </div> </td>
+          </tr>
+          <tr>
+            <td> branch </td><td> string </td><td> optional </td><td>   <div class="docs">  Branch name </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.GotoFileRequestDTO">
+        <a href="#messages.GotoFileRequestDTO"><span class="badge">M</span> GotoFileRequestDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> projectId </td><td> string </td><td> optional </td><td>   <div class="docs">  Project ID in Upsource </div> </td>
+          </tr>
+          <tr>
+            <td> revisionId </td><td> string </td><td> optional </td><td>   <div class="docs">  ID of the revision (search in heads if not provided) </div> </td>
+          </tr>
+          <tr>
+            <td> reviewId </td><td>   <a href="Ids.html#messages.ReviewIdDTO">ReviewIdDTO</a> </td><td> optional </td><td>   <div class="docs">  See ReviewIdDTO parameters </div> </td>
+          </tr>
+
+          <tr>
+            <td> pattern </td><td> string </td><td> required </td><td>   <div class="docs">  Search query, e.g. part of the name </div> </td>
+          </tr>
+          <tr>
+            <td> limit </td><td> int32 </td><td> required </td><td>   <div class="docs">  Number of results to return </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.GotoFileResponseDTO">
+        <a href="#messages.GotoFileResponseDTO"><span class="badge">M</span> GotoFileResponseDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> items </td><td>   <a href="#messages.GotoFileItemDTO">GotoFileItemDTO</a> </td><td> repeated </td><td>   <div class="docs">  See GotoFileItemDTO parameters </div> </td>
+          </tr>
+
+          <tr>
+            <td> hasMore </td><td> bool </td><td> required </td><td>   <div class="docs">  Whether all available items have been returned or more can be requested by passing the corresponding 'limit' value in the subsequent request </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.NavigationTargetItemDTO">
+        <a href="#messages.NavigationTargetItemDTO"><span class="badge">M</span> NavigationTargetItemDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> fileId </td><td>   <a href="Ids.html#messages.FileInRevisionDTO">FileInRevisionDTO</a> </td><td> required </td><td>   <div class="docs">  See FileInRevisionDTO parameters </div> </td>
+          </tr>
+
+          <tr>
+            <td> startOffset </td><td> int32 </td><td> required </td><td>   <div class="docs">  Start offset </div> </td>
+          </tr>
+          <tr>
+            <td> endOffset </td><td> int32 </td><td> required </td><td>   <div class="docs">  End offset </div> </td>
+          </tr>
+          <tr>
+            <td> stubIndex </td><td> int32 </td><td> required </td><td>   <div class="docs">  Stub index ID </div> </td>
+          </tr>
+          <tr>
+            <td> targetDescription </td><td>   <a href="#messages.TargetDescriptionDTO">TargetDescriptionDTO</a> </td><td> optional </td><td>   <div class="docs">  See TargetDescriptionDTO parameters </div> </td>
+          </tr>
+
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.PsiElementIdDTO">
+        <a href="#messages.PsiElementIdDTO"><span class="badge">M</span> PsiElementIdDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> fileId </td><td>   <a href="Ids.html#messages.FileInRevisionDTO">FileInRevisionDTO</a> </td><td> required </td><td>   <div class="docs">  See FileInRevisionDTO parameters </div> </td>
+          </tr>
+
+          <tr>
+            <td> range </td><td>   <a href="Ids.html#messages.RangeDTO">RangeDTO</a> </td><td> required </td><td>   <div class="docs">  Text range of the given PSI element </div> </td>
+          </tr>
+
+          <tr>
+            <td> localIndex </td><td> int32 </td><td> required </td><td>   <div class="docs">  Copy of the localIndex from 'ReferenceCodeMarkupItemDTO' to identify the exact PSI element </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.SameUsagesDTO">
+        <a href="#messages.SameUsagesDTO"><span class="badge">M</span> SameUsagesDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> oldUsage </td><td>   <a href="#messages.FindUsagesItemDTO">FindUsagesItemDTO</a> </td><td> required </td><td>   <div class="docs">  Old usage of the element. See FindUsagesItemDTO parameters </div> </td>
+          </tr>
+
+          <tr>
+            <td> newUsage </td><td>   <a href="#messages.FindUsagesItemDTO">FindUsagesItemDTO</a> </td><td> required </td><td>   <div class="docs">  New usage of the element. See FindUsagesItemDTO parameters </div> </td>
+          </tr>
+
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.StubIdDTO">
+        <a href="#messages.StubIdDTO"><span class="badge">M</span> StubIdDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> fileId </td><td>   <a href="Ids.html#messages.FileInRevisionDTO">FileInRevisionDTO</a> </td><td> required </td><td>   <div class="docs">  See FileInRevisionDTO parameters </div> </td>
+          </tr>
+
+          <tr>
+            <td> stubIndex </td><td> int32 </td><td> required </td><td>   <div class="docs">  Stub index ID </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.TargetDescriptionDTO">
+        <a href="#messages.TargetDescriptionDTO"><span class="badge">M</span> TargetDescriptionDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> imageName </td><td> string </td><td> optional </td><td>   <div class="docs">  ID of the element's image (if 'image' is none) </div> </td>
+          </tr>
+          <tr>
+            <td> image </td><td> string </td><td> optional </td><td>   <div class="docs">   Base62-encoded image (if 'imageName' is none) </div> </td>
+          </tr>
+          <tr>
+            <td> targetPresentation </td><td> string </td><td> optional </td><td>   <div class="docs">  Text representation of the given element </div> </td>
+          </tr>
+          <tr>
+            <td> locationPresentation </td><td> string </td><td> optional </td><td>   <div class="docs">  Text surrounding the element </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.TextSearchItem">
+        <a href="#messages.TextSearchItem"><span class="badge">M</span> TextSearchItem</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> file </td><td>   <a href="Ids.html#messages.FileInRevisionDTO">FileInRevisionDTO</a> </td><td> required </td><td>   <div class="docs">  The file in a particular project and revision </div> </td>
+          </tr>
+
+          <tr>
+            <td> revisionInfo </td><td>   <a href="Projects.html#messages.RevisionInfoDTO">RevisionInfoDTO</a> </td><td> required </td><td>   <div class="docs">  See RevisionInfoDTO parameters </div> </td>
+          </tr>
+
+          <tr>
+            <td> contentType </td><td>   <a href="FileOrDirectoryContent.html#messages.FileContentTypeDTO">FileContentTypeDTO</a> </td><td> required </td><td>   <div class="docs">  File content type </div> </td>
+          </tr>
+
+          <tr>
+            <td> isDeleted </td><td> bool </td><td> required </td><td>   <div class="docs">  Whether this file is deleted </div> </td>
+          </tr>
+          <tr>
+            <td> projectDetails </td><td>   <a href="#messages.TextSearchProjectDetails">TextSearchProjectDetails</a> </td><td> required </td><td>   <div class="docs">  Project details </div> </td>
+          </tr>
+
+          <tr>
+            <td> snippets </td><td>   <a href="#messages.TextSearchSnippet">TextSearchSnippet</a> </td><td> repeated </td><td>   <div class="docs">  Code snippets </div> </td>
+          </tr>
+
+          <tr>
+            <td> totalMatches </td><td> int32 </td><td> required </td><td>   <div class="docs">  Total number of matches in the file </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.TextSearchProjectDetails">
+        <a href="#messages.TextSearchProjectDetails"><span class="badge">M</span> TextSearchProjectDetails</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> projectName </td><td> string </td><td> required </td><td>   <div class="docs">  Holds the project name </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.TextSearchRequestDTO">
+        <a href="#messages.TextSearchRequestDTO"><span class="badge">M</span> TextSearchRequestDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> projectId </td><td> string </td><td> optional </td><td>   <div class="docs">  Project ID in Upsource </div> </td>
+          </tr>
+          <tr>
+            <td> query </td><td> string </td><td> required </td><td>   <div class="docs">  The search query </div> </td>
+          </tr>
+          <tr>
+            <td> filenameFilter </td><td> string </td><td> optional </td><td>   <div class="docs">  File name filter </div> </td>
+          </tr>
+          <tr>
+            <td> ignoreDeleted </td><td> bool </td><td> required </td><td>   <div class="docs">  Ignore matches in deleted files </div> </td>
+          </tr>
+          <tr>
+            <td> ignoreArchived </td><td> bool </td><td> required </td><td>   <div class="docs">  Whether to search in archived projects </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.TextSearchResponseDTO">
+        <a href="#messages.TextSearchResponseDTO"><span class="badge">M</span> TextSearchResponseDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> items </td><td>   <a href="#messages.TextSearchItem">TextSearchItem</a> </td><td> repeated </td><td>   <div class="docs">  The items that match the search query </div> </td>
+          </tr>
+
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.TextSearchSnippet">
+        <a href="#messages.TextSearchSnippet"><span class="badge">M</span> TextSearchSnippet</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> text </td><td> string </td><td> required </td><td>   <div class="docs">  Snippet text </div> </td>
+          </tr>
+          <tr>
+            <td> startLineNumber </td><td> int32 </td><td> required </td><td>   <div class="docs">  Start line number </div> </td>
+          </tr>
+          <tr>
+            <td> rangeInSnippet </td><td>   <a href="Ids.html#messages.RangeDTO">RangeDTO</a> </td><td> required </td><td>   <div class="docs">  Matching range in the snippet </div> </td>
+          </tr>
+
+          <tr>
+            <td> rangeInFile </td><td>   <a href="Ids.html#messages.RangeDTO">RangeDTO</a> </td><td> required </td><td>   <div class="docs">  Matching range in the file </div> </td>
+          </tr>
+
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.UsagesDiffByAnotherRevisionRequestDTO">
+        <a href="#messages.UsagesDiffByAnotherRevisionRequestDTO"><span class="badge">M</span> UsagesDiffByAnotherRevisionRequestDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> originElement </td><td>   <a href="#messages.PsiElementIdDTO">PsiElementIdDTO</a> </td><td> required </td><td>   <div class="docs">  Original element. See PsiElementIdDTO parameters </div> </td>
+          </tr>
+
+          <tr>
+            <td> anotherRevisionId </td><td> string </td><td> required </td><td>   <div class="docs">  ID of the other revision </div> </td>
+          </tr>
+          <tr>
+            <td> isAnotherOld </td><td> bool </td><td> required </td><td>   <div class="docs">  Whether the other revision is older </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.UsagesDiffByBoundaryRevisionsRequestDTO">
+        <a href="#messages.UsagesDiffByBoundaryRevisionsRequestDTO"><span class="badge">M</span> UsagesDiffByBoundaryRevisionsRequestDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> originElement </td><td>   <a href="#messages.PsiElementIdDTO">PsiElementIdDTO</a> </td><td> required </td><td>   <div class="docs">  Original element. See PsiElementIdDTO parameters </div> </td>
+          </tr>
+
+          <tr>
+            <td> newRevisionId </td><td> string </td><td> required </td><td>   <div class="docs">  ID of the new revision </div> </td>
+          </tr>
+          <tr>
+            <td> boundaryRevisionId </td><td> string </td><td> required </td><td>   <div class="docs">  ID of the boundary revision </div> </td>
+          </tr>
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.UsagesDiffDTO">
+        <a href="#messages.UsagesDiffDTO"><span class="badge">M</span> UsagesDiffDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> oldFilePathToRoot </td><td>   <a href="#messages.FilePathToRootDTO">FilePathToRootDTO</a> </td><td> optional </td><td>   <div class="docs">  See FilePathToRootDTO parameters </div> </td>
+          </tr>
+
+          <tr>
+            <td> newFilePathToRoot </td><td>   <a href="#messages.FilePathToRootDTO">FilePathToRootDTO</a> </td><td> optional </td><td>   <div class="docs">  See FilePathToRootDTO parameters </div> </td>
+          </tr>
+
+          <tr>
+            <td> removedUsage </td><td>   <a href="#messages.FindUsagesItemDTO">FindUsagesItemDTO</a> </td><td> repeated </td><td>   <div class="docs">  See FindUsagesItemDTO parameters </div> </td>
+          </tr>
+
+          <tr>
+            <td> sameUsage </td><td>   <a href="#messages.SameUsagesDTO">SameUsagesDTO</a> </td><td> repeated </td><td>   <div class="docs">  See SameUsagesDTO parameters </div> </td>
+          </tr>
+
+          <tr>
+            <td> addedUsage </td><td>   <a href="#messages.FindUsagesItemDTO">FindUsagesItemDTO</a> </td><td> repeated </td><td>   <div class="docs">  See FindUsagesItemDTO parameters </div> </td>
+          </tr>
+
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.UsagesDiffFullRequestDTO">
+        <a href="#messages.UsagesDiffFullRequestDTO"><span class="badge">M</span> UsagesDiffFullRequestDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> oldElement </td><td>   <a href="#messages.PsiElementIdDTO">PsiElementIdDTO</a> </td><td> required </td><td>   <div class="docs">  Old element. See PsiElementIdDTO parameters </div> </td>
+          </tr>
+
+          <tr>
+            <td> newElement </td><td>   <a href="#messages.PsiElementIdDTO">PsiElementIdDTO</a> </td><td> required </td><td>   <div class="docs">  New element. See PsiElementIdDTO parameters </div> </td>
+          </tr>
+
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.UsagesDiffRequestDTO">
+        <a href="#messages.UsagesDiffRequestDTO"><span class="badge">M</span> UsagesDiffRequestDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> fullRequest </td><td>   <a href="#messages.UsagesDiffFullRequestDTO">UsagesDiffFullRequestDTO</a> </td><td> optional </td><td>   <div class="docs">  See UsagesDiffFullRequestDTO parameters </div> </td>
+          </tr>
+
+          <tr>
+            <td> requestByAnotherRevision </td><td>   <a href="#messages.UsagesDiffByAnotherRevisionRequestDTO">UsagesDiffByAnotherRevisionRequestDTO</a> </td><td> optional </td><td>   <div class="docs">  See UsagesDiffByAnotherRevisionRequestDTO parameters </div> </td>
+          </tr>
+
+          <tr>
+            <td> requestByBoundaryRevisions </td><td>   <a href="#messages.UsagesDiffByBoundaryRevisionsRequestDTO">UsagesDiffByBoundaryRevisionsRequestDTO</a> </td><td> optional </td><td>   <div class="docs">  See UsagesDiffByBoundaryRevisionsRequestDTO parameters </div> </td>
+          </tr>
+
+      </table>
+    </div>
+    <div class="message block">
+      <h3 class="message" id="messages.UsagesDiffResponseDTO">
+        <a href="#messages.UsagesDiffResponseDTO"><span class="badge">M</span> UsagesDiffResponseDTO</a>
+      </h3>
+
+
+      <table class="field-table">
+        <thead>
+          <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> oldRevisionId </td><td> string </td><td> required </td><td>   <div class="docs">  ID of the old revision </div> </td>
+          </tr>
+          <tr>
+            <td> newRevisionId </td><td> string </td><td> required </td><td>   <div class="docs">  ID of the new revision </div> </td>
+          </tr>
+          <tr>
+            <td> usages </td><td>   <a href="#messages.UsagesDiffDTO">UsagesDiffDTO</a> </td><td> repeated </td><td>   <div class="docs">  See UsagesDiffDTO parameters </div> </td>
+          </tr>
+
+      </table>
+    </div>
+  </div>
+</body>
+
+</html>

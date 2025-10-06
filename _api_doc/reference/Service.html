@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="format-detection" content="telephone=no">
+
+<title>service.proto</title>
+
+<link rel="stylesheet" type="text/css" href="../styles/page.css">
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" sizes="16x16 32x32">
+</head>
+<body>
+  <div class="upsource-doc">
+    <h2>
+      Upsource API Documentation
+      <a class="index" href="index.html">Index</a>
+    </h2>
+
+    <h3>Services</h3>
+    <a href="../json/Service.json" class="json-link" target="_blank">View as JSON</a>
+    <div class="service block">
+      <h3 class="service" id="messages.UpsourceRPC"><a href="#messages.UpsourceRPC"><span class="badge">S</span> UpsourceRPC</a></h3>
+
+        <div class="docs">  Main RPC service </div>
+
+      <table class="methods-table">
+        <thead>
+          <tr><td>Name</td><td>Argument</td><td>Return Value</td><td>Description</td></tr>
+        </thead>
+          <tr>
+            <td> acceptUserAgreement </td>
+            <td>   <a href="Ids.html#messages.VoidMessage">VoidMessage</a> </td>
+            <td>   <a href="Ids.html#messages.VoidMessage">VoidMessage</a> </td>
+            <td>   <div class="docs">  Accepts the end user agreement for a given user </div> </td>
+          </tr>
+          <tr>
+            <td> getUserAgreementText </td>
+            <td>   <a href="Ids.html#messages.VoidMessage">VoidMessage</a> </td>
+            <td>   <a href="Misc.html#messages.UserAgreementTextDTO">UserAgreementTextDTO</a> </td>
+            <td>   <div class="docs">  Returns the text of the end user agreement </div> </td>
+          </tr>
+          <tr>
+            <td> getAllProjects </td>
+            <td>   <a href="Ids.html#messages.ProjectIdListDTO">ProjectIdListDTO</a> </td>
+            <td>   <a href="Projects.html#messages.ShortProjectInfoListDTO">ShortProjectInfoListDTO</a> </td>
+            <td>   <div class="docs">  In the case of an empty request, returns the list of all short project infos. Otherwise returns the list of project infos for a given set of project IDs. In any case only the projects the user has access to are returned. </div> </td>
+          </tr>
+          <tr>
+            <td> findProjects </td>
+            <td>   <a href="Projects.html#messages.FindProjectsRequestDTO">FindProjectsRequestDTO</a> </td>
+            <td>   <a href="Projects.html#messages.ShortProjectInfoListDTO">ShortProjectInfoListDTO</a> </td>
+            <td>   <div class="docs">  Returns the list of projects  matching a given search criteria </div> </td>
+          </tr>
+          <tr>
+            <td> getProjectInfo </td>
+            <td>   <a href="Ids.html#messages.ProjectIdDTO">ProjectIdDTO</a> </td>
+            <td>   <a href="Projects.html#messages.ProjectInfoDTO">ProjectInfoDTO</a> </td>
+            <td>   <div class="docs">  Returns basic information about the project - name, project model, latest revision, etc. </div> </td>
+          </tr>
+          <tr>
+            <td> getProjectVcsLinks </td>
+            <td>   <a href="Ids.html#messages.ProjectIdDTO">ProjectIdDTO</a> </td>
+            <td>   <a href="Projects.html#messages.VcsRepoListDTO">VcsRepoListDTO</a> </td>
+            <td>   <div class="docs">  Returns VCS repository URL(s) for a given project </div> </td>
+          </tr>
+          <tr>
+            <td> getProjectReadme </td>
+            <td>   <a href="Ids.html#messages.ProjectIdDTO">ProjectIdDTO</a> </td>
+            <td>   <a href="Projects.html#messages.ProjectReadmeResponseDTO">ProjectReadmeResponseDTO</a> </td>
+            <td>   <div class="docs">  Returns README (README.md) contents from the latest revision </div> </td>
+          </tr>
+          <tr>
+            <td> getCodeReviewPatterns </td>
+            <td>   <a href="Ids.html#messages.VoidMessage">VoidMessage</a> </td>
+            <td>   <a href="Projects.html#messages.CodeReviewPatternsDTO">CodeReviewPatternsDTO</a> </td>
+            <td>   <div class="docs">  Returns all registered code review patterns across all projects </div> </td>
+          </tr>
+          <tr>
+            <td> getHeadRevision </td>
+            <td>   <a href="Ids.html#messages.ProjectIdDTO">ProjectIdDTO</a> </td>
+            <td>   <a href="Projects.html#messages.RevisionInfoDTO">RevisionInfoDTO</a> </td>
+            <td>   <div class="docs">  Returns the revision descriptor for the latest revision - ID, date, commit message, authors, parent revisions, etc. </div> </td>
+          </tr>
+          <tr>
+            <td> getRevisionsList </td>
+            <td>   <a href="Projects.html#messages.RevisionsListRequestDTO">RevisionsListRequestDTO</a> </td>
+            <td>   <a href="Projects.html#messages.RevisionDescriptorListDTO">RevisionDescriptorListDTO</a> </td>
+            <td>   <div class="docs">  Returns the list of revisions in a given project (optionally with revision graph) </div> </td>
+          </tr>
+          <tr>
+            <td> getRevisionsListFiltered </td>
+            <td>   <a href="Projects.html#messages.RevisionsListFilteredRequestDTO">RevisionsListFilteredRequestDTO</a> </td>
+            <td>   <a href="Projects.html#messages.RevisionDescriptorListDTO">RevisionDescriptorListDTO</a> </td>
+            <td>   <div class="docs">  Returns the list of revisions that match the given search query </div> </td>
+          </tr>
+          <tr>
+            <td> getUserRevisionsList </td>
+            <td>   <a href="Projects.html#messages.UserRevisionsListRequestDTO">UserRevisionsListRequestDTO</a> </td>
+            <td>   <a href="Projects.html#messages.RevisionDescriptorListDTO">RevisionDescriptorListDTO</a> </td>
+            <td>   <div class="docs">  Returns the list of revisions across all projects authored by the specified user and (optionally) matching the specified query </div> </td>
+          </tr>
+          <tr>
+            <td> getRevisionsListUpdate </td>
+            <td>   <a href="Projects.html#messages.RevisionsListUpdateRequestDTO">RevisionsListUpdateRequestDTO</a> </td>
+            <td>   <a href="Projects.html#messages.RevisionsListUpdateResponseDTO">RevisionsListUpdateResponseDTO</a> </td>
+            <td>   <div class="docs">  Returns the list of revisions since the given revision </div> </td>
+          </tr>
+          <tr>
+            <td> getRevisionInfo </td>
+            <td>   <a href="Ids.html#messages.RevisionInProjectDTO">RevisionInProjectDTO</a> </td>
+            <td>   <a href="Projects.html#messages.RevisionInfoDTO">RevisionInfoDTO</a> </td>
+            <td>   <div class="docs">  Returns the revision descriptor - ID, date, commit message, authors, parent revisions, etc. </div> </td>
+          </tr>
+          <tr>
+            <td> getRevisionChanges </td>
+            <td>   <a href="Projects.html#messages.RevisionChangesRequestDTO">RevisionChangesRequestDTO</a> </td>
+            <td>   <a href="Projects.html#messages.RevisionsDiffDTO">RevisionsDiffDTO</a> </td>
+            <td>   <div class="docs">  Returns the list of changes (files that were added, removed, or modified) in a revision </div> </td>
+          </tr>
+          <tr>
+            <td> getRevisionBranches </td>
+            <td>   <a href="Ids.html#messages.RevisionInProjectDTO">RevisionInProjectDTO</a> </td>
+            <td>   <a href="Projects.html#messages.RevisionBranchesResponseDTO">RevisionBranchesResponseDTO</a> </td>
+            <td>   <div class="docs">  Returns the list of branches a revision is part of </div> </td>
+          </tr>
+          <tr>
+            <td> getProjectSubtree </td>
+            <td>   <a href="Ids.html#messages.FileInRevisionDTO">FileInRevisionDTO</a> </td>
+            <td>   <a href="Projects.html#messages.ProjectItemsListDTO">ProjectItemsListDTO</a> </td>
+            <td>   <div class="docs">  Returns the project structure tree starting from the given file </div> </td>
+          </tr>
+          <tr>
+            <td> getFileMeta </td>
+            <td>   <a href="Ids.html#messages.FileInRevisionDTO">FileInRevisionDTO</a> </td>
+            <td>   <a href="Projects.html#messages.FileMetaResponseDTO">FileMetaResponseDTO</a> </td>
+            <td>   <div class="docs">  Returns meta information about a file (is deleted, is latest revision, etc.) </div> </td>
+          </tr>
+          <tr>
+            <td> getFileAnnotation </td>
+            <td>   <a href="Ids.html#messages.FileInRevisionDTO">FileInRevisionDTO</a> </td>
+            <td>   <a href="Projects.html#messages.FileAnnotationResponseDTO">FileAnnotationResponseDTO</a> </td>
+            <td>   <div class="docs">  Returns the line-by-line file annotation </div> </td>
+          </tr>
+          <tr>
+            <td> getFileContributors </td>
+            <td>   <a href="Ids.html#messages.FileInRevisionDTO">FileInRevisionDTO</a> </td>
+            <td>   <a href="FileOrDirectoryContent.html#messages.FileContributorsResponseDTO">FileContributorsResponseDTO</a> </td>
+            <td>   <div class="docs">  Returns the file contributors </div> </td>
+          </tr>
+          <tr>
+            <td> getFileFragmentAuthors </td>
+            <td>   <a href="Projects.html#messages.FileFragmentAuthorsRequestDTO">FileFragmentAuthorsRequestDTO</a> </td>
+            <td>   <a href="Users.html#messages.UsersListDTO">UsersListDTO</a> </td>
+            <td>   <div class="docs">  Returns the authors of the given file fragment </div> </td>
+          </tr>
+          <tr>
+            <td> getFileHistory </td>
+            <td>   <a href="Projects.html#messages.FileHistoryRequestDTO">FileHistoryRequestDTO</a> </td>
+            <td>   <a href="Projects.html#messages.FileHistoryResponseDTO">FileHistoryResponseDTO</a> </td>
+            <td>   <div class="docs">  Returns the history (list of revision IDs and change types) of the file </div> </td>
+          </tr>
+          <tr>
+            <td> getFileDiff </td>
+            <td>   <a href="Projects.html#messages.FileDiffRequestDTO">FileDiffRequestDTO</a> </td>
+            <td>   <a href="Projects.html#messages.FileDiffResponseDTO">FileDiffResponseDTO</a> </td>
+            <td>   <div class="docs">  Returns the diff (changed lines and ranges) between the given revisions of a file </div> </td>
+          </tr>
+          <tr>
+            <td> getFileInlineDiff </td>
+            <td>   <a href="Projects.html#messages.FileDiffRequestDTO">FileDiffRequestDTO</a> </td>
+            <td>   <a href="Projects.html#messages.FileInlineDiffResponseDTO">FileInlineDiffResponseDTO</a> </td>
+            <td>   <div class="docs">  Returns the inline diff (changed lines and ranges, line numbers mapping) for the given file </div> </td>
+          </tr>
+          <tr>
+            <td> getFileMergeInlineDiff </td>
+            <td>   <a href="Projects.html#messages.FileMergeInlineDiffRequestDTO">FileMergeInlineDiffRequestDTO</a> </td>
+            <td>   <a href="Projects.html#messages.FileInlineDiffResponseDTO">FileInlineDiffResponseDTO</a> </td>
+            <td>   <div class="docs">  Returns the inline diff of a file after the merge with the base branch </div> </td>
+          </tr>
+          <tr>
+            <td> getFileContent </td>
+            <td>   <a href="Ids.html#messages.FileInRevisionDTO">FileInRevisionDTO</a> </td>
+            <td>   <a href="FileOrDirectoryContent.html#messages.FileContentResponseDTO">FileContentResponseDTO</a> </td>
+            <td>   <div class="docs">  Returns the contents of the given file </div> </td>
+          </tr>
+          <tr>
+            <td> getFilePsi </td>
+            <td>   <a href="FileOrDirectoryContent.html#messages.FilePsiRequestDTO">FilePsiRequestDTO</a> </td>
+            <td>   <a href="FileOrDirectoryContent.html#messages.FilePsiResponseDTO">FilePsiResponseDTO</a> </td>
+            <td>   <div class="docs">  Returns the semantic markup of the given file </div> </td>
+          </tr>
+          <tr>
+            <td> getStubNavigationRange </td>
+            <td>   <a href="FindUsages.html#messages.StubIdDTO">StubIdDTO</a> </td>
+            <td>   <a href="FindUsages.html#messages.NavigationTargetItemDTO">NavigationTargetItemDTO</a> </td>
+            <td>   <div class="docs">  Returns the text range of the given PSI element </div> </td>
+          </tr>
+          <tr>
+            <td> getElementDescription </td>
+            <td>   <a href="FindUsages.html#messages.PsiElementIdDTO">PsiElementIdDTO</a> </td>
+            <td>   <a href="FindUsages.html#messages.TargetDescriptionDTO">TargetDescriptionDTO</a> </td>
+            <td>   <div class="docs">  Returns the text representation of the given PSI element </div> </td>
+          </tr>
+          <tr>
+            <td> getElementDocumentation </td>
+            <td>   <a href="FindUsages.html#messages.PsiElementIdDTO">PsiElementIdDTO</a> </td>
+            <td>   <a href="FindUsages.html#messages.ElementDocumentationDTO">ElementDocumentationDTO</a> </td>
+            <td>   <div class="docs">  Returns the documentation (e.g. Javadoc) for the given PSI element </div> </td>
+          </tr>
+          <tr>
+            <td> findUsages </td>
+            <td>   <a href="FindUsages.html#messages.PsiElementIdDTO">PsiElementIdDTO</a> </td>
+            <td>   <a href="FindUsages.html#messages.FindUsagesResponseDTO">FindUsagesResponseDTO</a> </td>
+            <td>   <div class="docs">  Returns the list of usages for the given PSI element </div> </td>
+          </tr>
+          <tr>
+            <td> getUsagesDiff </td>
+            <td>   <a href="FindUsages.html#messages.UsagesDiffRequestDTO">UsagesDiffRequestDTO</a> </td>
+            <td>   <a href="FindUsages.html#messages.UsagesDiffResponseDTO">UsagesDiffResponseDTO</a> </td>
+            <td>   <div class="docs">  Returns the usages diff for the given PSI element between two revisions </div> </td>
+          </tr>
+          <tr>
+            <td> findHierarchy </td>
+            <td>   <a href="FindUsages.html#messages.PsiElementIdDTO">PsiElementIdDTO</a> </td>
+            <td>   <a href="FindUsages.html#messages.FindHierarchyResultDTO">FindHierarchyResultDTO</a> </td>
+            <td>   <div class="docs">  Returns the list of inheritors and ancestors for the given PSI element </div> </td>
+          </tr>
+          <tr>
+            <td> gotoFileByName </td>
+            <td>   <a href="FindUsages.html#messages.GotoFileRequestDTO">GotoFileRequestDTO</a> </td>
+            <td>   <a href="FindUsages.html#messages.GotoFileResponseDTO">GotoFileResponseDTO</a> </td>
+            <td>   <div class="docs">  Returns the files matched by the search query in a given revision, review, project-wide, or service-wide </div> </td>
+          </tr>
+          <tr>
+            <td> textSearch </td>
+            <td>   <a href="FindUsages.html#messages.TextSearchRequestDTO">TextSearchRequestDTO</a> </td>
+            <td>   <a href="FindUsages.html#messages.TextSearchResponseDTO">TextSearchResponseDTO</a> </td>
+            <td>   <div class="docs">  Performs full-text search across all commits and files (either service-wide or project-wide) </div> </td>
+          </tr>
+          <tr>
+            <td> findBranches </td>
+            <td>   <a href="FindUsages.html#messages.FindBranchRequestDTO">FindBranchRequestDTO</a> </td>
+            <td>   <a href="FindUsages.html#messages.FindBranchResponseDTO">FindBranchResponseDTO</a> </td>
+            <td>   <div class="docs">  Performs project-wide search by branch name </div> </td>
+          </tr>
+          <tr>
+            <td> getBranchDiff </td>
+            <td>   <a href="Projects.html#messages.BranchRequestDTO">BranchRequestDTO</a> </td>
+            <td>   <a href="Projects.html#messages.RevisionsDiffDTO">RevisionsDiffDTO</a> </td>
+            <td>   <div class="docs">  Returns the list of changes in the given branch </div> </td>
+          </tr>
+          <tr>
+            <td> getRevisionsDiff </td>
+            <td>   <a href="Projects.html#messages.RevisionsDiffRequestDTO">RevisionsDiffRequestDTO</a> </td>
+            <td>   <a href="Projects.html#messages.RevisionsDiffDTO">RevisionsDiffDTO</a> </td>
+            <td>   <div class="docs">  Returns the list of changes between any two revisions </div> </td>
+          </tr>
+          <tr>
+            <td> getCompareInfo </td>
+            <td>   <a href="Projects.html#messages.CompareRequestDTO">CompareRequestDTO</a> </td>
+            <td>   <a href="Projects.html#messages.CompareInfoDTO">CompareInfoDTO</a> </td>
+            <td>   <div class="docs">  Compare page </div> </td>
+          </tr>
+          <tr>
+            <td> getCompareGraph </td>
+            <td>   <a href="Projects.html#messages.RevisionsDiffRequestDTO">RevisionsDiffRequestDTO</a> </td>
+            <td>   <a href="Projects.html#messages.CompareGraphDTO">CompareGraphDTO</a> </td>
+            <td>   <div class="docs">  Revision graph for compare page </div> </td>
+          </tr>
+          <tr>
+            <td> getBranchInfo </td>
+            <td>   <a href="Projects.html#messages.BranchRequestDTO">BranchRequestDTO</a> </td>
+            <td>   <a href="Projects.html#messages.BranchInfoDTO">BranchInfoDTO</a> </td>
+            <td>   <div class="docs">  Branch page </div> </td>
+          </tr>
+          <tr>
+            <td> getBranchGraph </td>
+            <td>   <a href="Projects.html#messages.BranchRequestDTO">BranchRequestDTO</a> </td>
+            <td>   <a href="Projects.html#messages.BranchGraphDTO">BranchGraphDTO</a> </td>
+            <td>   <div class="docs">  Revision graph for branch page </div> </td>
+          </tr>
+          <tr>
+            <td> getBranches </td>
+            <td>   <a href="Projects.html#messages.BranchesRequestDTO">BranchesRequestDTO</a> </td>
+            <td>   <a href="Projects.html#messages.BranchListDTO">BranchListDTO</a> </td>
+            <td>   <div class="docs">  Returns the list of branches in a project </div> </td>
+          </tr>
+          <tr>
+            <td> findCommits </td>
+            <td>   <a href="Projects.html#messages.FindCommitsRequestDTO">FindCommitsRequestDTO</a> </td>
+            <td>   <a href="Projects.html#messages.FindCommitsResponseDTO">FindCommitsResponseDTO</a> </td>
+            <td>   <div class="docs">  Finds commit(s) with the given commit hash </div> </td>
+          </tr>
+          <tr>
+            <td> getProjectDiscussions </td>
+            <td>   <a href="Projects.html#messages.DiscussionsInProjectRequestDTO">DiscussionsInProjectRequestDTO</a> </td>
+            <td>   <a href="Projects.html#messages.DiscussionsInProjectDTO">DiscussionsInProjectDTO</a> </td>
+            <td>   <div class="docs">  Returns the discussions in the project, matching given query </div> </td>
+          </tr>
+          <tr>
+            <td> getFileDiscussions </td>
+            <td>   <a href="Ids.html#messages.FileInRevisionDTO">FileInRevisionDTO</a> </td>
+            <td>   <a href="Projects.html#messages.DiscussionsInFileDTO">DiscussionsInFileDTO</a> </td>
+            <td>   <div class="docs">  Returns the discussions in the given file </div> </td>
+          </tr>
+          <tr>
+            <td> getInlineDiscussionsInRevision </td>
+            <td>   <a href="Ids.html#messages.RevisionInProjectDTO">RevisionInProjectDTO</a> </td>
+            <td>   <a href="Projects.html#messages.DiscussionsInFilesDTO">DiscussionsInFilesDTO</a> </td>
+            <td>   <div class="docs">  Returns the discussions in the given revision </div> </td>
+          </tr>
+          <tr>
+            <td> createDiscussion </td>
+            <td>   <a href="Projects.html#messages.CreateDiscussionRequestDTO">CreateDiscussionRequestDTO</a> </td>
+            <td>   <a href="Projects.html#messages.DiscussionInFileDTO">DiscussionInFileDTO</a> </td>
+            <td>   <div class="docs">  Creates a new discussion </div> </td>
+          </tr>
+          <tr>
+            <td> resolveDiscussion </td>
+            <td>   <a href="Projects.html#messages.ResolveDiscussionRequestDTO">ResolveDiscussionRequestDTO</a> </td>
+            <td>   <a href="Projects.html#messages.ResolveDiscussionResponseDTO">ResolveDiscussionResponseDTO</a> </td>
+            <td>   <div class="docs">  Updates a discussion </div> </td>
+          </tr>
+          <tr>
+            <td> getCurrentUserCanResolveDiscussion </td>
+            <td>   <a href="Projects.html#messages.DiscussionIdDTO">DiscussionIdDTO</a> </td>
+            <td>   <a href="Ids.html#messages.VoidMessage">VoidMessage</a> </td>
+            <td>   <div class="docs">  Checks if current user can resolve the given discussion </div> </td>
+          </tr>
+          <tr>
+            <td> addDiscussionLabel </td>
+            <td>   <a href="Projects.html#messages.UpdateDiscussionLabelRequestDTO">UpdateDiscussionLabelRequestDTO</a> </td>
+            <td>   <a href="Projects.html#messages.LabelDTO">LabelDTO</a> </td>
+            <td>   <div class="docs">  Adds a label to a discussion </div> </td>
+          </tr>
+          <tr>
+            <td> addReviewLabel </td>
+            <td>   <a href="Projects.html#messages.UpdateReviewLabelRequestDTO">UpdateReviewLabelRequestDTO</a> </td>
+            <td>   <a href="Projects.html#messages.UpdateReviewLabelResponseDTO">UpdateReviewLabelResponseDTO</a> </td>
+            <td>   <div class="docs">  Adds a label to a review </div> </td>
+          </tr>
+          <tr>
+            <td> removeDiscussionLabel </td>
+            <td>   <a href="Projects.html#messages.UpdateDiscussionLabelRequestDTO">UpdateDiscussionLabelRequestDTO</a> </td>
+            <td>   <a href="Ids.html#messages.VoidMessage">VoidMessage</a> </td>
+            <td>   <div class="docs">  Removes a label from a discussion </div> </td>
+          </tr>
+          <tr>
+            <td> removeReviewLabel </td>
+            <td>   <a href="Projects.html#messages.UpdateReviewLabelRequestDTO">UpdateReviewLabelRequestDTO</a> </td>
+            <td>   <a href="Projects.html#messages.UpdateReviewLabelResponseDTO">UpdateReviewLabelResponseDTO</a> </td>
+            <td>   <div class="docs">  Removes a label from a review </div> </td>
+          </tr>
+          <tr>
+            <td> starDiscussion </td>
+            <td>   <a href="Projects.html#messages.UpdateDiscussionFlagRequestDTO">UpdateDiscussionFlagRequestDTO</a> </td>
+            <td>   <a href="Ids.html#messages.VoidMessage">VoidMessage</a> </td>
+            <td>   <div class="docs">  Stars a discussion </div> </td>
+          </tr>
+          <tr>
+            <td> readDiscussion </td>
+            <td>   <a href="Projects.html#messages.UpdateDiscussionFlagRequestDTO">UpdateDiscussionFlagRequestDTO</a> </td>
+            <td>   <a href="Ids.html#messages.VoidMessage">VoidMessage</a> </td>
+            <td>   <div class="docs">  Toggles the read/unread state of a discussion </div> </td>
+          </tr>
+          <tr>
+            <td> addComment </td>
+            <td>   <a href="Projects.html#messages.AddCommentRequestDTO">AddCommentRequestDTO</a> </td>
+            <td>   <a href="Projects.html#messages.CommentDTO">CommentDTO</a> </td>
+            <td>   <div class="docs">  Adds a comment to the discussion </div> </td>
+          </tr>
+          <tr>
+            <td> updateComment </td>
+            <td>   <a href="Projects.html#messages.UpdateCommentRequestDTO">UpdateCommentRequestDTO</a> </td>
+            <td>   <a href="Projects.html#messages.UpdateCommentResponseDTO">UpdateCommentResponseDTO</a> </td>
+            <td>   <div class="docs">  Updates the comment </div> </td>
+          </tr>
+          <tr>
+            <td> removeComment </td>
+            <td>   <a href="Projects.html#messages.RemoveCommentRequestDTO">RemoveCommentRequestDTO</a> </td>
+            <td>   <a href="Projects.html#messages.RemoveCommentResponseDTO">RemoveCommentResponseDTO</a> </td>
+            <td>   <div class="docs">  Removes the comment </div> </td>
+          </tr>
+          <tr>
+            <td> updateTaskList </td>
+            <td>   <a href="Projects.html#messages.UpdateTaskListRequestDTO">UpdateTaskListRequestDTO</a> </td>
+            <td>   <a href="Projects.html#messages.UpdateCommentResponseDTO">UpdateCommentResponseDTO</a> </td>
+            <td>   <div class="docs">  Updates the task list embedded in a comment </div> </td>
+          </tr>
+          <tr>
+            <td> toggleReaction </td>
+            <td>   <a href="Projects.html#messages.ToggleReactionRequestDTO">ToggleReactionRequestDTO</a> </td>
+            <td>   <a href="Ids.html#messages.VoidMessage">VoidMessage</a> </td>
+            <td>   <div class="docs">  Adds or removes a reaction to a specified target </div> </td>
+          </tr>
+          <tr>
+            <td> getFeed </td>
+            <td>   <a href="Projects.html#messages.FeedRequestDTO">FeedRequestDTO</a> </td>
+            <td>   <a href="Projects.html#messages.FeedDTO">FeedDTO</a> </td>
+            <td>   <div class="docs">  Returns the news feed </div> </td>
+          </tr>
+          <tr>
+            <td> getRevisionDiscussions </td>
+            <td>   <a href="Ids.html#messages.RevisionInProjectDTO">RevisionInProjectDTO</a> </td>
+            <td>   <a href="Projects.html#messages.DiscussionsInRevisionDTO">DiscussionsInRevisionDTO</a> </td>
+            <td>   <div class="docs">  Returns the discussions in the given revision </div> </td>
+          </tr>
+          <tr>
+            <td> getRevisionReviewInfo </td>
+            <td>   <a href="Projects.html#messages.RevisionListDTO">RevisionListDTO</a> </td>
+            <td>   <a href="Projects.html#messages.RevisionReviewInfoListDTO">RevisionReviewInfoListDTO</a> </td>
+            <td>   <div class="docs">  Returns short review information for a set of revisions </div> </td>
+          </tr>
+          <tr>
+            <td> getSuggestedReviewsForRevisions </td>
+            <td>   <a href="Projects.html#messages.RevisionListDTO">RevisionListDTO</a> </td>
+            <td>   <a href="Projects.html#messages.SuggestedReviewListDTO">SuggestedReviewListDTO</a> </td>
+            <td>   <div class="docs">  Returns review suggestions for a set of revisions </div> </td>
+          </tr>
+          <tr>
+            <td> getSuggestedReviewForGhosts </td>
+            <td>   <a href="Projects.html#messages.UncommittedRevisionDTO">UncommittedRevisionDTO</a> </td>
+            <td>   <a href="Projects.html#messages.ReviewSuggestDTO">ReviewSuggestDTO</a> </td>
+            <td>   <div class="docs">  Returns review suggestion for the uncommitted revision </div> </td>
+          </tr>
+          <tr>
+            <td> getRevisionDiscussionCounters </td>
+            <td>   <a href="Projects.html#messages.RevisionDiscussionCountersRequestDTO">RevisionDiscussionCountersRequestDTO</a> </td>
+            <td>   <a href="Projects.html#messages.RevisionDiscussionCountersListDTO">RevisionDiscussionCountersListDTO</a> </td>
+            <td>   <div class="docs">  Returns discussion counters for a set of revisions </div> </td>
+          </tr>
+          <tr>
+            <td> getRevisionBuildStatus </td>
+            <td>   <a href="Projects.html#messages.RevisionListDTO">RevisionListDTO</a> </td>
+            <td>   <a href="Projects.html#messages.RevisionBuildStatusListDTO">RevisionBuildStatusListDTO</a> </td>
+            <td>   <div class="docs">  Returns build status for revisions </div> </td>
+          </tr>
+          <tr>
+            <td> getRevisionsOwnershipSummary </td>
+            <td>   <a href="Projects.html#messages.RevisionListDTO">RevisionListDTO</a> </td>
+            <td>   <a href="Projects.html#messages.RevisionsOwnershipSummaryDTO">RevisionsOwnershipSummaryDTO</a> </td>
+            <td>   <div class="docs">  Returns the code ownership summary for given revisions </div> </td>
+          </tr>
+          <tr>
+            <td> getRevisionsExternalInspectionsDiff </td>
+            <td>   <a href="Projects.html#messages.RevisionListDTO">RevisionListDTO</a> </td>
+            <td>   <a href="Projects.html#messages.RevisionsExternalInspectionsDiffResponseDTO">RevisionsExternalInspectionsDiffResponseDTO</a> </td>
+            <td>   <div class="docs">  Returns the diff of external inspections compared to the previous run </div> </td>
+          </tr>
+          <tr>
+            <td> getUsersForMention </td>
+            <td>   <a href="Users.html#messages.UsersForMentionRequestDTO">UsersForMentionRequestDTO</a> </td>
+            <td>   <a href="Users.html#messages.UsersListDTO">UsersListDTO</a> </td>
+            <td>   <div class="docs">  Returns the suggested users to be mentioned in a comment </div> </td>
+          </tr>
+          <tr>
+            <td> getUsersForReview </td>
+            <td>   <a href="Users.html#messages.UsersForReviewRequestDTO">UsersForReviewRequestDTO</a> </td>
+            <td>   <a href="Users.html#messages.UsersForReviewDTO">UsersForReviewDTO</a> </td>
+            <td>   <div class="docs">  Returns the suggested reviewers for a given review </div> </td>
+          </tr>
+          <tr>
+            <td> getProjectUserGroups </td>
+            <td>   <a href="Users.html#messages.ProjectUserGroupsRequestDTO">ProjectUserGroupsRequestDTO</a> </td>
+            <td>   <a href="Users.html#messages.UserGroupsListDTO">UserGroupsListDTO</a> </td>
+            <td>   <div class="docs">  Returns the list of non-empty user groups relevant to a given project </div> </td>
+          </tr>
+          <tr>
+            <td> getUserGroupsByIds </td>
+            <td>   <a href="Users.html#messages.UserGroupsIdsListDTO">UserGroupsIdsListDTO</a> </td>
+            <td>   <a href="Users.html#messages.UserGroupsListDTO">UserGroupsListDTO</a> </td>
+            <td>   <div class="docs">  Returns the list of user groups by given IDs </div> </td>
+          </tr>
+          <tr>
+            <td> findUsers </td>
+            <td>   <a href="Users.html#messages.FindUsersRequestDTO">FindUsersRequestDTO</a> </td>
+            <td>   <a href="Users.html#messages.UserInfoResponseDTO">UserInfoResponseDTO</a> </td>
+            <td>   <div class="docs">  Returns the list of users matching a given search criteria </div> </td>
+          </tr>
+          <tr>
+            <td> getLabels </td>
+            <td>   <a href="Projects.html#messages.LabelsRequestDTO">LabelsRequestDTO</a> </td>
+            <td>   <a href="Projects.html#messages.LabelsListDTO">LabelsListDTO</a> </td>
+            <td>   <div class="docs">  Returns the list of discussion labels </div> </td>
+          </tr>
+          <tr>
+            <td> getReviewLabels </td>
+            <td>   <a href="Projects.html#messages.LabelsRequestDTO">LabelsRequestDTO</a> </td>
+            <td>   <a href="Projects.html#messages.LabelsListDTO">LabelsListDTO</a> </td>
+            <td>   <div class="docs">  Returns the list of review labels </div> </td>
+          </tr>
+          <tr>
+            <td> getReviews </td>
+            <td>   <a href="Projects.html#messages.ReviewsRequestDTO">ReviewsRequestDTO</a> </td>
+            <td>   <a href="Projects.html#messages.ReviewListDTO">ReviewListDTO</a> </td>
+            <td>   <div class="docs">  Returns the list of reviews </div> </td>
+          </tr>
+          <tr>
+            <td> createReview </td>
+            <td>   <a href="Projects.html#messages.CreateReviewRequestDTO">CreateReviewRequestDTO</a> </td>
+            <td>   <a href="Projects.html#messages.ReviewDescriptorDTO">ReviewDescriptorDTO</a> </td>
+            <td>   <div class="docs">  Creates a review </div> </td>
+          </tr>
+          <tr>
+            <td> closeReview </td>
+            <td>   <a href="Projects.html#messages.CloseReviewRequestDTO">CloseReviewRequestDTO</a> </td>
+            <td>   <a href="Projects.html#messages.CloseReviewResponseDTO">CloseReviewResponseDTO</a> </td>
+            <td>   <div class="docs">  Closes a review </div> </td>
+          </tr>
+          <tr>
+            <td> renameReview </td>
+            <td>   <a href="Projects.html#messages.RenameReviewRequestDTO">RenameReviewRequestDTO</a> </td>
+            <td>   <a href="Projects.html#messages.RenameReviewResponseDTO">RenameReviewResponseDTO</a> </td>
+            <td>   <div class="docs">  Renames a review </div> </td>
+          </tr>
+          <tr>
+            <td> editReviewDescription </td>
+            <td>   <a href="Projects.html#messages.EditReviewDescriptionRequestDTO">EditReviewDescriptionRequestDTO</a> </td>
+            <td>   <a href="Projects.html#messages.EditReviewDescriptionResponseDTO">EditReviewDescriptionResponseDTO</a> </td>
+            <td>   <div class="docs">  Sets review description </div> </td>
+          </tr>
+          <tr>
+            <td> getReviewDetails </td>
+            <td>   <a href="Ids.html#messages.ReviewIdDTO">ReviewIdDTO</a> </td>
+            <td>   <a href="Projects.html#messages.ReviewDescriptorDTO">ReviewDescriptorDTO</a> </td>
+            <td>   <div class="docs">  Returns review details </div> </td>
+          </tr>
+          <tr>
+            <td> getReviewOwnershipSummary </td>
+            <td>   <a href="Ids.html#messages.ReviewIdDTO">ReviewIdDTO</a> </td>
+            <td>   <a href="Projects.html#messages.ReviewOwnershipSummaryDTO">ReviewOwnershipSummaryDTO</a> </td>
+            <td>   <div class="docs">  Returns the code ownership summary for a given review </div> </td>
+          </tr>
+          <tr>
+            <td> getReviewProgress </td>
+            <td>   <a href="Ids.html#messages.ReviewIdDTO">ReviewIdDTO</a> </td>
+            <td>   <a href="Projects.html#messages.ReviewProgressDTO">ReviewProgressDTO</a> </td>
+            <td>   <div class="docs">  Returns participants' progress in a given review </div> </td>
+          </tr>
+          <tr>
+            <td> getReviewInspectionsDiff </td>
+            <td>   <a href="Projects.html#messages.ReviewInspectionsDiffRequestDTO">ReviewInspectionsDiffRequestDTO</a> </td>
+            <td>   <a href="FileOrDirectoryContent.html#messages.InspectionsDiffDTO">InspectionsDiffDTO</a> </td>
+            <td>   <div class="docs">  Returns the diff of inspections between two revisions </div> </td>
+          </tr>
+          <tr>
+            <td> addRevisionToReview </td>
+            <td>   <a href="Projects.html#messages.RevisionsInReviewDTO">RevisionsInReviewDTO</a> </td>
+            <td>   <a href="Ids.html#messages.VoidMessage">VoidMessage</a> </td>
+            <td>   <div class="docs">  Attaches a revision to a review </div> </td>
+          </tr>
+          <tr>
+            <td> startBranchTracking </td>
+            <td>   <a href="Projects.html#messages.StartBranchTrackingRequestDTO">StartBranchTrackingRequestDTO</a> </td>
+            <td>   <a href="Ids.html#messages.VoidMessage">VoidMessage</a> </td>
+            <td>   <div class="docs">  Initiates branch tracking for a given review </div> </td>
+          </tr>
+          <tr>
+            <td> stopBranchTracking </td>
+            <td>   <a href="Projects.html#messages.StopBranchTrackingRequestDTO">StopBranchTrackingRequestDTO</a> </td>
+            <td>   <a href="Ids.html#messages.VoidMessage">VoidMessage</a> </td>
+            <td>   <div class="docs">  Stops branch tracking for a given review </div> </td>
+          </tr>
+          <tr>
+            <td> squashReviewRevisions </td>
+            <td>   <a href="Ids.html#messages.ReviewIdDTO">ReviewIdDTO</a> </td>
+            <td>   <a href="Ids.html#messages.VoidMessage">VoidMessage</a> </td>
+            <td>   <div class="docs">  Rebase the review to a single squashed revision </div> </td>
+          </tr>
+          <tr>
+            <td> removeRevisionFromReview </td>
+            <td>   <a href="Projects.html#messages.RevisionsInReviewDTO">RevisionsInReviewDTO</a> </td>
+            <td>   <a href="Ids.html#messages.VoidMessage">VoidMessage</a> </td>
+            <td>   <div class="docs">  Removes a revision from a review </div> </td>
+          </tr>
+          <tr>
+            <td> getRevisionsInReview </td>
+            <td>   <a href="Ids.html#messages.ReviewIdDTO">ReviewIdDTO</a> </td>
+            <td>   <a href="Projects.html#messages.RevisionsInReviewResponseDTO">RevisionsInReviewResponseDTO</a> </td>
+            <td>   <div class="docs">  Returns the list of revisions in a review </div> </td>
+          </tr>
+          <tr>
+            <td> getSuggestedRevisionsForReview </td>
+            <td>   <a href="Ids.html#messages.ReviewIdDTO">ReviewIdDTO</a> </td>
+            <td>   <a href="Projects.html#messages.SuggestedRevisionListDTO">SuggestedRevisionListDTO</a> </td>
+            <td>   <div class="docs">  Returns the list of suggested revisions for a particular review </div> </td>
+          </tr>
+          <tr>
+            <td> addParticipantToReview </td>
+            <td>   <a href="Projects.html#messages.ParticipantInReviewRequestDTO">ParticipantInReviewRequestDTO</a> </td>
+            <td>   <a href="Ids.html#messages.VoidMessage">VoidMessage</a> </td>
+            <td>   <div class="docs">  Adds a participant (reviewer or watcher) to a review </div> </td>
+          </tr>
+          <tr>
+            <td> addGroupToReview </td>
+            <td>   <a href="Projects.html#messages.AddGroupToReviewRequestDTO">AddGroupToReviewRequestDTO</a> </td>
+            <td>   <a href="Projects.html#messages.AddGroupToReviewResponseDTO">AddGroupToReviewResponseDTO</a> </td>
+            <td>   <div class="docs">  Adds a group of participants (reviewers or watchers) to a review </div> </td>
+          </tr>
+          <tr>
+            <td> updateParticipantInReview </td>
+            <td>   <a href="Projects.html#messages.UpdateParticipantInReviewRequestDTO">UpdateParticipantInReviewRequestDTO</a> </td>
+            <td>   <a href="Projects.html#messages.UpdateParticipantInReviewResponseDTO">UpdateParticipantInReviewResponseDTO</a> </td>
+            <td>   <div class="docs">  Updates the participant's state </div> </td>
+          </tr>
+          <tr>
+            <td> removeParticipantFromReview </td>
+            <td>   <a href="Projects.html#messages.ParticipantInReviewRequestDTO">ParticipantInReviewRequestDTO</a> </td>
+            <td>   <a href="Ids.html#messages.VoidMessage">VoidMessage</a> </td>
+            <td>   <div class="docs">  Removes a participant from a review </div> </td>
+          </tr>
+          <tr>
+            <td> toggleReviewMuted </td>
+            <td>   <a href="Projects.html#messages.ToggleReviewMutedRequestDTO">ToggleReviewMutedRequestDTO</a> </td>
+            <td>   <a href="Ids.html#messages.VoidMessage">VoidMessage</a> </td>
+            <td>   <div class="docs">  Mutes activities taking place in a certain review or cancels muting that was previously set </div> </td>
+          </tr>
+          <tr>
+            <td> setReviewDeadline </td>
+            <td>   <a href="Projects.html#messages.ReviewDeadlineRequestDTO">ReviewDeadlineRequestDTO</a> </td>
+            <td>   <a href="Ids.html#messages.VoidMessage">VoidMessage</a> </td>
+            <td>   <div class="docs">  Sets/clears review due date </div> </td>
+          </tr>
+          <tr>
+            <td> setReviewTargetBranch </td>
+            <td>   <a href="Projects.html#messages.ReviewTargetBranchDTO">ReviewTargetBranchDTO</a> </td>
+            <td>   <a href="Projects.html#messages.SetReviewTargetBranchResponseDTO">SetReviewTargetBranchResponseDTO</a> </td>
+            <td>   <div class="docs">  Merge review: sets target branch </div> </td>
+          </tr>
+          <tr>
+            <td> getReviewSummaryChanges </td>
+            <td>   <a href="Projects.html#messages.ReviewSummaryChangesRequestDTO">ReviewSummaryChangesRequestDTO</a> </td>
+            <td>   <a href="Projects.html#messages.ReviewSummaryChangesResponseDTO">ReviewSummaryChangesResponseDTO</a> </td>
+            <td>   <div class="docs">  Returns the list of changes (sum of all revisions) in a review </div> </td>
+          </tr>
+          <tr>
+            <td> getFileInReviewSummaryInlineChanges </td>
+            <td>   <a href="Projects.html#messages.FileInReviewDiffRequestDTO">FileInReviewDiffRequestDTO</a> </td>
+            <td>   <a href="Projects.html#messages.FileInlineDiffResponseDTO">FileInlineDiffResponseDTO</a> </td>
+            <td>   <div class="docs">  Returns the diff (sum of all revisions) of a file in review </div> </td>
+          </tr>
+          <tr>
+            <td> getFileInReviewSummaryDiff </td>
+            <td>   <a href="Projects.html#messages.FileInReviewDiffRequestDTO">FileInReviewDiffRequestDTO</a> </td>
+            <td>   <a href="Projects.html#messages.FileDiffResponseDTO">FileDiffResponseDTO</a> </td>
+            <td>   <div class="docs">  Returns the diff (sum of all revisions) of a file in review </div> </td>
+          </tr>
+          <tr>
+            <td> setFileInReviewReadStatus </td>
+            <td>   <a href="Projects.html#messages.FileInReviewReadStatusRequestDTO">FileInReviewReadStatusRequestDTO</a> </td>
+            <td>   <a href="Ids.html#messages.VoidMessage">VoidMessage</a> </td>
+            <td>   <div class="docs">  Track file read status </div> </td>
+          </tr>
+          <tr>
+            <td> getReviewSummaryDiscussions </td>
+            <td>   <a href="Projects.html#messages.ReviewSummaryDiscussionsRequestDTO">ReviewSummaryDiscussionsRequestDTO</a> </td>
+            <td>   <a href="Projects.html#messages.DiscussionsInFilesDTO">DiscussionsInFilesDTO</a> </td>
+            <td>   <div class="docs">  Returns the review discussions </div> </td>
+          </tr>
+          <tr>
+            <td> removeReview </td>
+            <td>   <a href="Ids.html#messages.ReviewIdDTO">ReviewIdDTO</a> </td>
+            <td>   <a href="Ids.html#messages.VoidMessage">VoidMessage</a> </td>
+            <td>   <div class="docs">  Removes the review </div> </td>
+          </tr>
+          <tr>
+            <td> getMatchingRevisionsForStacktrace </td>
+            <td>   <a href="Projects.html#messages.StacktraceDTO">StacktraceDTO</a> </td>
+            <td>   <a href="Projects.html#messages.MatchingRevisionsResponseDTO">MatchingRevisionsResponseDTO</a> </td>
+            <td>   <div class="docs">  Returns matching revisions for stacktrace </div> </td>
+          </tr>
+          <tr>
+            <td> getStacktraceInContextOfRevision </td>
+            <td>   <a href="Projects.html#messages.StacktraceDTO">StacktraceDTO</a> </td>
+            <td>   <a href="Projects.html#messages.StacktracePositionsDTO">StacktracePositionsDTO</a> </td>
+            <td>   <div class="docs">  Returns full paths and vcs commit ids for lines of stacktrace in context of revision </div> </td>
+          </tr>
+          <tr>
+            <td> getCurrentUser </td>
+            <td>   <a href="Ids.html#messages.VoidMessage">VoidMessage</a> </td>
+            <td>   <a href="Users.html#messages.CurrentUserResponseDTO">CurrentUserResponseDTO</a> </td>
+            <td>   <div class="docs">  Returns the user info for a currently logged-in user </div> </td>
+          </tr>
+          <tr>
+            <td> getCurrentUserCanCloseReview </td>
+            <td>   <a href="Ids.html#messages.ReviewIdDTO">ReviewIdDTO</a> </td>
+            <td>   <a href="Ids.html#messages.VoidMessage">VoidMessage</a> </td>
+            <td>   <div class="docs">  Checks if current user can close given review </div> </td>
+          </tr>
+          <tr>
+            <td> getCurrentUserCanDeleteReview </td>
+            <td>   <a href="Ids.html#messages.ReviewIdDTO">ReviewIdDTO</a> </td>
+            <td>   <a href="Ids.html#messages.VoidMessage">VoidMessage</a> </td>
+            <td>   <div class="docs">  Checks if current user can delete given review </div> </td>
+          </tr>
+          <tr>
+            <td> getUserInfo </td>
+            <td>   <a href="Users.html#messages.UserInfoRequestDTO">UserInfoRequestDTO</a> </td>
+            <td>   <a href="Users.html#messages.UserInfoResponseDTO">UserInfoResponseDTO</a> </td>
+            <td>   <div class="docs">  Returns user info for given users </div> </td>
+          </tr>
+          <tr>
+            <td> getUsersPresenceInfo </td>
+            <td>   <a href="Users.html#messages.UserInfoRequestDTO">UserInfoRequestDTO</a> </td>
+            <td>   <a href="Users.html#messages.UsersPresenceInfoResponseDTO">UsersPresenceInfoResponseDTO</a> </td>
+            <td>   <div class="docs">  Returns presence info for given users </div> </td>
+          </tr>
+          <tr>
+            <td> bindVcsUsername </td>
+            <td>   <a href="Users.html#messages.BindVcsUsernameRequestDTO">BindVcsUsernameRequestDTO</a> </td>
+            <td>   <a href="Ids.html#messages.VoidMessage">VoidMessage</a> </td>
+            <td>   <div class="docs">  Maps a VCS username/email to a Hub account </div> </td>
+          </tr>
+          <tr>
+            <td> getUserProjects </td>
+            <td>   <a href="Users.html#messages.UserProjectsRequestDTO">UserProjectsRequestDTO</a> </td>
+            <td>   <a href="Users.html#messages.UserProjectsResponseDTO">UserProjectsResponseDTO</a> </td>
+            <td>   <div class="docs">  Returns the list of projects the specified user contributed to </div> </td>
+          </tr>
+          <tr>
+            <td> setUserAbsence </td>
+            <td>   <a href="Users.html#messages.UserAbsenceRequestDTO">UserAbsenceRequestDTO</a> </td>
+            <td>   <a href="Ids.html#messages.VoidMessage">VoidMessage</a> </td>
+            <td>   <div class="docs">  Sets or clears a user absence </div> </td>
+          </tr>
+          <tr>
+            <td> getUserSetting </td>
+            <td>   <a href="Misc.html#messages.GetSettingRequestDTO">GetSettingRequestDTO</a> </td>
+            <td>   <a href="Misc.html#messages.GetSettingResponseDTO">GetSettingResponseDTO</a> </td>
+            <td>   <div class="docs">  Returns the value of a user setting by name </div> </td>
+          </tr>
+          <tr>
+            <td> setUserSetting </td>
+            <td>   <a href="Misc.html#messages.SetSettingRequestDTO">SetSettingRequestDTO</a> </td>
+            <td>   <a href="Ids.html#messages.VoidMessage">VoidMessage</a> </td>
+            <td>   <div class="docs">  Updates the value of a user setting by name </div> </td>
+          </tr>
+          <tr>
+            <td> getClusterSetting </td>
+            <td>   <a href="Misc.html#messages.GetSettingRequestDTO">GetSettingRequestDTO</a> </td>
+            <td>   <a href="Misc.html#messages.GetSettingResponseDTO">GetSettingResponseDTO</a> </td>
+            <td>   <div class="docs">  Returns the value of a cluster-wide setting by name </div> </td>
+          </tr>
+          <tr>
+            <td> setClusterSetting </td>
+            <td>   <a href="Misc.html#messages.SetSettingRequestDTO">SetSettingRequestDTO</a> </td>
+            <td>   <a href="Ids.html#messages.VoidMessage">VoidMessage</a> </td>
+            <td>   <div class="docs">  Updates the value of a cluster-wide setting by name </div> </td>
+          </tr>
+          <tr>
+            <td> setMotto </td>
+            <td>   <a href="Misc.html#messages.SetMottoRequestDTO">SetMottoRequestDTO</a> </td>
+            <td>   <a href="Ids.html#messages.VoidMessage">VoidMessage</a> </td>
+            <td>   <div class="docs">  Sets the server motto </div> </td>
+          </tr>
+          <tr>
+            <td> getProjectSetting </td>
+            <td>   <a href="Misc.html#messages.GetProjectSettingRequestDTO">GetProjectSettingRequestDTO</a> </td>
+            <td>   <a href="Misc.html#messages.GetSettingResponseDTO">GetSettingResponseDTO</a> </td>
+            <td>   <div class="docs">  Returns the value of a project setting by name </div> </td>
+          </tr>
+          <tr>
+            <td> setProjectSetting </td>
+            <td>   <a href="Misc.html#messages.SetProjectSettingRequestDTO">SetProjectSettingRequestDTO</a> </td>
+            <td>   <a href="Ids.html#messages.VoidMessage">VoidMessage</a> </td>
+            <td>   <div class="docs">  Updates the value of a project setting by name </div> </td>
+          </tr>
+          <tr>
+            <td> setProjectWebhooks </td>
+            <td>   <a href="Misc.html#messages.SetProjectWebhooksRequestDTO">SetProjectWebhooksRequestDTO</a> </td>
+            <td>   <a href="Ids.html#messages.VoidMessage">VoidMessage</a> </td>
+            <td>   <div class="docs">  Updates the set of webhooks in a project </div> </td>
+          </tr>
+          <tr>
+            <td> createProject </td>
+            <td>   <a href="Projects.html#messages.CreateProjectRequestDTO">CreateProjectRequestDTO</a> </td>
+            <td>   <a href="Ids.html#messages.VoidMessage">VoidMessage</a> </td>
+            <td>   <div class="docs">  Creates a project </div> </td>
+          </tr>
+          <tr>
+            <td> loadProject </td>
+            <td>   <a href="Ids.html#messages.ProjectIdDTO">ProjectIdDTO</a> </td>
+            <td>   <a href="Projects.html#messages.ProjectSettingsDTO">ProjectSettingsDTO</a> </td>
+            <td>   <div class="docs">  Loads project settings </div> </td>
+          </tr>
+          <tr>
+            <td> editProject </td>
+            <td>   <a href="Projects.html#messages.EditProjectRequestDTO">EditProjectRequestDTO</a> </td>
+            <td>   <a href="Ids.html#messages.VoidMessage">VoidMessage</a> </td>
+            <td>   <div class="docs">  Updates project settings </div> </td>
+          </tr>
+          <tr>
+            <td> deleteProject </td>
+            <td>   <a href="Ids.html#messages.ProjectIdDTO">ProjectIdDTO</a> </td>
+            <td>   <a href="Ids.html#messages.VoidMessage">VoidMessage</a> </td>
+            <td>   <div class="docs">  Deletes a project </div> </td>
+          </tr>
+          <tr>
+            <td> resetProject </td>
+            <td>   <a href="Ids.html#messages.ProjectIdDTO">ProjectIdDTO</a> </td>
+            <td>   <a href="Ids.html#messages.VoidMessage">VoidMessage</a> </td>
+            <td>   <div class="docs">  Completely reset a project </div> </td>
+          </tr>
+          <tr>
+            <td> getProjectConfigurationParameters </td>
+            <td>   <a href="Ids.html#messages.VoidMessage">VoidMessage</a> </td>
+            <td>   <a href="Projects.html#messages.ProjectConfigurationResponseDTO">ProjectConfigurationResponseDTO</a> </td>
+            <td>   <div class="docs">  Loads project settings </div> </td>
+          </tr>
+          <tr>
+            <td> getVcsHostingServices </td>
+            <td>   <a href="Projects.html#messages.VcsHostingRequestDTO">VcsHostingRequestDTO</a> </td>
+            <td>   <a href="Projects.html#messages.VcsHostingResponseDTO">VcsHostingResponseDTO</a> </td>
+            <td>   <div class="docs">  Loads VCS Hosting services </div> </td>
+          </tr>
+          <tr>
+            <td> createOrEditLabel </td>
+            <td>   <a href="Projects.html#messages.EditLabelRequestDTO">EditLabelRequestDTO</a> </td>
+            <td>   <a href="Projects.html#messages.LabelDTO">LabelDTO</a> </td>
+            <td>   <div class="docs">  Creates/updates a discussion label in a project </div> </td>
+          </tr>
+          <tr>
+            <td> createOrEditReviewLabel </td>
+            <td>   <a href="Projects.html#messages.EditLabelRequestDTO">EditLabelRequestDTO</a> </td>
+            <td>   <a href="Projects.html#messages.LabelDTO">LabelDTO</a> </td>
+            <td>   <div class="docs">  Creates/updates a review label in a project </div> </td>
+          </tr>
+          <tr>
+            <td> hidePredefinedLabels </td>
+            <td>   <a href="Projects.html#messages.HidePredefinedLabelsRequestDTO">HidePredefinedLabelsRequestDTO</a> </td>
+            <td>   <a href="Ids.html#messages.VoidMessage">VoidMessage</a> </td>
+            <td>   <div class="docs">  Hides predefined discussion labels in a project </div> </td>
+          </tr>
+          <tr>
+            <td> hidePredefinedReviewLabels </td>
+            <td>   <a href="Projects.html#messages.HidePredefinedLabelsRequestDTO">HidePredefinedLabelsRequestDTO</a> </td>
+            <td>   <a href="Ids.html#messages.VoidMessage">VoidMessage</a> </td>
+            <td>   <div class="docs">  Hides predefined review labels in a project </div> </td>
+          </tr>
+          <tr>
+            <td> deleteLabel </td>
+            <td>   <a href="Projects.html#messages.EditLabelRequestDTO">EditLabelRequestDTO</a> </td>
+            <td>   <a href="Ids.html#messages.VoidMessage">VoidMessage</a> </td>
+            <td>   <div class="docs">  Deletes a discussion label from a project </div> </td>
+          </tr>
+          <tr>
+            <td> deleteReviewLabel </td>
+            <td>   <a href="Projects.html#messages.EditLabelRequestDTO">EditLabelRequestDTO</a> </td>
+            <td>   <a href="Ids.html#messages.VoidMessage">VoidMessage</a> </td>
+            <td>   <div class="docs">  Deletes a review label from a project </div> </td>
+          </tr>
+          <tr>
+            <td> mergeLabels </td>
+            <td>   <a href="Projects.html#messages.EditLabelsRequestDTO">EditLabelsRequestDTO</a> </td>
+            <td>   <a href="Projects.html#messages.LabelDTO">LabelDTO</a> </td>
+            <td>   <div class="docs">  Merges two or more discussion labels into one </div> </td>
+          </tr>
+          <tr>
+            <td> testVcsConnection </td>
+            <td>   <a href="Projects.html#messages.TestConnectionRequestDTO">TestConnectionRequestDTO</a> </td>
+            <td>   <a href="Projects.html#messages.TestConnectionResponseDTO">TestConnectionResponseDTO</a> </td>
+            <td>   <div class="docs">  Checks connection to a given VCS repository </div> </td>
+          </tr>
+          <tr>
+            <td> testPOP3Mailbox </td>
+            <td>   <a href="Misc.html#messages.TestPOP3MailboxRequestDTO">TestPOP3MailboxRequestDTO</a> </td>
+            <td>   <a href="Misc.html#messages.TestPOP3MailboxResponseDTO">TestPOP3MailboxResponseDTO</a> </td>
+            <td>   <div class="docs">  Checks availability of a given POP3 mailbox </div> </td>
+          </tr>
+          <tr>
+            <td> getReadOnlyMode </td>
+            <td>   <a href="Ids.html#messages.VoidMessage">VoidMessage</a> </td>
+            <td>   <a href="Misc.html#messages.ReadOnlyModeDTO">ReadOnlyModeDTO</a> </td>
+            <td>   <div class="docs">  Checks if server is in read-only mode </div> </td>
+          </tr>
+          <tr>
+            <td> setReadOnlyMode </td>
+            <td>   <a href="Misc.html#messages.ReadOnlyModeDTO">ReadOnlyModeDTO</a> </td>
+            <td>   <a href="Ids.html#messages.VoidMessage">VoidMessage</a> </td>
+            <td>   <div class="docs">  Enables/disables the read-only mode </div> </td>
+          </tr>
+          <tr>
+            <td> getEmailBounces </td>
+            <td>   <a href="Ids.html#messages.VoidMessage">VoidMessage</a> </td>
+            <td>   <a href="Misc.html#messages.EmailBouncesResponseDTO">EmailBouncesResponseDTO</a> </td>
+            <td>  </td>
+          </tr>
+          <tr>
+            <td> resetEmailBounces </td>
+            <td>   <a href="Ids.html#messages.VoidMessage">VoidMessage</a> </td>
+            <td>   <a href="Ids.html#messages.VoidMessage">VoidMessage</a> </td>
+            <td>  </td>
+          </tr>
+          <tr>
+            <td> getAllRoles </td>
+            <td>   <a href="Ids.html#messages.VoidMessage">VoidMessage</a> </td>
+            <td>   <a href="Projects.html#messages.AllRolesResponseDTO">AllRolesResponseDTO</a> </td>
+            <td>   <div class="docs">  Returns all roles available in Hub </div> </td>
+          </tr>
+          <tr>
+            <td> getUsersRoles </td>
+            <td>   <a href="Projects.html#messages.UsersRolesRequestDTO">UsersRolesRequestDTO</a> </td>
+            <td>   <a href="Projects.html#messages.UsersRolesResponseDTO">UsersRolesResponseDTO</a> </td>
+            <td>   <div class="docs">  Returns users that have any access to the project and role keys associated with each user </div> </td>
+          </tr>
+          <tr>
+            <td> addUserRole </td>
+            <td>   <a href="Projects.html#messages.AddRoleRequestDTO">AddRoleRequestDTO</a> </td>
+            <td>   <a href="Ids.html#messages.VoidMessage">VoidMessage</a> </td>
+            <td>   <div class="docs">  Adds a user role </div> </td>
+          </tr>
+          <tr>
+            <td> deleteUserRole </td>
+            <td>   <a href="Projects.html#messages.DeleteRoleRequestDTO">DeleteRoleRequestDTO</a> </td>
+            <td>   <a href="Ids.html#messages.VoidMessage">VoidMessage</a> </td>
+            <td>   <div class="docs">  Deletes a user role (not the role itself, but the association) </div> </td>
+          </tr>
+          <tr>
+            <td> inviteUser </td>
+            <td>   <a href="Projects.html#messages.InviteUserRequestDTO">InviteUserRequestDTO</a> </td>
+            <td>   <a href="Projects.html#messages.InviteUserResponseDTO">InviteUserResponseDTO</a> </td>
+            <td>   <div class="docs">  Searches for user in Hub by an email, and sends an invitation if not found </div> </td>
+          </tr>
+          <tr>
+            <td> exportData </td>
+            <td>   <a href="Ids.html#messages.VoidMessage">VoidMessage</a> </td>
+            <td>   <a href="Misc.html#messages.ExportDataResponseDTO">ExportDataResponseDTO</a> </td>
+            <td>   <div class="docs">  Exports user-generated data - reviews, discussions, settings </div> </td>
+          </tr>
+          <tr>
+            <td> getProjectActivity </td>
+            <td>   <a href="Analytics.html#messages.ProjectActivityRequestDTO">ProjectActivityRequestDTO</a> </td>
+            <td>   <a href="Analytics.html#messages.ProjectActivityDTO">ProjectActivityDTO</a> </td>
+            <td>   <div class="docs">  Returns project activity distribution over time, i.e. the number of commits per time period </div> </td>
+          </tr>
+          <tr>
+            <td> getContributorsDistribution </td>
+            <td>   <a href="Analytics.html#messages.ContributorsDistributionRequestDTO">ContributorsDistributionRequestDTO</a> </td>
+            <td>   <a href="Analytics.html#messages.ContributorsDistributionDTO">ContributorsDistributionDTO</a> </td>
+            <td>   <div class="docs">  Returns contributors distribution over time, i.e. the number of commits per time period per committer </div> </td>
+          </tr>
+          <tr>
+            <td> getResponsibilityDistribution </td>
+            <td>   <a href="Analytics.html#messages.ResponsibilityDistributionRequestDTO">ResponsibilityDistributionRequestDTO</a> </td>
+            <td>   <a href="Analytics.html#messages.ResponsibilityDistributionDTO">ResponsibilityDistributionDTO</a> </td>
+            <td>   <div class="docs">  Returns commits distribution in a given date range over all committers and modules </div> </td>
+          </tr>
+          <tr>
+            <td> getProjectCommitters </td>
+            <td>   <a href="Ids.html#messages.ProjectIdDTO">ProjectIdDTO</a> </td>
+            <td>   <a href="Analytics.html#messages.ProjectCommittersDTO">ProjectCommittersDTO</a> </td>
+            <td>   <div class="docs">  Returns all committers throughout the project history </div> </td>
+          </tr>
+          <tr>
+            <td> getUserActivity </td>
+            <td>   <a href="Analytics.html#messages.UserActivityRequestDTO">UserActivityRequestDTO</a> </td>
+            <td>   <a href="Analytics.html#messages.UserActivityDTO">UserActivityDTO</a> </td>
+            <td>   <div class="docs">  Returns project activity distribution over time, i.e. the number of commits per time period for a specified set of committers </div> </td>
+          </tr>
+          <tr>
+            <td> getModulesDistribution </td>
+            <td>   <a href="Analytics.html#messages.ModulesDistributionRequestDTO">ModulesDistributionRequestDTO</a> </td>
+            <td>   <a href="Analytics.html#messages.ModulesDistributionDTO">ModulesDistributionDTO</a> </td>
+            <td>   <div class="docs">  Returns per-module activity distribution in the project </div> </td>
+          </tr>
+          <tr>
+            <td> getCommitsSummary </td>
+            <td>   <a href="Analytics.html#messages.CommitsSummaryRequestDTO">CommitsSummaryRequestDTO</a> </td>
+            <td>   <a href="Analytics.html#messages.CommitsSummaryDTO">CommitsSummaryDTO</a> </td>
+            <td>   <div class="docs">  Returns the summary for the specified date range and set of committers: total number of commits, number of commits that aren't part of any module, total number of modules changed </div> </td>
+          </tr>
+          <tr>
+            <td> getCommitsDetails </td>
+            <td>   <a href="Analytics.html#messages.CommitsDetailsRequestDTO">CommitsDetailsRequestDTO</a> </td>
+            <td>   <a href="Analytics.html#messages.CommitsDetailsDTO">CommitsDetailsDTO</a> </td>
+            <td>   <div class="docs">  Returns the revisions in the specified module, in the specified date range and for the specified committers </div> </td>
+          </tr>
+          <tr>
+            <td> getFileHistoryChart </td>
+            <td>   <a href="Analytics.html#messages.FileHistoryChartRequestDTO">FileHistoryChartRequestDTO</a> </td>
+            <td>   <a href="Analytics.html#messages.FileHistoryChartDTO">FileHistoryChartDTO</a> </td>
+            <td>   <div class="docs">  Returns the data required to display an animated chart of distribution of individual files in project across "edits - age" plane </div> </td>
+          </tr>
+          <tr>
+            <td> getProjectTreeMap </td>
+            <td>   <a href="Analytics.html#messages.ProjectTreeMapRequestDTO">ProjectTreeMapRequestDTO</a> </td>
+            <td>   <a href="Analytics.html#messages.ProjectTreeMapDTO">ProjectTreeMapDTO</a> </td>
+            <td>   <div class="docs">  Returns the list of files in a project and their content sizes required to build the interactive treemap chart </div> </td>
+          </tr>
+          <tr>
+            <td> getProjectPulse </td>
+            <td>   <a href="Analytics.html#messages.ProjectPulseRequestDTO">ProjectPulseRequestDTO</a> </td>
+            <td>   <a href="Analytics.html#messages.PulseResponseDTO">PulseResponseDTO</a> </td>
+            <td>   <div class="docs">  Returns the activity pulse for a specified project </div> </td>
+          </tr>
+          <tr>
+            <td> getUserPulse </td>
+            <td>   <a href="Analytics.html#messages.UserPulseRequestDTO">UserPulseRequestDTO</a> </td>
+            <td>   <a href="Analytics.html#messages.PulseResponseDTO">PulseResponseDTO</a> </td>
+            <td>   <div class="docs">  Returns the activity pulse of a given user across all projects (`allValues` time series is always empty) </div> </td>
+          </tr>
+          <tr>
+            <td> getReviewStatistics </td>
+            <td>   <a href="Analytics.html#messages.ReviewStatisticsRequestDTO">ReviewStatisticsRequestDTO</a> </td>
+            <td>   <a href="Analytics.html#messages.ReviewStatisticsDTO">ReviewStatisticsDTO</a> </td>
+            <td>   <div class="docs">  Returns the general review statistics in the project </div> </td>
+          </tr>
+          <tr>
+            <td> getReviewCoverage </td>
+            <td>   <a href="Analytics.html#messages.ReviewCoverageRequestDTO">ReviewCoverageRequestDTO</a> </td>
+            <td>   <a href="Analytics.html#messages.ReviewCoverageDTO">ReviewCoverageDTO</a> </td>
+            <td>   <div class="docs">  Returns the number of revisions covered by reviews in the project </div> </td>
+          </tr>
+          <tr>
+            <td> getReviewTimeStatistics </td>
+            <td>   <a href="Analytics.html#messages.ReviewTimeStatisticsRequestDTO">ReviewTimeStatisticsRequestDTO</a> </td>
+            <td>   <a href="Analytics.html#messages.ReviewTimeStatisticsDTO">ReviewTimeStatisticsDTO</a> </td>
+            <td>   <div class="docs">  Returns the time distribution of reviews and review iterations </div> </td>
+          </tr>
+          <tr>
+            <td> getReviewersGraph </td>
+            <td>   <a href="Analytics.html#messages.ReviewersGraphRequestDTO">ReviewersGraphRequestDTO</a> </td>
+            <td>   <a href="Analytics.html#messages.ReviewersGraphDTO">ReviewersGraphDTO</a> </td>
+            <td>   <div class="docs">  Returns review activity graph for the project </div> </td>
+          </tr>
+          <tr>
+            <td> updateUserTimezone </td>
+            <td>   <a href="Misc.html#messages.UpdateUserTimezoneDTO">UpdateUserTimezoneDTO</a> </td>
+            <td>   <a href="Ids.html#messages.VoidMessage">VoidMessage</a> </td>
+            <td>   <div class="docs">  Updates user timezone </div> </td>
+          </tr>
+          <tr>
+            <td> updateAchievementsLastSeen </td>
+            <td>   <a href="Misc.html#messages.UserActionNotificationDTO">UserActionNotificationDTO</a> </td>
+            <td>   <a href="Ids.html#messages.VoidMessage">VoidMessage</a> </td>
+            <td>   <div class="docs">  Updates the time when the user last saw the list of his/her achievements </div> </td>
+          </tr>
+          <tr>
+            <td> getUnlockedUserAchievements </td>
+            <td>   <a href="Misc.html#messages.UserAchievementsRequestDTO">UserAchievementsRequestDTO</a> </td>
+            <td>   <a href="Misc.html#messages.AchievementsListDTO">AchievementsListDTO</a> </td>
+            <td>   <div class="docs">  Returns the list of achievements the user has unlocked </div> </td>
+          </tr>
+          <tr>
+            <td> getUnreadUnlockedUserAchievementsCount </td>
+            <td>   <a href="Ids.html#messages.VoidMessage">VoidMessage</a> </td>
+            <td>   <a href="Misc.html#messages.UserAchievementsCountDTO">UserAchievementsCountDTO</a> </td>
+            <td>   <div class="docs">  Returns a count of unread achievements the user has unlocked </div> </td>
+          </tr>
+          <tr>
+            <td> getUserAchievements </td>
+            <td>   <a href="Misc.html#messages.UserAchievementsRequestDTO">UserAchievementsRequestDTO</a> </td>
+            <td>   <a href="Misc.html#messages.AchievementsListDTO">AchievementsListDTO</a> </td>
+            <td>   <div class="docs">  Returns the list of all achievements with information about whether the achievement was unlocked by the user or not </div> </td>
+          </tr>
+          <tr>
+            <td> getAvailableIssueTrackerProviders </td>
+            <td>   <a href="Ids.html#messages.VoidMessage">VoidMessage</a> </td>
+            <td>   <a href="IssueTrackers.html#messages.IssueTrackerProvidersListDTO">IssueTrackerProvidersListDTO</a> </td>
+            <td>   <div class="docs">  Returns the list of available issue trackers </div> </td>
+          </tr>
+          <tr>
+            <td> getIssueInfo </td>
+            <td>   <a href="IssueTrackers.html#messages.IssueInfoRequestDTO">IssueInfoRequestDTO</a> </td>
+            <td>   <a href="IssueTrackers.html#messages.IssueInfoDTO">IssueInfoDTO</a> </td>
+            <td>   <div class="docs">  Returns detailed issue information </div> </td>
+          </tr>
+          <tr>
+            <td> createIssueFromDiscussion </td>
+            <td>   <a href="IssueTrackers.html#messages.CreateIssueFromDiscussionRequestDTO">CreateIssueFromDiscussionRequestDTO</a> </td>
+            <td>   <a href="IssueTrackers.html#messages.IssueIdDTO">IssueIdDTO</a> </td>
+            <td>   <div class="docs">  Creates an issue from the discussion in a given issue tracker </div> </td>
+          </tr>
+          <tr>
+            <td> createIssueFromReview </td>
+            <td>   <a href="IssueTrackers.html#messages.CreateIssueFromReviewRequestDTO">CreateIssueFromReviewRequestDTO</a> </td>
+            <td>   <a href="IssueTrackers.html#messages.IssueIdDTO">IssueIdDTO</a> </td>
+            <td>   <div class="docs">  Creates an issue from the review in a given issue tracker </div> </td>
+          </tr>
+      </table></div>
+  </div>
+</body>
+
+</html>
